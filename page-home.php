@@ -21,7 +21,7 @@ get_header();
         <div class="row mb-5">
             <section class="col-12 section-header-border pb-2">
                 <h2 class="section-header-title text-uppercase fw-bold mb-0">Destacados</h2>
-                <?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-destacados.php'; ?>
+                <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-destacados.php'; ?>
             </section>
         </div>
     </div>
@@ -31,7 +31,7 @@ get_header();
             <div class="row">
                 <div class="col-12 section-header-border pb-2">
                     <h3 class="section-header-title text-uppercase fw-bold mb-0">Metalcore</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-metalcore.php'; ?>
+					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-metalcore.php'; ?>
                 </div>
             </div>
         </div>
@@ -42,29 +42,29 @@ get_header();
             <div class="row">
                 <div class="col-12 section-header-border pb-2">
                     <h3 class="section-header-title text-uppercase fw-bold mb-0">Deathore</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-deathcore.php'; ?>
+					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-deathcore.php'; ?>
                 </div>
             </div>
         </div>
     </section>
-	<!-- Sección Thrash -->
+	<!-- Sección Pop-punk -->
     <section class="mb-5">
         <div class="container mb-3">
             <div class="row">
                 <div class="col-12 section-header-border pb-2">
-                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Thrash</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-thrash.php'; ?>
+                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Pop-Punk</h3>
+					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-pop-punk.php'; ?>
                 </div>
             </div>
         </div>
     </section>
-	<!-- Sección Heavy -->
+	<!-- Sección Easycore -->
     <section class="mb-5">
         <div class="container mb-3">
             <div class="row">
                 <div class="col-12 section-header-border pb-2">
-                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Heavy</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-heavy.php'; ?>
+                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Easycore</h3>
+					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-easycore.php'; ?>
                 </div>
             </div>
         </div>
