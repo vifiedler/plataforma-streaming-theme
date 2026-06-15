@@ -1,0 +1,861 @@
+/* ============================================
+   VARIABLES GLOBALES
+   ============================================ */
+
+:root {
+  --tm-black: #000000;
+  --tm-text-gray: #333333;
+  --tm-light-border: #e2e2e2;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+/* ============================================
+   ESTILOS ORIGINALES RESTAURADOS
+   ============================================ */
+
+.author .vcard a {
+  color: #595c5f !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.author.vcard a:visited {
+  color: #595c5f !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cat-links a:visited {
+  color: #595c5f !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-previous a {
+  color: #595c5f !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-next a {
+  color: #595c5f !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.posts-navigation .nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.posted-on a {
+  color: #595c5f !important;
+  text-decoration: none;
+}
+
+.border-loop {
+  border-left: 2px solid #e2e2e2 !important;
+}
+
+.border-loop-abajo {
+  border-bottom: 2px solid #e2e2e2 !important;
+}
+
+/* ============================================
+   TIPOGRAFÍA GLOBAL
+   ============================================ */
+
+.post,
+.page {
+  margin: 0 0 0;
+}
+
+.section-header-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: var(--tm-black);
+}
+
+.section-header-border {
+  border-bottom: 4px solid var(--tm-black) !important;
+}
+
+.lg__title {
+  font-family: 'Frank Ruhl Libre', 'Grifinito-M', Georgia, serif;
+  font-size: 3rem;
+  line-height: 1.05;
+  color: var(--tm-black);
+  letter-spacing: -0.5px;
+  transition: color 0.2s ease;
+}
+
+.lg__title-medium {
+  font-family: 'Frank Ruhl Libre', 'Grifinito-M', Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--tm-black);
+  transition: color 0.2s ease;
+}
+
+.lg__title-small {
+  font-family: 'Frank Ruhl Libre', 'Grifinito-M', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--tm-black);
+  transition: color 0.2s ease;
+}
+
+a:hover .lg__title,
+a:hover .lg__title-small {
+  color: #777;
+}
+
+.tease-dek {
+  color: var(--tm-black);
+  font-family: 'Lora', Chronicle, Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.3888888889;
+}
+
+.tease-dek-small {
+  color: var(--tm-text-gray);
+  font-family: 'Lora', Chronicle, Georgia, serif;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.meta-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.article-divider {
+  border-bottom: 1px solid var(--tm-light-border);
+}
+
+.article-divider:last-child {
+  border-bottom: none;
+}
+
+
+/* ============================================
+   SINGLE POST
+   ============================================ */
+
+.single-img-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.single-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.single-img-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  color: #888;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.single-category-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tm-black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--tm-black);
+  padding-bottom: 1px;
+}
+
+.single-category-tag:hover {
+  color: #555;
+  border-color: #555;
+}
+
+.single-title {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--tm-black);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.single-dek {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.single-byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 0;
+  border-top: 1px solid var(--tm-light-border);
+  border-bottom: 1px solid var(--tm-light-border);
+  margin-bottom: 2rem;
+}
+
+.single-byline img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.single-byline-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  color: var(--tm-black);
+  font-weight: 600;
+}
+
+.single-byline-name a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--tm-black);
+}
+
+.single-byline-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+
+.single-body-col {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.entry-content {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #1a1a1a;
+}
+
+.entry-content p {
+  margin-bottom: 1.5em;
+}
+
+.entry-content h2,
+.entry-content h3 {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+.links-single a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+  margin-right: 6px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.links-single a:hover {
+  background: var(--tm-black);
+  color: #fff;
+  border-color: var(--tm-black);
+}
+
+
+/* ============================================
+   ARCHIVE — categorías y etiquetas
+   ============================================ */
+
+.archive-header-bar {
+  border-top: 4px solid var(--tm-black);
+  border-bottom: 1px solid var(--tm-light-border);
+  padding: 1.5rem 0 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.archive-kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.page-title {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: var(--tm-black);
+  margin-bottom: 0;
+}
+
+.archive-description {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.tamano-card {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--tm-light-border) !important;
+  background: transparent !important;
+}
+
+.foto-card-container {
+  overflow: hidden;
+  aspect-ratio: 3/2;
+}
+
+.foto-card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.foto-card-container:hover .foto-card {
+  transform: scale(1.03);
+}
+
+.archive-card-kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.archive-card-title {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  color: var(--tm-black);
+  transition: color 0.2s;
+}
+
+.archive-card-title:hover {
+  color: #555;
+}
+
+.archive-card-excerpt {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--tm-text-gray);
+}
+
+.archive-row-item {
+  border-top: 1px solid var(--tm-light-border);
+}
+
+.archive-row-item:last-child {
+  border-bottom: 1px solid var(--tm-light-border);
+}
+
+
+/* ============================================
+   ARCHIVE AUTHOR — página de colaborador
+   ============================================ */
+
+.archive-author-header {
+  border-bottom: 1px solid var(--tm-light-border);
+  gap: 28px;
+}
+
+.archive-author-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .archive-author-avatar {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.archive-author-name {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: var(--tm-black);
+}
+
+.archive-author-bio {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 640px;
+}
+
+
+/* ============================================
+   LOOP UAP2 — imagen max 175px
+   ============================================ */
+
+.uap2-img {
+  width: 100%;
+  height: 175px;
+  max-height: 175px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.uap2-img-wrap {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.uap2-img-wrap:hover .uap2-img {
+  transform: scale(1.03);
+}
+
+
+/* ============================================
+   CAROUSEL — estilo TM
+   ============================================ */
+
+.tm-carousel {
+  position: relative;
+}
+
+.tm-carousel__img-wrap {
+  display: block;
+  overflow: hidden;
+}
+
+.tm-carousel__img {
+  width: auto;
+  height: 50vh;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.tm-carousel__img-wrap:hover .tm-carousel__img {
+  transform: scale(1.03);
+}
+
+.tm-carousel__body {
+  padding-top: 12px;
+}
+
+.tm-carousel__indicators {
+  position: static;
+  margin: 10px 0 0;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.tm-carousel__indicators button {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  opacity: 1;
+  transition: background 0.2s;
+  flex: unset;
+}
+
+.tm-carousel__indicators button.active {
+  background-color: var(--tm-black);
+}
+
+.tm-carousel__prev,
+.tm-carousel__next {
+  position: absolute;
+  top: calc(240px);
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--tm-light-border);
+  color: var(--tm-black);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.15s;
+  padding: 0;
+}
+
+.tm-carousel__prev:hover,
+.tm-carousel__next:hover {
+  background: #fff;
+}
+
+.tm-carousel__prev {
+  left: 8px;
+}
+
+.tm-carousel__next {
+  right: 8px;
+}
+
+.tm-carousel__prev i,
+.tm-carousel__next i {
+  font-size: 0.75rem;
+}
+
+/* Carousel full width — padding lateral en el cuerpo de texto */
+.tm-carousel-section .tm-carousel__body {
+  padding-left: calc((100vw - 1320px) / 2);
+  padding-right: calc((100vw - 1320px) / 2);
+}
+
+@media (max-width: 1400px) {
+  .tm-carousel-section .tm-carousel__body {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+/* ============================================
+   FOOTER — estilo Texas Monthly
+   ============================================ */
+
+.fbs__footer {
+  background-color: #111;
+  color: #ccc;
+  font-family: 'Inter', sans-serif;
+}
+
+.fbs__footer-newsletter {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.fbs__footer-newsletter-title {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.fbs__footer-newsletter-desc {
+  font-size: 0.82rem;
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.fbs__footer .widget input[type="email"],
+.fbs__footer .widget input[type="text"] {
+  background: #222;
+  border: 1px solid #333;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  padding: 10px 14px;
+  width: 100%;
+  outline: none;
+  border-radius: 0;
+}
+
+.fbs__footer .widget input[type="email"]:focus,
+.fbs__footer .widget input[type="text"]:focus {
+  border-color: #555;
+}
+
+.fbs__footer .widget input[type="submit"],
+.fbs__footer .widget button[type="submit"] {
+  background: #fff;
+  color: #000;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.15s;
+}
+
+.fbs__footer .widget input[type="submit"]:hover,
+.fbs__footer .widget button[type="submit"]:hover {
+  background: #e0e0e0;
+}
+
+.fbs__footer-links {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.fbs__footer .widget h3,
+.fbs__footer .widget .widgettitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.fbs__footer ul,
+.footer-theme ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fbs__footer ul li {
+  margin-bottom: 8px;
+}
+
+.fbs__footer ul li a {
+  font-size: 0.78rem;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.15s;
+  line-height: 1.4;
+}
+
+.fbs__footer ul li a:hover {
+  color: #fff;
+}
+
+.fbs__footer .textwidget,
+.fbs__footer .widget p {
+  font-size: 0.82rem;
+  color: #999;
+  line-height: 1.7;
+}
+
+.fbs__footer .textwidget a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.fbs__footer .textwidget a:hover {
+  color: #fff;
+}
+
+.footer-theme.quick-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.footer-theme.quick-contact li::before {
+  margin-right: 0;
+}
+
+.fbs__footer .credits {
+  padding: 20px 0 8px;
+  font-size: 0.72rem;
+  color: #555;
+  border-top: 1px solid #2a2a2a;
+}
+
+.fbs__footer .credits a {
+  color: #888;
+  text-decoration: none;
+}
+
+.fbs__footer .credits a:hover {
+  color: #fff;
+}
+
+.fbs__footer .quick-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.72rem;
+}
+
+.fbs__footer .quick-links a:hover {
+  color: #fff;
+}
+
+
+/* ============================================
+   LOOP CRIPTOZOOLOGÍA — grid 2|1|2
+   ============================================ */
+
+.cripto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 0 24px;
+  align-items: start;
+}
+
+/* Línea vertical entre columnas */
+.cripto-grid__col--side:first-child {
+  border-right: 1px solid var(--tm-light-border);
+  padding-right: 24px;
+}
+
+.cripto-grid__col--side:last-child {
+  border-left: 1px solid var(--tm-light-border);
+  padding-left: 24px;
+}
+
+/* Imagen columnas laterales */
+.cripto-card__img--small {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Imagen columna central */
+.cripto-card__img--large {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cripto-card__img-wrap {
+  overflow: hidden;
+}
+
+.cripto-card__img-wrap:hover .cripto-card__img--small,
+.cripto-card__img-wrap:hover .cripto-card__img--large {
+  transform: scale(1.03);
+}
+
+/* Título central más grande */
+.cripto-grid__col--main .lg__title {
+  font-size: 1.8rem;
+}
+
+/* Mobile: stack vertical */
+@media (max-width: 767px) {
+  .cripto-grid {
+    grid-template-columns: 1fr;
+    gap: 24px 0;
+  }
+
+  .cripto-grid__col--side:first-child,
+  .cripto-grid__col--side:last-child {
+    border: none;
+    padding: 0;
+    border-top: 1px solid var(--tm-light-border);
+    padding-top: 24px;
+  }
+}
+
+/* ============================================
+   CONTACT FORM 7 — estilo TM
+   ============================================ */
+
+/* Input email */
+.wpcf7 .form-control {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.3px;
+  color: #fff;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 0;
+  padding: 10px 14px;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.15s;
+}
+
+.wpcf7 .form-control:focus {
+  background: #222;
+  color: #fff;
+  border-color: #888;
+  box-shadow: none;
+}
+
+.wpcf7 .form-control::placeholder {
+  color: #666;
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+}
+
+/* Botón submit */
+.wpcf7 .btn-primary {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wpcf7 .btn-primary:hover,
+.wpcf7 .btn-primary:focus {
+  background: #e0e0e0;
+  color: #000;
+  box-shadow: none;
+}
+
+/* Mensaje de respuesta CF7 */
+.wpcf7-response-output {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  border: none !important;
+  padding: 8px 0 0 !important;
+  margin: 6px 0 0 !important;
+  color: #aaa;
+}
+
+.wpcf7-not-valid-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: #e07070;
+  margin-top: 4px;
+}

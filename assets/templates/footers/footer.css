@@ -1,0 +1,167 @@
+/* ============================================
+   FOOTER — estilo Texas Monthly
+   ============================================ */
+
+.fbs__footer {
+  background-color: #111;
+  color: #ccc;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Newsletter strip */
+.fbs__footer-newsletter {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.fbs__footer-newsletter-title {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.fbs__footer-newsletter-desc {
+  font-size: 0.82rem;
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Widget de formulario / email dentro de footer_5 */
+.fbs__footer .widget input[type="email"],
+.fbs__footer .widget input[type="text"] {
+  background: #222;
+  border: 1px solid #333;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  padding: 10px 14px;
+  width: 100%;
+  outline: none;
+  border-radius: 0;
+}
+
+.fbs__footer .widget input[type="email"]:focus,
+.fbs__footer .widget input[type="text"]:focus {
+  border-color: #555;
+}
+
+.fbs__footer .widget input[type="submit"],
+.fbs__footer .widget button[type="submit"] {
+  background: #fff;
+  color: #000;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.15s;
+}
+
+.fbs__footer .widget input[type="submit"]:hover,
+.fbs__footer .widget button[type="submit"]:hover {
+  background: #e0e0e0;
+}
+
+/* Links section */
+.fbs__footer-links {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* Títulos de widgets */
+.fbs__footer .widget h3,
+.fbs__footer .widget .widgettitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* Listas de links en widgets */
+.fbs__footer ul,
+.footer-theme ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fbs__footer ul li {
+  margin-bottom: 8px;
+}
+
+.fbs__footer ul li a {
+  font-size: 0.78rem;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.15s;
+  line-height: 1.4;
+}
+
+.fbs__footer ul li a:hover {
+  color: #fff;
+}
+
+/* Texto plano en widgets */
+.fbs__footer .textwidget,
+.fbs__footer .widget p {
+  font-size: 0.82rem;
+  color: #999;
+  line-height: 1.7;
+}
+
+.fbs__footer .textwidget a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.fbs__footer .textwidget a:hover {
+  color: #fff;
+}
+
+/* Quick contact íconos */
+.footer-theme.quick-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.footer-theme.quick-contact li::before {
+  margin-right: 0;
+}
+
+/* Créditos */
+.fbs__footer .credits {
+  padding: 20px 0 8px;
+  font-size: 0.72rem;
+  color: #555;
+  border-top: 1px solid #2a2a2a;
+}
+
+.fbs__footer .credits a {
+  color: #888;
+  text-decoration: none;
+}
+
+.fbs__footer .credits a:hover {
+  color: #fff;
+}
+
+.fbs__footer .quick-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.72rem;
+}
+
+.fbs__footer .quick-links a:hover {
+  color: #fff;
+}

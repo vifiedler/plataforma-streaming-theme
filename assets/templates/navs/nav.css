@@ -1,0 +1,139 @@
+/* ============================================
+   NAVBAR — estilo Texas Monthly
+   ============================================ */
+
+#masthead,
+.fbs__net-navbar {
+  background-color: #000 !important;
+  border-bottom: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 52px;
+}
+
+/* Logo */
+.fbs__net-navbar .navbar-brand {
+  padding: 10px 0;
+  margin-right: 2rem;
+}
+
+.fbs__net-navbar .navbar-brand img {
+  width: 100%;
+  object-fit: fill;
+}
+
+/* Links del menú */
+.fbs__net-navbar .navbar-nav .nav-item .nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75) !important;
+  padding: 0 14px !important;
+  line-height: 52px;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+  border-bottom: none;
+}
+
+.fbs__net-navbar .navbar-nav .nav-item .nav-link:hover,
+.fbs__net-navbar .navbar-nav .nav-item .nav-link:focus {
+  color: #fff !important;
+}
+
+.fbs__net-navbar .navbar-nav .nav-item.active > .nav-link,
+.fbs__net-navbar .navbar-nav .nav-item.current-menu-item > .nav-link {
+  color: #fff !important;
+  border-bottom: 2px solid #fff;
+}
+
+/* Ocultar flecha nativa Bootstrap */
+.dropdown-toggle::after {
+  display: none;
+}
+
+.bi-chevron-down {
+  font-size: 0.6rem;
+  margin-left: 3px;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.nav-link.dropdown-toggle.show .bi-chevron-down {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.fbs__net-navbar .dropdown-menu {
+  background: #111;
+  border: none;
+  border-radius: 0;
+  padding: 8px 0;
+  min-width: 200px;
+}
+
+.fbs__net-navbar .dropdown-menu .nav-link {
+  line-height: 1 !important;
+  padding: 10px 20px !important;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+}
+
+.fbs__net-navbar .dropdown-menu .nav-link:hover {
+  background: #222;
+}
+
+/* Botón Suscribirse — clase asignada desde WP Admin */
+.fbs__net-navbar .navbar-nav .nav-item .nav-link.fbs__nav-subscribe {
+  color: #000 !important;
+  background: #fff;
+  padding: 7px 14px !important;
+  line-height: 1 !important;
+  margin: auto 0 auto 8px;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: none !important;
+}
+
+.fbs__net-navbar .navbar-nav .nav-item .nav-link.fbs__nav-subscribe:hover {
+  background: #e0e0e0;
+  color: #000 !important;
+}
+
+/* Toggler móvil */
+.fbs__net-navbar .navbar-toggler {
+  color: #fff;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.fbs__net-navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Menú colapsado en móvil */
+@media (max-width: 991px) {
+  .fbs__net-navbar .navbar-nav .nav-item .nav-link {
+    line-height: 1;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #222 !important;
+  }
+
+  .fbs__net-navbar .navbar-nav .nav-item.active > .nav-link,
+  .fbs__net-navbar .navbar-nav .nav-item.current-menu-item > .nav-link {
+    border-bottom: 1px solid #444 !important;
+  }
+
+  .fbs__net-navbar .navbar-collapse {
+    padding-bottom: 12px;
+  }
+
+  .fbs__net-navbar .navbar-nav .nav-item .nav-link.fbs__nav-subscribe {
+    display: inline-block;
+    margin: 12px 0 4px;
+    padding: 8px 16px !important;
+  }
+}
