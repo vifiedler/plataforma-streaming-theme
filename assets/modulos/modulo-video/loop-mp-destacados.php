@@ -2,14 +2,14 @@
 <?php
 $temp = $wp_query;
 $args = array(
-    'post_type'      => 'post',
+    'post_type'      => 'videos',
     'post_status'    => 'publish',
     'orderby'        => 'date',
     'order'          => 'DESC',
     'posts_per_page' => -1,
     'tax_query'      => array(
         array(
-            'taxonomy' => 'category',
+            'taxonomy' => 'genero_videos',
             'field'    => 'slug',
             'terms'    => 'destacados',
         ),
