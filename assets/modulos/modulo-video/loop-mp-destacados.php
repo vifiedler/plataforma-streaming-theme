@@ -29,9 +29,9 @@ if ($wp_query->have_posts()):
         <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
             <article>
                 <!-- Imagen -->
-                <a href="<?php echo get_the_permalink(); ?>" class="d-block tm-carousel__img-wrap h-50">
+                <a href="<?php echo get_the_permalink(); ?>" class="d-block tm-carousel__img-wrap">
                      <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
-                        alt="<?php echo esc_attr(get_the_title()); ?>" class="w-100 object-fit-fill tm-carousel__img">
+                        alt="<?php echo esc_attr(get_the_title()); ?>" class="w-100 object-fit-fill tm-carousel__img h-50">
                 </a>
                 <!-- Texto -->
                 <div class="tm-carousel__body pt-3">
