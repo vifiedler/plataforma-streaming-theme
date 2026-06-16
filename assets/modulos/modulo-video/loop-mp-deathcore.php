@@ -26,6 +26,7 @@ if ($wp_query->have_posts()):
             alt="<?php echo esc_attr(get_field('titulo_video')); ?>">
         <div class="card-body">
             <h5 class="card-title"><?php echo get_field('titulo_video'); ?></h5>
+            <p><strong>Artista:</strong> <?php echo get_field('nombre_artista'); ?></p>
             <p class="card-text"><?php echo get_field('descripcion_video'); ?></p>
             <p><strong>Duración:</strong> <?php echo get_field('duracion'); ?></p>
             <a href="<?php the_permalink(); ?>" class="btn btn-primary">Ver video</a>
