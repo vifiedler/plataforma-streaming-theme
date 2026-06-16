@@ -42,7 +42,7 @@ if ($wp_query->have_posts()):
                         <?php echo get_the_excerpt(); ?>
                     </div>
                     <div class="meta-text text-muted">
-                        <?php nota2_template_posted_by(); ?>
+                        <?php nota3_template_posted_by(); ?>
                     </div>
                 </div>
             </article>
