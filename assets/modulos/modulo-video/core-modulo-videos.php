@@ -55,6 +55,7 @@ function genero_videos(){
             'show_admin_column' => true,
             // Show in quick edit panel?
             'show_in_quick_edit' => true,
+            'show_in_rest' => true,
         )
     );
 }
