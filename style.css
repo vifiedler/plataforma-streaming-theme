@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -21,6 +21,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+
+/*--------------------------------------------------------------
+>>> CHANGELOG:
+----------------------------------------------------------------
+
+15/06/2026 - Se realizaron cambios a los loops, se trabajó en ellos y se modificó el estilo en el css.
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:

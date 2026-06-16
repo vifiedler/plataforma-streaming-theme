@@ -21,9 +21,7 @@ get_header();
         <div class="row mb-5">
             <section class="col-12 section-header-border pb-2">
                 <h2 class="section-header-title text-uppercase fw-bold mb-0">Destacados</h2>
-                <div class="row">
                     <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-destacados.php'; ?>
-                </div>
             </section>
         </div>
     </div>
