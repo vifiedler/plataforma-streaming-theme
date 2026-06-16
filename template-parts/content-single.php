@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package nota2-template
+ * @package nota3-template
  */
 ?>
 
@@ -33,11 +33,11 @@
             <div>
                 <div class="single-byline-name">
                     <a href="<?php echo esc_url(get_author_posts_url($autor_id)); ?>">
-                        <?php nota2_template_posted_by(); ?>
+                        <?php nota3_template_posted_by(); ?>
                     </a>
                 </div>
                 <div class="single-byline-meta">
-                    <?php nota2_template_posted_on(); ?>
+                    <?php nota3_template_posted_on(); ?>
                 </div>
             </div>
         </div>
@@ -45,16 +45,9 @@
             <div class="entry-content col-md-8">
                 <?php the_content(); ?>
             </div>
-            <div class="col-md-4 border-loop">
-                <?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-crime3.php'; ?>
-                <?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-criptozoology3.php'; ?>
-                <?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-uap3.php'; ?>
-                <?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-paranormal3.php'; ?>
-                <?php include get_template_directory() . '/assets/modulos/modulo-post/loop-mp-cults3.php'; ?>
-            </div>
         </div>
         <div class="mt-4 pt-3 border-top links-single">
-            <?php nota2_template_entry_footer(); ?>
+            <?php nota3_template_entry_footer(); ?>
         </div>
 
     </div>

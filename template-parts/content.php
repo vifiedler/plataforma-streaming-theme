@@ -10,7 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	aber que pasa si hago esto
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
