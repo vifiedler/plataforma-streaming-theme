@@ -30,7 +30,7 @@ if ($wp_query->have_posts()):
             <article>
                 <!-- Imagen -->
                 <a href="<?php echo get_the_permalink(); ?>" class="d-block tm-carousel__img-wrap h-50">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                     <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
                         alt="<?php echo esc_attr(get_the_title()); ?>" class="w-100 object-fit-fill tm-carousel__img">
                 </a>
                 <!-- Texto -->
