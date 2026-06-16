@@ -12,7 +12,7 @@
 
     <?php
     // ===== Video como hero (arriba de todo) =====
-    $iframe = get_field('oembed');
+    $iframe = get_field('url_video');
 
     if (!empty($iframe)):
 
