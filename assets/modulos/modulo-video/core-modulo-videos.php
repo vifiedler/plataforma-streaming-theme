@@ -41,3 +41,21 @@ function registrar_cpt_videos()
     register_post_type('hero', $args);
 }
 add_action('init', 'registrar_cpt_videos');
+
+/*texonomía tipo de genero de los videos */
+function genero_videos(){
+    register_taxonomy(
+        'genero-videos',
+        'videos',
+        array(
+            'label' => __('Genero videos'),
+            'rewrite' => array('slug' => 'genero-videos'),
+            'hierarchical' => true,
+            // Allow videomatic creation of taxonomy columns on associated post-types table?
+            'show_admin_column' => true,
+            // Show in quick edit panel?
+            'show_in_quick_edit' => true,
+        )
+    );
+}
+add_action('init', 'genero-videos');
