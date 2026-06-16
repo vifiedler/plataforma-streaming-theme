@@ -58,4 +58,4 @@ function genero_videos(){
         )
     );
 }
-add_action('init', 'genero-videos');
+add_action('init', 'genero_videos');
