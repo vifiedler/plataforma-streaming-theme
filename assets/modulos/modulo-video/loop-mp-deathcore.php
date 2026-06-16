@@ -23,11 +23,11 @@ if ($wp_query->have_posts()):
 <section class="" id="deathcore">
     <div class="card" style="width: 18rem;">
         <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>" class="card-img-top"
-            alt="<?php echo esc_attr(get_field('titulo_video')); ?>">
+            alt="<?php echo get_the_title(); ?>">
         <div class="card-body">
-            <h5 class="card-title"><?php echo get_field('titulo_video'); ?></h5>
+            <h5 class="card-title"><?php echo get_the_title(); ?></h5>
             <p><strong>Artista:</strong> <?php echo get_field('nombre_artista'); ?></p>
-            <p class="card-text"><?php echo get_field('descripcion_video'); ?></p>
+            <p class="card-text"><?php echo get_the_excerpt(); ?></p>
             <p><strong>Duración:</strong> <?php echo get_field('duracion'); ?></p>
             <a href="<?php the_permalink(); ?>" class="btn btn-primary">Ver video</a>
         </div>
