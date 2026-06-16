@@ -16,60 +16,61 @@ get_header();
 ?>
 
 <main class="mt-5">
-<!-- Sección Destacados -->
+    <!-- Sección Destacados -->
     <div class="container">
         <div class="row mb-5">
             <section class="col-12 section-header-border pb-2">
                 <h2 class="section-header-title text-uppercase fw-bold mb-0">Destacados</h2>
-                <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-destacados.php'; ?>
+                <div class="row">
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-destacados.php'; ?>
+                </div>
             </section>
         </div>
     </div>
-	<!-- Sección Metalcore -->
+    <!-- Sección Metalcore -->
     <section class="mb-5">
         <div class="container mb-3">
-            <div class="row">
-                <div class="col-12 section-header-border pb-2">
-                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Metalcore</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-metalcore.php'; ?>
+            <div class="col-12 section-header-border pb-2">
+                <h3 class="section-header-title text-uppercase fw-bold mb-0">Metalcore</h3>
+                <div class="row">
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-metalcore.php'; ?>
                 </div>
             </div>
         </div>
     </section>
-	<!-- Sección Deathcore -->
+    <!-- Sección Deathcore -->
     <section class="mb-5">
         <div class="container mb-3">
-            <div class="row">
-                <div class="col-12 section-header-border pb-2">
-                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Deathore</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-deathcore.php'; ?>
+            <div class="col-12 section-header-border pb-2">
+                <h3 class="section-header-title text-uppercase fw-bold mb-0">Deathore</h3>
+                <div class="row">
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-deathcore.php'; ?>
                 </div>
             </div>
         </div>
     </section>
-	<!-- Sección Pop-punk -->
+    <!-- Sección Pop-punk -->
     <section class="mb-5">
         <div class="container mb-3">
-            <div class="row">
-                <div class="col-12 section-header-border pb-2">
-                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Pop-Punk</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-pop-punk.php'; ?>
+            <div class="col-12 section-header-border pb-2">
+                <h3 class="section-header-title text-uppercase fw-bold mb-0">Pop-Punk</h3>
+                <div class="row">
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-pop-punk.php'; ?>
                 </div>
             </div>
         </div>
     </section>
-	<!-- Sección Easycore -->
+    <!-- Sección Easycore -->
     <section class="mb-5">
         <div class="container mb-3">
-            <div class="row">
-                <div class="col-12 section-header-border pb-2">
-                    <h3 class="section-header-title text-uppercase fw-bold mb-0">Easycore</h3>
-					<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-easycore.php'; ?>
+            <div class="col-12 section-header-border pb-2">
+                <h3 class="section-header-title text-uppercase fw-bold mb-0">Easycore</h3>
+                <div class="row">
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-easycore.php'; ?>
                 </div>
             </div>
         </div>
     </section>
-
 </main>
 <?php
 get_sidebar();

@@ -45,7 +45,7 @@ add_action('init', 'registrar_cpt_videos');
 /*texonomía tipo de genero de los videos */
 function genero_videos(){
     register_taxonomy(
-        'genero-videos',
+        'genero_videos',
         'videos',
         array(
             'label' => __('Genero videos'),

@@ -10,7 +10,7 @@ $args = array(
     'posts_per_page' => -1,
     'tax_query' => array(
         array(
-            'taxonomy' => 'genero_videos',
+            'taxonomy' => 'genero-videos',
             'field' => 'slug',
             'terms' => 'deathcore'
         ),
@@ -20,7 +20,6 @@ $wp_query = new WP_Query($args);
 if ($wp_query->have_posts()):
     while ($wp_query->have_posts()):
         $wp_query->the_post(); ?>
-<section class="" id="deathcore">
     <div class="card" style="width: 18rem;">
         <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>" class="card-img-top"
             alt="<?php echo get_the_title(); ?>">
@@ -33,7 +32,6 @@ if ($wp_query->have_posts()):
         </div>
     </div>
     <!-- End deathcore-->
-</section>
 
 <?php endwhile;
 endif;
