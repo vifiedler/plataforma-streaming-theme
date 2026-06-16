@@ -10,7 +10,7 @@ $args = array(
     'posts_per_page' => -1,
     'tax_query' => array(
         array(
-            'taxonomy' => 'genero-videos',
+            'taxonomy' => 'genero_videos',
             'field' => 'slug',
             'terms' => 'deathcore'
         ),
