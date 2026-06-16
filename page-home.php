@@ -77,7 +77,7 @@ get_header();
             <div class="col-12 section-header-border pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Hardcore</h3>
                 <div class="row">
-                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-easycore.php'; ?>
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-hardcore.php'; ?>
                 </div>
             </div>
         </div>
