@@ -27,6 +27,17 @@ get_header();
             </section>
         </div>
     </div>
+    <!-- Sección Nu Metal -->
+    <section class="mb-5">
+        <div class="container mb-3">
+            <div class="col-12 section-header-border pb-2">
+                <h3 class="section-header-title text-uppercase fw-bold mb-0">Nu Metal</h3>
+                <div class="row">
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-nu-metal.php'; ?>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Sección Metalcore -->
     <section class="mb-5">
         <div class="container mb-3">
