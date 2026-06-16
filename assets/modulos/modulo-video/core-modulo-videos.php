@@ -38,7 +38,7 @@ function registrar_cpt_videos()
         'capability_type' => 'post',
     );
 
-    register_post_type('hero', $args);
+    register_post_type('videos', $args);
 }
 add_action('init', 'registrar_cpt_videos');
 
