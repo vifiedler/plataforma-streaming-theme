@@ -71,6 +71,17 @@ get_header();
             </div>
         </div>
     </section>
+    <!-- Sección Hardcore -->
+    <section class="mb-5">
+        <div class="container mb-3">
+            <div class="col-12 section-header-border pb-2">
+                <h3 class="section-header-title text-uppercase fw-bold mb-0">Hardcore</h3>
+                <div class="row">
+                    <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-easycore.php'; ?>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 <?php
 get_sidebar();

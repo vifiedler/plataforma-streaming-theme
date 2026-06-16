@@ -1,4 +1,4 @@
-<!-- Custom loop metalcore -->
+<!-- Custom loop hardcore -->
 <?php
 $temp = $wp_query;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -12,7 +12,7 @@ $args = array(
         array(
             'taxonomy' => 'genero_videos',
             'field' => 'slug',
-            'terms' => 'metalcore'
+            'terms' => 'hardcore'
         ),
     ),
 );
@@ -31,7 +31,7 @@ if ($wp_query->have_posts()):
             <a href="<?php the_permalink(); ?>" class="btn btn-primary">Ver video</a>
         </div>
     </div>
-    <!-- End metalcore-->
+    <!-- End hardcore-->
 
 <?php endwhile;
 endif;
