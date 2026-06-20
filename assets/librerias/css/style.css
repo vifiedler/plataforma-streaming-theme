@@ -14,7 +14,6 @@
 
 body {
     background-color: var(--breakdown-bg);
-    color: var(--breakdown-text);
 }
 
 /* ===== Links globales ===== */
@@ -250,8 +249,13 @@ a:hover {
     border-color: var(--breakdown-accent);
 }
 
-.tm-carousel__prev { left: 12px; }
-.tm-carousel__next { right: 12px; }
+.tm-carousel__prev {
+    left: 12px;
+}
+
+.tm-carousel__next {
+    right: 12px;
+}
 
 /* ===== Video Cards (archive / taxonomy) ===== */
 .video-card {
@@ -284,6 +288,7 @@ a:hover {
     position: absolute;
     bottom: 6px;
     right: 6px;
+    color: #aaa;
     background: rgba(0, 0, 0, 0.85);
     color: var(--breakdown-text);
     font-size: 0.72rem;
@@ -299,6 +304,7 @@ a:hover {
 }
 
 .video-card__title {
+    color: var(--tffc2fd3a644f6275);
     font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.35;
@@ -320,6 +326,7 @@ a:hover {
 }
 
 .video-card__artist {
+    color: #aaa;
     font-size: 0.82rem;
     color: var(--breakdown-text-muted);
     margin-bottom: 0;
