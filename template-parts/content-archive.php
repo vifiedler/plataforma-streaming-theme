@@ -24,7 +24,7 @@ while (have_posts()):
                 <?php endif; ?>
 
                 <div class="archive-card-kicker mb-1">
-                    <?php echo esc_html(nota2_template_entry_footer()) . '&nbsp;&nbsp;·&nbsp;&nbsp;';
+                    <?php echo esc_html(nota3_template_entry_footer()) . '&nbsp;&nbsp;·&nbsp;&nbsp;';
                     nota2_template_posted_on();
                     ?>
                 </div>

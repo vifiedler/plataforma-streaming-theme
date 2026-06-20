@@ -137,3 +137,53 @@
     padding: 8px 16px !important;
   }
 }
+/* ============================================
+   NAV MOBILE — dark override
+   ============================================ */
+
+.nav-mobile {
+    background-color: #000 !important;
+}
+
+.nav-mobile .navbar-nav .nav-link,
+.nav-mobile .navbar-nav li a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75) !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #222;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.nav-mobile .navbar-nav .nav-link:hover,
+.nav-mobile .navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+.nav-mobile .navbar-toggler {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* ============================================
+   HAMBURGUESA PERSONALIZADA
+   ============================================ */
+
+.boton-hamburguesa {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.linea-hamburguesa {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #f0ece3;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
