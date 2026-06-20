@@ -21,7 +21,7 @@
 
         $params = array(
             'controls' => 0,
-            'hd'       => 1,
+            'hd' => 1,
             'autohide' => 1
         );
         $new_src = add_query_arg($params, $src);
@@ -29,10 +29,10 @@
 
         $attributes = 'frameborder="0"';
         $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-    ?>
-    <div class="video-hero">
-        <?php echo $iframe; ?>
-    </div>
+        ?>
+        <div class="video-hero">
+            <?php echo $iframe; ?>
+        </div>
     <?php endif; ?>
 
     <div class="px-3 px-md-0">
@@ -43,18 +43,20 @@
         <?php
         $generos = get_the_terms(get_the_ID(), 'genero_videos');
         if (!empty($generos) && !is_wp_error($generos)):
-        ?>
-        <div class="mb-2">
-            <?php foreach ($generos as $genero): ?>
-                <span class="badge-genero"><?php echo esc_html($genero->name); ?></span>
-            <?php endforeach; ?>
-        </div>
+            ?>
+            <div class="mb-2">
+                <?php foreach ($generos as $genero): ?>
+                    <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="badge-genero">
+                        <?php echo esc_html($genero->name); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
         <?php endif; ?>
 
         <!-- Artista y duración -->
         <p class="duracion-single mb-3">
             <?php
-            $artista  = get_field('nombre_artista');
+            $artista = get_field('nombre_artista');
             $duracion = get_field('duracion');
             ?>
             <?php if (!empty($artista)): ?>
@@ -76,7 +78,7 @@
             $avatar_url = get_avatar_url($autor_id, ['size' => 80]);
             if ($avatar_url):
                 ?>
-            <img src="<?php echo $avatar_url; ?>" alt="<?php echo get_the_author(); ?>">
+                <img src="<?php echo $avatar_url; ?>" alt="<?php echo get_the_author(); ?>">
             <?php endif; ?>
             <div>
                 <div class="single-byline-name">
