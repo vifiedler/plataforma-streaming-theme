@@ -18,6 +18,7 @@
                 <span class="video-card__duration">
                     <?php echo esc_html( get_field('duracion') ); ?>
                 </span>
+				<strong>peopeo</strong>
             </div>
         </a>
 
