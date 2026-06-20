@@ -31,7 +31,7 @@ if ($wp_query->have_posts()):
                 <!-- Imagen -->
                 <a href="<?php echo get_the_permalink(); ?>" class="d-block tm-carousel__img-wrap">
                      <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
-                        alt="<?php echo esc_attr(get_the_title()); ?>" class="w-100 object-fit-fill tm-carousel__img h-50">
+                        alt="<?php echo esc_attr(get_the_title()); ?>" class="object-fit-fill tm-carousel__img">
                 </a>
                 <!-- Texto -->
                 <div class="tm-carousel__body pt-3">

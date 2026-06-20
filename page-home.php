@@ -17,7 +17,7 @@ get_header();
 
 <main class="mt-5">
     <!-- Sección Destacados -->
-    <div class="container">
+    <div>
         <div class="row mb-5">
             <section class="col-12 section-header-border pb-2">
                 <h2 class="section-header-title text-uppercase fw-bold mb-0">Destacados</h2>
