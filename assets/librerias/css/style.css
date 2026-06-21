@@ -27,7 +27,8 @@ a:hover {
     color: var(--breakdown-text);
     text-decoration: none;
 }
-a:visited{
+
+a:visited {
     color: var(--breakdown-text-muted);
 }
 
@@ -46,7 +47,7 @@ a:visited{
     color: #fff;
 }
 
-/* ===== site-footer fallback (footer.php por defecto) ===== */
+/* ===== site-footer fallback ===== */
 .site-footer {
     background-color: #111;
     color: var(--breakdown-text-muted);
@@ -79,6 +80,24 @@ a:visited{
 
 .section-header-border {
     border-bottom: 4px solid var(--breakdown-accent) !important;
+}
+
+/* ===== Ver más ===== */
+.ver-mas {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--breakdown-text-muted);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.ver-mas:hover {
+    color: var(--breakdown-accent);
+    text-decoration: none;
 }
 
 /* ===== Archive / Taxonomy header ===== */
@@ -125,7 +144,7 @@ a:visited{
     color: var(--breakdown-accent);
 }
 
-/* ===== Tarjeta de video (loops por género — homepage) ===== */
+/* ===== Tarjeta de video (loops homepage — NO carrusel) ===== */
 .card {
     background-color: var(--breakdown-card);
     border: none;
@@ -212,7 +231,7 @@ a:visited{
 .tm-carousel__img {
     width: 100%;
     height: 100%;
-    object-fit: fill !important;
+    object-fit: cover !important;
     transition: 0.6s;
 }
 
@@ -336,7 +355,6 @@ a:visited{
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 16px 0;
 }
 
 .bd-carousel-track {
@@ -345,6 +363,7 @@ a:visited{
     overflow-x: scroll;
     flex: 1;
     scrollbar-width: none;
+    padding: 50px 8px;   /* espacio vertical para el pop-out sin clipping */
 }
 
 .bd-carousel-track::-webkit-scrollbar {
@@ -356,12 +375,16 @@ a:visited{
     background: var(--breakdown-card);
     border-radius: 6px;
     overflow: hidden;
-    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0.15s;
 }
 
 .bd-carousel-card:hover {
-    transform: scale(1.05);
-    z-index: 1;
+    transform: scale(1.25);
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bd-carousel-thumb-wrap {
@@ -379,7 +402,7 @@ a:visited{
 }
 
 .bd-carousel-card:hover .bd-carousel-thumb {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .bd-carousel-duration {
@@ -446,20 +469,4 @@ a:visited{
 .bd-carousel-btn:hover {
     background: var(--breakdown-accent);
     border-color: var(--breakdown-accent);
-}
-.ver-mas {
-    display: inline-block;
-    vertical-align: middle;
-    color: var(--breakdown-text-muted);
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: color 0.2s;
-}
-
-.ver-mas:hover {
-    color: var(--breakdown-accent);
-    text-decoration: none;
 }
