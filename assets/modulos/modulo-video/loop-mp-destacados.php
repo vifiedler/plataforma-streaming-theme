@@ -34,7 +34,7 @@ if ($wp_query->have_posts()):
                         alt="<?php echo esc_attr(get_the_title()); ?>" class="object-fit-fill tm-carousel__img">
                 </a>
                 <!-- Texto -->
-                <div class="tm-carousel__body pt-3">
+                <div class="tm-carousel__body pt-3 container">
                     <a href="<?php echo get_the_permalink(); ?>" class="text-decoration-none">
                         <h3 class="lg__title-small mb-2"><?php the_title(); ?></h3>
                     </a>
