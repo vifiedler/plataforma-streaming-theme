@@ -137,3 +137,12 @@
     padding: 8px 16px !important;
   }
 }
+.fbs__net-navbar .aws-search-form input {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--breakdown-text);
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: 180px;
+}

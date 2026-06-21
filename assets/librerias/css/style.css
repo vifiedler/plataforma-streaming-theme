@@ -69,6 +69,8 @@ a:hover {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 2px;
+    display: inline;
+    margin-right: 1rem;
     color: var(--breakdown-text);
 }
 
@@ -200,16 +202,14 @@ a:hover {
 }
 
 .tm-carousel__img-wrap {
-    display: block;
+    aspect-ratio: 16 / 7;
     overflow: hidden;
-    border-radius: 10px;
 }
 
 .tm-carousel__img {
     width: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+    height: 100%;
+    object-fit: cover !important;
 }
 
 .tm-carousel__img-wrap:hover .tm-carousel__img {
@@ -442,4 +442,20 @@ a:hover {
 .bd-carousel-btn:hover {
     background: var(--breakdown-accent);
     border-color: var(--breakdown-accent);
+}
+.ver-mas {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--breakdown-text-muted);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.ver-mas:hover {
+    color: var(--breakdown-accent);
+    text-decoration: none;
 }
