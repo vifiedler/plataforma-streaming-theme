@@ -25,8 +25,8 @@ get_header();
     </div>
     <!-- Sección Nu Metal -->
     <section class="mb-5">
-        <div class="container-fluid mb-3">
-            <div class="col-12 section-header-border pb-2">
+        <div class="container-fluid mb-3 section-header-border">
+            <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Nu Metal</h3><a
                     href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-nu-metal.php'; ?>
@@ -35,8 +35,8 @@ get_header();
     </section>
     <!-- Sección Metalcore -->
     <section class="mb-5">
-        <div class="container-fluid mb-3">
-            <div class="col-12 section-header-border pb-2">
+        <div class="container-fluid mb-3 section-header-border">
+            <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Metalcore</h3><a
                     href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-metalcore.php'; ?>
@@ -45,8 +45,8 @@ get_header();
     </section>
     <!-- Sección Deathcore -->
     <section class="mb-5">
-        <div class="container-fluid mb-3">
-            <div class="col-12 section-header-border pb-2">
+        <div class="container-fluid mb-3 section-header-border">
+            <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Deathore</h3><a
                     href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-deathcore.php'; ?>
@@ -55,8 +55,8 @@ get_header();
     </section>
     <!-- Sección Pop-punk -->
     <section class="mb-5">
-        <div class="container-fluid mb-3">
-            <div class="col-12 section-header-border pb-2">
+        <div class="container-fluid mb-3 section-header-border">
+            <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Pop-Punk</h3><a
                     href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-pop-punk.php'; ?>
@@ -65,8 +65,8 @@ get_header();
     </section>
     <!-- Sección Easycore -->
     <section class="mb-5">
-        <div class="container-fluid mb-3">
-            <div class="col-12 section-header-border pb-2">
+        <div class="container-fluid mb-3 section-header-border">
+            <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Easycore</h3><a
                     href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-easycore.php'; ?>
@@ -75,8 +75,8 @@ get_header();
     </section>
     <!-- Sección Hardcore -->
     <section class="mb-5">
-        <div class="container-fluid mb-3">
-            <div class="col-12 section-header-border pb-2">
+        <div class="container-fluid mb-3 section-header-border">
+            <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Hardcore</h3><a
                     href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-hardcore.php'; ?>
