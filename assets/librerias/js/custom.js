@@ -1,4 +1,4 @@
-$(document).ready(function () {
+(function ($) {
 
     let scrollAmount = 680;
 
@@ -12,4 +12,4 @@ $(document).ready(function () {
         $track.animate({ scrollLeft: $track.scrollLeft() - scrollAmount }, 350);
     });
 
-});
+})(jQuery);
