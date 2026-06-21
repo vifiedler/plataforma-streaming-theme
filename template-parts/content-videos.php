@@ -23,7 +23,7 @@
 			</h3>
 			<p class="video-card__artist">
 				<?php echo esc_html(get_field('nombre_artista')); ?><span class="video-card__duration">
-					<?php echo esc_html(get_field('duracion')); ?>
+					<?php echo get_field('duracion'); ?>
 				</span>
 			</p>
 		</div>

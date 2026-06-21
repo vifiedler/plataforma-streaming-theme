@@ -20,19 +20,28 @@ $wp_query = new WP_Query($args);
 if ($wp_query->have_posts()):
     while ($wp_query->have_posts()):
         $wp_query->the_post(); ?>
-    <div class="card" style="width: 18rem;">
-        <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>" class="card-img-top"
-            alt="<?php echo get_the_title(); ?>">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo get_the_title(); ?></h5>
-            <p><strong>Artista:</strong> <?php echo get_field('nombre_artista'); ?></p>
-            <p><strong>Duración:</strong> <?php echo get_field('duracion'); ?></p>
-            <a href="<?php the_permalink(); ?>" class="btn btn-primary">Ver video</a>
+<div class="bd-carousel-warp">
+    <button class="bd-carousel-btn bd-carousel-prev"><i class="bi bi-chevron-left"></i></button>
+
+    <div class="bd-carousel-card">
+        <a href="<?php the_permalink(); ?>" class="d-block text-decorantion-none">
+            <div class="bd-carousel-thumb-wrap"><img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
+                    class="bd-carousel-thumb" alt="<?php echo get_the_title(); ?>"><span
+                    class="bd-carousel-duracion"><?php echo get_field('duracion'); ?></span></div>
+        </a>
+        <div class="bd-carousel-card-body">
+            <h5 class="bd-carousel-title"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h5>
+            <p class="bd-carousel-artist"><?php echo get_field('nombre_artista'); ?></p>
         </div>
     </div>
+</div>
     <!-- End easycore-->
 
-<?php endwhile;
+<?php endwhile;?>
+<button class="bd-carousel-btn bd-carousel-next">
+    <i class="bi bi-chevron-right"></i>
+</button>
+<?php
 endif;
 wp_reset_query();
 $wp_query = $temp; ?>
