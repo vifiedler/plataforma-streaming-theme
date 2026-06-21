@@ -41,7 +41,7 @@ if ($wp_query->have_posts()):
                     <div class="tease-dek-small mb-3">
                         <?php echo get_the_excerpt(); ?>
                     </div>
-                    <div class="meta-text text-muted">
+                    <div class="bd-carousel-title">
                         <?php echo esc_html(get_field('nombre_artista')); ?>
                     </div>
                 </div>

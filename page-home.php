@@ -24,7 +24,7 @@ get_header();
         </section>
     </div>
     <!-- Sección Nu Metal -->
-    <section class="mb-5">
+    <section class="mb-0">
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Nu Metal</h3><a
@@ -34,7 +34,7 @@ get_header();
         </div>
     </section>
     <!-- Sección Metalcore -->
-    <section class="mb-5">
+    <section class="mb-0">
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Metalcore</h3><a
@@ -44,7 +44,7 @@ get_header();
         </div>
     </section>
     <!-- Sección Deathcore -->
-    <section class="mb-5">
+    <section class="mb-0">
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Deathore</h3><a
@@ -54,7 +54,7 @@ get_header();
         </div>
     </section>
     <!-- Sección Pop-punk -->
-    <section class="mb-5">
+    <section class="mb-0">
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Pop-Punk</h3><a
@@ -64,7 +64,7 @@ get_header();
         </div>
     </section>
     <!-- Sección Easycore -->
-    <section class="mb-5">
+    <section class="mb-0">
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Easycore</h3><a
@@ -74,7 +74,7 @@ get_header();
         </div>
     </section>
     <!-- Sección Hardcore -->
-    <section class="mb-5">
+    <section class="mb-0">
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Hardcore</h3><a
