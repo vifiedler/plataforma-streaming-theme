@@ -27,6 +27,9 @@ a:hover {
     color: var(--breakdown-text);
     text-decoration: none;
 }
+a:visited{
+    color: var(--breakdown-text-muted);
+}
 
 /* ===== Botón primario ===== */
 .btn-primary {
@@ -209,7 +212,7 @@ a:hover {
 .tm-carousel__img {
     width: 100%;
     height: 100%;
-    object-fit: cover !important;
+    object-fit: fill !important;
 }
 
 .tm-carousel__img-wrap:hover .tm-carousel__img {
