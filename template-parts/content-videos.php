@@ -17,14 +17,12 @@
 			</div>
 		</a>
 
-		<div class="video-card__body">
+		<div class="video-card__body container">
 			<h3 class="video-card__title">
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h3>
 			<p class="video-card__artist">
-				<?php echo esc_html(get_field('nombre_artista')); ?><span class="video-card__duration">
-					<?php echo get_field('duracion'); ?>
-				</span>
+				<?php echo esc_html(get_field('nombre_artista')); ?>
 			</p>
 		</div>
 

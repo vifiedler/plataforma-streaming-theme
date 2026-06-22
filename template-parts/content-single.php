@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4 pt-3 border-top links-single">
+        <div class="mt-4 pt-3 links-single">
             <?php nota3_template_entry_footer(); ?>
         </div>
     </div>
