@@ -30,7 +30,7 @@ if ($wp_query->have_posts()):
                     <article class="tm-hero-slide position-relative">
                         <!-- Imagen -->
                         <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
-                            alt="<?php echo esc_attr(get_the_title()); ?>" class="object-fit-fill tm-carousel__img">
+                            alt="<?php echo esc_attr(get_the_title()); ?>" class="tm-carousel__img">
                         <!-- Texto -->
                         <div class="tm-hero-body">
                             <a href="<?php echo get_the_permalink(); ?>" class="text-decoration-none">

@@ -19,7 +19,6 @@ get_header();
     <!-- Sección Destacados -->
     <div class="row mb-5">
         <section class="col-12 section-header-border pb-2">
-            <h2 class="section-header-title text-uppercase fw-bold mb-0">Destacados</h2>
             <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-destacados.php'; ?>
         </section>
     </div>
@@ -28,7 +27,7 @@ get_header();
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Nu Metal</h3><a
-                    href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
+                    href="<?php echo esc_url(get_term_link('nu-metal', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-nu-metal.php'; ?>
             </div>
         </div>
@@ -47,8 +46,8 @@ get_header();
     <section class="mb-0">
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
-                <h3 class="section-header-title text-uppercase fw-bold mb-0">Deathore</h3><a
-                    href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
+                <h3 class="section-header-title text-uppercase fw-bold mb-0">Deathcore</h3><a
+                    href="<?php echo esc_url(get_term_link('deathcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-deathcore.php'; ?>
             </div>
         </div>
@@ -58,7 +57,7 @@ get_header();
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Pop-Punk</h3><a
-                    href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
+                    href="<?php echo esc_url(get_term_link('pop-punk', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-pop-punk.php'; ?>
             </div>
         </div>
@@ -68,7 +67,7 @@ get_header();
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Easycore</h3><a
-                    href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
+                    href="<?php echo esc_url(get_term_link('easycore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-easycore.php'; ?>
             </div>
         </div>
@@ -78,7 +77,7 @@ get_header();
         <div class="container-fluid mb-3 section-header-border">
             <div class="col-12 pb-2">
                 <h3 class="section-header-title text-uppercase fw-bold mb-0">Hardcore</h3><a
-                    href="<?php echo esc_url(get_term_link('metalcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
+                    href="<?php echo esc_url(get_term_link('hardcore', 'genero_videos')); ?>" class="ver-mas">Ver más</a>
                 <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-hardcore.php'; ?>
             </div>
         </div>

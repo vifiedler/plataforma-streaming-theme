@@ -223,22 +223,12 @@ a:visited {
     background-color: var(--breakdown-bg);
 }
 
-.tm-carousel__img-wrap {
-    aspect-ratio: 16 / 7;
-    overflow: hidden;
-}
-
 .tm-carousel__img {
     width: 100%;
     aspect-ratio: 16 / 7;
     display: block;
     object-fit: cover !important;
     transition: 0.6s;
-}
-
-.tm-carousel__body {
-    color: var(--breakdown-text);
-    padding-top: 12px;
 }
 
 .tm-carousel__body .lg__title-small {
