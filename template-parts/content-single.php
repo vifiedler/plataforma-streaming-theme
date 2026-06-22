@@ -9,10 +9,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('mb-5'); ?>>
-    <div class="embed-container">
+    <div class="embed-container mb-3">
         <?php the_field('url_video'); ?>
     </div>
-    <div class="px-3 px-md-0 container">
+    <div class="px-3 px-md-0 container-fluid">
         <div class="row">
             <div class="col-12">
                 <h1 class="single-title">Canción: <?php echo get_the_title(); ?></h1>
