@@ -35,7 +35,7 @@
     </div>
     <?php endif; ?>
 
-    <div class="px-3 px-md-0">
+    <div class="px-3 px-md-0 container row col-12">
 
         <h1 class="single-title"><?php echo get_the_title(); ?></h1>
         <h2><i class="bi bi-person-fill"></i>
