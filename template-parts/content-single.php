@@ -10,9 +10,30 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('mb-5'); ?>>
 
-    <div class="embed-container">
-        <?php the_field('url-video'); ?>
-    </div>
+    <?php
+    // video hero, sacado de acf
+    $iframe = get_field('url_video');
+
+    if (!empty($iframe)):
+
+        preg_match('/src="(.+?)"/', $iframe, $matches);
+        $src = $matches[1];
+
+        $params = array(
+            'controls' => 0,
+            'hd' => 1,
+            'autohide' => 1
+        );
+        $new_src = add_query_arg($params, $src);
+        $iframe = str_replace($src, $new_src, $iframe);
+
+        $attributes = 'frameborder="0"';
+        $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+        ?>
+        <div class="video-hero">
+            <?php echo $iframe; ?>
+        </div>
+    <?php endif; ?>
     <div class="px-3 px-md-0 container">
         <div class="row">
             <div class="col-12">
@@ -41,6 +62,7 @@
                 <?php endif; ?>
             </div>
             <div class="single-byline">
+
                 <div class="single-byline-meta">
                     <?php nota3_template_posted_on(); ?>
                 </div>
