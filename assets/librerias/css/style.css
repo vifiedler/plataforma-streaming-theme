@@ -562,3 +562,9 @@ a:visited {
 .single main {
     padding: 0;
 }
+
+/*modificaciones al archive*/
+.video-card:hover .video-card__thumb {
+    transform: scale(1.06);
+    opacity: 0.85;
+}
