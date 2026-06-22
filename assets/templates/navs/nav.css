@@ -10,6 +10,9 @@
   padding-bottom: 0;
   min-height: 52px;
 }
+.navbar-brand{
+  margin-right: 0 !important;
+}
 
 /* Logo */
 .fbs__net-navbar .navbar-brand {
