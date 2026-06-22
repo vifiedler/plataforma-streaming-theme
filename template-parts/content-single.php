@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('mb-5'); ?>>
-    <div class="container px-0">
+    <div class="px-0">
         <div class="embed-container">
             <?php the_field('url_video'); ?>
         </div>
