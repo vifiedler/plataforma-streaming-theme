@@ -432,7 +432,7 @@ a:visited {
 }
 
 .bd-carousel-card {
-    flex: 0 0 320px;
+    flex: 0 0 250px;
     background: var(--breakdown-card);
     border-radius: 6px;
     overflow: hidden;
