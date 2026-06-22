@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="container-fluid">
+	<main id="primary" class="">
 
 		<?php
 		while ( have_posts() ) :
