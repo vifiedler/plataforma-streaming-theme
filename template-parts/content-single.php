@@ -30,37 +30,37 @@
         $attributes = 'frameborder="0"';
         $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
         ?>
-    <div class="video-hero">
-        <?php echo $iframe; ?>
-    </div>
+        <div class="video-hero">
+            <?php echo $iframe; ?>
+        </div>
     <?php endif; ?>
 
     <div class="px-3 px-md-0 container row col-12">
 
-        <h1 class="single-title"><?php echo get_the_title(); ?></h1>
-        <h2><i class="bi bi-person-fill"></i>
+        <h1 class="single-title">Canción: <?php echo get_the_title(); ?></h1>
+        <h2>Artista:
             <?php echo get_field('nombre_artista'); ?>
         </h2>
-        <p class="duracion-single mb-3">
-            &middot; <i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?>
+        <p class="duracion-single mb-3"><i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?>
         </p>
+        <!-- Descripción corta -->
+        <div class="single-dek">
+            <?php echo get_the_excerpt(); ?>
+        </div>
         <!-- Géneros -->
         <?php
         $generos = get_the_terms(get_the_ID(), 'genero_videos');
         if (!empty($generos) && !is_wp_error($generos)):
             ?>
-        <div class="mb-2">
-            <?php foreach ($generos as $genero): ?>
-            <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="tm-hero-btn">
-                <?php echo esc_html($genero->name); ?>
-            </a>
-            <?php endforeach; ?>
-        </div>
+            <div class="mb-2">
+                <?php foreach ($generos as $genero): ?>
+                    <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="tm-hero-btn">
+                        <?php echo esc_html($genero->name); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
         <?php endif; ?>
-        <!-- Descripción corta -->
-        <div class="single-dek">
-            <?php echo get_the_excerpt(); ?>
-        </div>
+
 
         <div class="single-byline">
             <?php
@@ -68,7 +68,7 @@
             $avatar_url = get_avatar_url($autor_id, ['size' => 80]);
             if ($avatar_url):
                 ?>
-            <img src="<?php echo $avatar_url; ?>" alt="<?php echo get_the_author(); ?>">
+                <img src="<?php echo $avatar_url; ?>" alt="<?php echo get_the_author(); ?>">
             <?php endif; ?>
             <div>
                 <div class="single-byline-name">
