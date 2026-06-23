@@ -20,5 +20,8 @@
         aws_get_search_form(true, array('id' => '62968e5c35f00'));
       } ?>
         </div>
+            <div class="nav-search-wrap">
+        <?php get_search_form(); ?>
+    </div>
     </div>
 </nav>
