@@ -16,10 +16,10 @@ $args = array(
             'terms' => $current_term->slug,
         ),
     ),
-)};
+);
 $wp_query = new WP_Query($args);
 if ($wp_query->have_posts()):
-    $carousel_id = 'carouseldestacados_' . uniqid();
+    $carousel_id = 'carouseldestacados_' . uniqid();}
     ?>
 
 <div id="<?php echo esc_attr($carousel_id); ?>" class="carousel slide tm-carousel" data-bs-ride="carousel">
