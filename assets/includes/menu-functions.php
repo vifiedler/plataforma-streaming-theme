@@ -20,7 +20,7 @@ function add_class_to_custom_logo() {
         '<a href="%1$s" class="navbar-brand" rel="home" itemprop="url">%2$s</a>',
         esc_url( home_url( '/' ) ),
         wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-            'class' => 'img-fluid site-logo',
+            'class' => 'img-fluid',
         ) )
     );
     return $html;
