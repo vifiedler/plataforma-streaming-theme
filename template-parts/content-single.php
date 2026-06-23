@@ -26,19 +26,18 @@
                     <?php echo get_field('duracion'); ?>
                 </p>
             </div>
-            <div class="container my-5">
-                <div class="row">
-                    <!--imagen artista-->
-                    <div class="col-md-4">
-                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                            alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
-                    </div><!-- Descripción del video -->
-                    <div class="col-md-8">
-                        <p><?php echo get_field('descripcion'); ?></p>
-                    </div>
+        </div>
+        <div class="container my-5">
+            <div class="row">
+                <!--imagen artista-->
+                <div class="col-md-4">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                        alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
+                </div><!-- Descripción del video -->
+                <div class="col-md-8">
+                    <p><?php echo get_field('descripcion'); ?></p>
                 </div>
-            </div>
-            <!-- Géneros -->
+            </div> <!-- Géneros -->
             <?php
                 $generos = get_the_terms(get_the_ID(), 'genero_videos');
                 if (!empty($generos) && !is_wp_error($generos)):
@@ -53,7 +52,6 @@
             <?php endif; ?>
         </div>
         <div class="single-byline">
-
             <div class="single-byline-meta">
                 <?php nota3_template_posted_on(); ?>
             </div>
