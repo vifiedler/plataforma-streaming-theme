@@ -34,7 +34,7 @@
             <!--imagen artista-->
             <div class="col-md-4">
                 <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                    alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
+                    alt="<?php echo get_the_title(); ?>" class="img-fluid rounded">
             </div><!-- Descripción del video -->
             <div class="col-md-8">
                 <p><?php echo get_field('descripcion'); ?></p>
