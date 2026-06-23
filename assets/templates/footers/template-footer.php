@@ -1,4 +1,4 @@
-<footer id="colophon" class="fbs__footer mt-5">
+<footer id="colophon" class="fbs__footer mt-3">
     <div class="container">
         <!-- Links — widgets footer_2 (logo/desc) + footer_1/3/4 (columnas) -->
         <div class="fbs__footer-links row py-5">
