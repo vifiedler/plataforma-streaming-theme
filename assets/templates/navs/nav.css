@@ -12,11 +12,13 @@
 }
 .navbar-brand{
   margin-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* Logo */
 .fbs__net-navbar .navbar-brand {
-  padding: 10px 0;
+  padding: 0;
 }
 
 .fbs__net-navbar .navbar-brand img {
