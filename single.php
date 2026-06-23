@@ -10,14 +10,14 @@
 get_header();
 ?>
 
-<main id="primary" class="">
+<main id="primary" class="site-main">
 
     <?php
 		while ( have_posts() ) :
 			the_post();
 
 			get_template_part( 'template-parts/content-single', get_post_type() );?>
-    <div class=""><?php
+    <div class="container-fluid my-3 px-5"><?php
 			the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'nota3-template' ) . '</span> <span class="nav-title">%title</span>',
