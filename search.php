@@ -24,7 +24,7 @@ get_header();
             </h1>
         </header><!-- .page-header -->
 
-        <div class="row g-4">
+        <div class="container-fluid row g-4">
             <?php while (have_posts()) : the_post(); ?>
                 <?php get_template_part('template-parts/content', 'videos'); ?>
             <?php endwhile; ?>
