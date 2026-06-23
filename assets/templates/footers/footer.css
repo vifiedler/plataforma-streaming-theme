@@ -8,25 +8,6 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Newsletter strip */
-.fbs__footer-newsletter {
-  border-bottom: 1px solid #2a2a2a;
-}
-
-.fbs__footer-newsletter-title {
-  font-family: 'Frank Ruhl Libre', Georgia, serif;
-  font-size: 1.3rem;
-  color: #fff;
-  margin-bottom: 6px;
-}
-
-.fbs__footer-newsletter-desc {
-  font-size: 0.82rem;
-  color: #999;
-  line-height: 1.6;
-  margin-bottom: 0;
-}
-
 /* Widget de formulario / email dentro de footer_5 */
 .fbs__footer .widget input[type="email"],
 .fbs__footer .widget input[type="text"] {
@@ -64,11 +45,6 @@
 .fbs__footer .widget input[type="submit"]:hover,
 .fbs__footer .widget button[type="submit"]:hover {
   background: #e0e0e0;
-}
-
-/* Links section */
-.fbs__footer-links {
-  border-bottom: 1px solid #2a2a2a;
 }
 
 /* Títulos de widgets */
