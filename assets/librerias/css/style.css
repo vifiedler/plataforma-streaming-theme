@@ -33,7 +33,9 @@ a:hover {
     color: var(--breakdown-text);
     text-decoration: none;
 }
-
+a:visited{
+    color:#1a1a1a;
+}
 /* ===== Botón primario ===== */
 .btn-primary {
     background-color: var(--breakdown-accent);
