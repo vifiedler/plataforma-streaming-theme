@@ -30,4 +30,7 @@
                 <div class="container-fluid d-flex align-items-center justify-content-between">
                     <?php include get_template_directory() . '/assets/templates/navs/nav-desk.php'; ?>
                 </div>
+                            <div class="nav-search-wrap">
+        <?php get_search_form(); ?>
+    </div>
         </header><!-- #masthead -->
