@@ -1,19 +1,21 @@
-<!-- Custom loop deathcore -->
 <?php
-$current_term != get_queried_object();
+$current_term = get_queried_object();
 $temp = $wp_query;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$current_post_id = get_the_ID();
 $args = array(
     'post_type'      => 'videos',
     'orderby'        => 'date',
     'order'          => 'DESC',
     'paged'          => $paged,
     'posts_per_page' => -1,
+    'post__not_in'   => array($current_post_id),
     'tax_query'      => array(
         array(
             'taxonomy' => 'genero_videos',
             'field'    => 'slug',
             'terms'    => $current_term->slug,
+            'operator' => 'NOT IN',
         ),
     ),
 );
