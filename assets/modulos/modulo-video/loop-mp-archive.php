@@ -11,7 +11,7 @@ $args = array(
         array(
             'taxonomy' => 'genero_videos',
             'field' => 'slug',
-            'terms' => 'destacados',
+            'terms' => $current_term->slug,
         ),
     ),
 );
