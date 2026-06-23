@@ -1,6 +1,6 @@
 <div class="container-fluid row credits pt-3">
     <div class="container">
-        <div class="col-xl-8 text-center text-xl-start mb-3 mb-xl-0">
+        <div class="col-xl-8 text-center mb-3 mb-xl-0">
             <!--
                 Note:
                 =>>> Please keep all the footer links intact. <<<=
