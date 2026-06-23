@@ -1,5 +1,5 @@
 <div class="container-fluid row credits pt-3">
-    <div class="col-xl-8 text-center text-xl-start mb-3 mb-xl-0">
+    <div class="container col-xl-8 text-center text-xl-start mb-3 mb-xl-0">
         <!--
                 Note:
                 =>>> Please keep all the footer links intact. <<<=
@@ -7,7 +7,7 @@
                 =>>> Buy the pro version, which includes a functional PHP/AJAX contact form and many additional features.: https://freebootstrap.net/template/vertex-pro-bootstrap-website-template-for-portfolio/ <<<=
                 -->
         &copy;
-        <script>document.write(new Date().getFullYear());</script> Rincón de lo Obscuro.
+        <script>document.write(new Date().getFullYear());</script> Breakdown.
         Derechos Reservados. Hecho con <i class="bi bi-heart-fill text-danger"></i> por <a
             href="https://vifiedler.laboratoriodiseno.cl">Vicente Fiedler</a>
     </div>
