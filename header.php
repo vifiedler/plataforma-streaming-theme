@@ -26,7 +26,7 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text"
             href="#primary"><?php esc_html_e( 'Skip to content', 'nota3-template' ); ?></a>
-            <header id="masthead" class="fbs__net-navbar navbar navbar-expand-lg dark z-0 position-fixed">
+            <header id="masthead" class="fbs__net-navbar navbar navbar-expand-lg dark">
                 <div class="container-fluid d-flex align-items-center justify-content-between">
                     <?php include get_template_directory() . '/assets/templates/navs/nav-desk.php'; ?>
                 </div>
