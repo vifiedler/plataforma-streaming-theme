@@ -13,13 +13,7 @@ get_header();
 <main id="primary" class="site-main">
 
     <?php if (have_posts()): ?>
-
-    <header class="page-header container-fluid mt-5">
-        <?php
-			the_archive_title('<h1 class="page-title">', '</h1>');
-			?>
-    </header><!-- .page-header -->
-    <!-- Sección Destacados -->
+    <!-- Slider categoria -->
     <div class="row mb-5">
         <section class="col-12 section-header-border pb-2">
             <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-archive.php'; ?>
