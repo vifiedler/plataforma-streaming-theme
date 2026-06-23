@@ -23,6 +23,5 @@
                 <?php echo esc_html(get_field('nombre_artista')); ?>
             </p>
         </div>
-
     </div>
 </div>
