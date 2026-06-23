@@ -22,6 +22,9 @@ get_header();
     <section>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive.php'; ?>
 	</section>
+    <section>
+        <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive-relacionados.php'; ?>
+	</section>
     <!--<div class="row g-4 container-fluid page-header">
 
         <?php
