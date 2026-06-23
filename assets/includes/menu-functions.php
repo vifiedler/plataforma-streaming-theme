@@ -14,19 +14,18 @@ add_action('wp_enqueue_scripts', 'cargar_estilos_para_menus');
 
 
 /*customizar la clase y el link del logo de wordpress*/
-function add_class_to_custom_logo()
-{
-    $custom_logo_id = get_theme_mod('custom_logo');
-    $html = sprintf(
-        '<a href="%1$s" class="col-12 col-md-2 navbar-brand p-0" rel="home" itemprop="url">%2$s</a>',
-        esc_url(home_url('/')),
-        wp_get_attachment_image($custom_logo_id, 'full', false, array(
-            'class' => 'img-fluid',
-        ))
+function add_class_to_custom_logo() {
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $html = sprintf( 
+        '<a href="%1$s" class="navbar-brand" rel="home" itemprop="url">%2$s</a>',
+        esc_url( home_url( '/' ) ),
+        wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+            'class' => 'img-fluid site-logo',
+        ) )
     );
     return $html;
 }
-add_filter('get_custom_logo', 'add_class_to_custom_logo');
+add_filter( 'get_custom_logo', 'add_class_to_custom_logo' );
 /*customizar la clase y el link del logo de wordpress*/
 
 
