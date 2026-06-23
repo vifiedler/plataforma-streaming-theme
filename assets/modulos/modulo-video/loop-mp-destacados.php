@@ -4,7 +4,7 @@ $args = array(
     'post_type' => 'videos',
     'post_status' => 'publish',
     'orderby' => 'date',
-    'order' => 'DESC',
+    'order' => 'rand',
     'posts_per_page' => -1,
     'tax_query' => array(
         array(
