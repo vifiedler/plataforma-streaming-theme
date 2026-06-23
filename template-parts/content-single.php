@@ -27,34 +27,35 @@
                 </p>
             </div>
         </div>
-        <div class="container my-5">
-            <div class="row">
-                <!--imagen artista-->
-                <div class="col-md-4">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                        alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
-                </div><!-- Descripción del video -->
-                <div class="col-md-8">
-                    <p><?php echo get_field('descripcion'); ?></p>
-                </div>
-            </div> <!-- Géneros -->
-            <?php
+
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <!--imagen artista-->
+            <div class="col-md-4">
+                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                    alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
+            </div><!-- Descripción del video -->
+            <div class="col-md-8">
+                <p><?php echo get_field('descripcion'); ?></p>
+            </div>
+        </div> <!-- Géneros -->
+        <?php
                 $generos = get_the_terms(get_the_ID(), 'genero_videos');
                 if (!empty($generos) && !is_wp_error($generos)):
                     ?>
-            <div class="mb-2">
-                <?php foreach ($generos as $genero): ?>
-                <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="tm-hero-btn">
-                    <?php echo esc_html($genero->name); ?>
-                </a>
-                <?php endforeach; ?>
-            </div>
-            <?php endif; ?>
+        <div class="mb-2">
+            <?php foreach ($generos as $genero): ?>
+            <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="tm-hero-btn">
+                <?php echo esc_html($genero->name); ?>
+            </a>
+            <?php endforeach; ?>
         </div>
-        <div class="single-byline">
-            <div class="single-byline-meta">
-                <?php nota3_template_posted_on(); ?>
-            </div>
+        <?php endif; ?>
+    </div>
+    <div class="single-byline">
+        <div class="single-byline-meta">
+            <?php nota3_template_posted_on(); ?>
         </div>
     </div>
     <div class="mt-4 pt-3 links-single">
