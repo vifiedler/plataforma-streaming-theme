@@ -52,8 +52,9 @@
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
+        <div class="mt-4 pt-3 links-single">
+            <?php nota3_template_entry_footer(); ?>
+        </div>
     </div>
-    <div class="mt-4 pt-3 links-single">
-        <?php nota3_template_entry_footer(); ?>
-    </div>
+
 </article>
