@@ -1,4 +1,5 @@
 <?php
+$current_term = get_queried_object();
 $temp = $wp_query;
 $args = array(
     'post_type' => 'videos',
