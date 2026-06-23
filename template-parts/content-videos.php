@@ -5,7 +5,12 @@
  * @package nota3-template
  */
 ?>
-
+    <!-- Sección Destacados -->
+    <div class="row mb-5">
+        <section class="col-12 section-header-border pb-2">
+            <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-destacados.php'; ?>
+        </section>
+    </div>
 <div class="col-12 col-md-4">
     <div class="video-card">
         <a href="<?php the_permalink(); ?>" class="d-block text-decoration-none">
