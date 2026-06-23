@@ -1,4 +1,3 @@
-<!-- carrusel destacados — estilo TM, altura 50% -->
 <?php
 $temp = $wp_query;
 $args = array(
@@ -21,17 +20,17 @@ if ($wp_query->have_posts()):
     ?>
 
     <div id="<?php echo esc_attr($carousel_id); ?>" class="carousel slide tm-carousel" data-bs-ride="carousel">
-        <!-- Slides -->
+        <!-- slider -->
         <div class="carousel-inner">
             <?php $i = 0;
             while ($wp_query->have_posts()):
                 $wp_query->the_post(); ?>
                 <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
                     <article class="tm-hero-slide position-relative">
-                        <!-- Imagen -->
+                        <!-- img -->
                         <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
                             alt="<?php echo esc_attr(get_the_title()); ?>" class="tm-carousel__img">
-                        <!-- Texto -->
+                        <!-- contenido -->
                         <div class="tm-hero-body">
                             <a href="<?php echo get_the_permalink(); ?>" class="text-decoration-none">
                                 <h3 class="tm-hero-title"><?php the_title(); ?></h3>
@@ -48,7 +47,7 @@ if ($wp_query->have_posts()):
                 </div>
                 <?php $i++; endwhile; ?>
         </div>
-        <!-- Controles -->
+        <!-- controles -->
         <button class="tm-carousel__prev" type="button" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
             data-bs-slide="prev">
             <i class="bi bi-chevron-left"></i>
