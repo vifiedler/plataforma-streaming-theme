@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fbs__net-navbar">
+<nav class="navbar navbar-expand-lg fbs__net-navbar z-0 position-fixed">
     <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap">
         <div class="navbar-brand-wrap">
             <?php the_custom_logo(); ?>

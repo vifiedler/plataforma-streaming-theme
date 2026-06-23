@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<main class="mt-5">
+<main class="mt-0">
     <!-- Sección Destacados -->
     <div class="row mb-5">
         <section class="col-12 section-header-border pb-2">
