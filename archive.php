@@ -19,7 +19,10 @@ get_header();
             <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-archive.php'; ?>
         </section>
     </div>
-    <div class="row g-4 container-fluid page-header">
+    <section>
+        <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-archive.php'; ?>
+	</section>
+    <!--<div class="row g-4 container-fluid page-header">
 
         <?php
 			/* Start the Loop */
@@ -44,8 +47,9 @@ get_header();
 	?>
     </div>
 
-</main><!-- #main -->
+</main>-->
+    <!-- #main -->
 
-<?php
+    <?php
 get_sidebar();
 get_footer();
