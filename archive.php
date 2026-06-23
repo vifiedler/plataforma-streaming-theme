@@ -20,7 +20,7 @@ get_header();
         </section>
     </div>
     <section>
-        <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-archive.php'; ?>
+        <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive.php'; ?>
 	</section>
     <!--<div class="row g-4 container-fluid page-header">
 
