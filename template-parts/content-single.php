@@ -12,7 +12,7 @@
     <div class="embed-container mb-3">
         <?php the_field('url_video'); ?>
     </div>
-    <div class="px-3 px-md-0 container-fluid">
+    <div class="px-3 px-md-0 container-fluid mb-3">
         <div class="col-12">
             <div class="mx-5">
                 <h1 class="single-title">Canción: <?php echo get_the_title(); ?></h1>
@@ -29,8 +29,8 @@
         </div>
 
     </div>
-    <div class="container my-5">
-        <div class="row">
+    <div class="container-fluid my-3 px-5">
+        <div class="row mb-5">
             <!--imagen artista-->
             <div class="col-md-4">
                 <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
@@ -52,11 +52,6 @@
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
-    </div>
-    <div class="single-byline">
-        <div class="single-byline-meta">
-            <?php nota3_template_posted_on(); ?>
-        </div>
     </div>
     <div class="mt-4 pt-3 links-single">
         <?php nota3_template_entry_footer(); ?>
