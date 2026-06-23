@@ -1,5 +1,5 @@
 <div class="container-fluid row credits pt-3">
-    <div class="container">
+    <div class="container row">
         <div class="col-xl-8 text-center mb-3 mb-xl-0">
             <!--
                 Note:
