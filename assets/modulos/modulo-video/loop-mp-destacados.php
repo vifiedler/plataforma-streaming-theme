@@ -3,8 +3,7 @@ $temp = $wp_query;
 $args = array(
     'post_type' => 'videos',
     'post_status' => 'publish',
-    'orderby' => 'date',
-    'order' => 'rand',
+    'orderby' => 'rand',
     'posts_per_page' => -1,
     'tax_query' => array(
         array(

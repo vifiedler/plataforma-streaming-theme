@@ -51,9 +51,9 @@ function genero_videos(){
             'label' => __('Genero videos'),
             'rewrite' => array('slug' => 'genero-videos'),
             'hierarchical' => true,
-            // Allow videomatic creation of taxonomy columns on associated post-types table?
+            // Allow videomatic creation of taxonomy columns on associated post-types table
             'show_admin_column' => true,
-            // Show in quick edit panel?
+            // Show in quick edit panel
             'show_in_quick_edit' => true,
             'show_in_rest' => true,
         )
