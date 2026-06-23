@@ -564,3 +564,32 @@ a:hover {
     transform: scale(1.06);
     opacity: 0.85;
 }
+/* ===== Botón de búsqueda (estilo CTA) ===== */
+.nav-search-wrap .search-form .search-submit {
+    background-color: var(--breakdown-accent);
+    border: none;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.nav-search-wrap .search-form .search-submit:hover {
+    background-color: #c1121f;
+    color: #fff;
+}
+
+.nav-search-wrap .search-form .search-submit i.bi-search {
+    font-size: 0.85rem;
+    margin-right: 4px;
+}
