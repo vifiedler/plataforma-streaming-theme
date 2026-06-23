@@ -21,6 +21,12 @@ get_header();
 			?>
     </header><!-- .page-header -->
     <div class="row g-4 container-fluid page-header">
+		    <!-- Sección Destacados -->
+    <div class="row mb-5">
+        <section class="col-12 section-header-border pb-2">
+            <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-destacados.php'; ?>
+        </section>
+    </div>
         <?php
 			/* Start the Loop */
 			while (have_posts()):
