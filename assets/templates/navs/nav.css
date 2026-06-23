@@ -155,11 +155,10 @@
     width: 180px;
 }
 
-/* ===== Buscador nativo estilo Prime Video ===== */
+/* ===== Buscador nativo estilo Prime Video (mejorado) ===== */
 .nav-search-wrap {
     flex: 0 1 auto;
-    margin-left: auto;
-    margin-right: 1rem;
+    max-width: 300px;
 }
 
 .nav-search-wrap .search-form {
@@ -168,7 +167,7 @@
     background: #1a1a1a;
     border: 1px solid #333;
     border-radius: 4px;
-    padding: 0 8px;
+    padding: 2px 2px 2px 10px;
     transition: border-color 0.2s;
 }
 
@@ -183,37 +182,65 @@
     color: #fff;
     font-size: 0.85rem;
     padding: 6px 8px;
-    width: 160px;
+    flex: 1;
     outline: none;
+    min-width: 120px;
 }
 
 .nav-search-wrap .search-form input[type="search"]::placeholder {
     color: #888;
 }
 
-.nav-search-wrap .search-form button[type="submit"] {
-    background: transparent;
-    border: none;
-    color: #aaa;
-    padding: 6px 4px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+/* El botón ya está estilizado arriba en style.css, aquí solo aseguramos que se vea bien */
+.nav-search-wrap .search-form .search-submit {
+    border-radius: 4px;
+    padding: 6px 16px;
+    white-space: nowrap;
 }
 
-.nav-search-wrap .search-form button[type="submit"]:hover {
-    color: #fff;
-}
-
-/* Responsive móvil: el buscador ocupa todo el ancho */
+/* Responsive móvil */
 @media (max-width: 991px) {
     .nav-search-wrap {
-        margin-left: 0;
-        flex: 1 1 100%;
-        order: 2;
+        max-width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 12px;
+        width: 100%;
+        order: 3; /* para que quede debajo del menú en móvil si lo deseas */
+    }
+    .nav-search-wrap .search-form {
+        width: 100%;
     }
     .nav-search-wrap .search-form input[type="search"] {
         width: 100%;
     }
+}
+/* ===== Botón de búsqueda (estilo CTA) ===== */
+.nav-search-wrap .search-form .search-submit {
+    background-color: var(--breakdown-accent);
+    border: none;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-search-wrap .search-form .search-submit:hover {
+    background-color: #c1121f; /* o usa --breakdown-accent más oscuro */
+    color: #fff;
+}
+
+/* Ícono de lupa dentro del botón (si usas Bootstrap Icons) */
+.nav-search-wrap .search-form .search-submit i.bi-search {
+    font-size: 0.85rem;
+    margin-right: 4px;
 }
