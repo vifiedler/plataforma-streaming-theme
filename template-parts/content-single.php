@@ -13,7 +13,7 @@
         <?php the_field('url_video'); ?>
     </div>
     <div class="px-3 px-md-0 container-fluid">
-        <div class="row">
+        <div class="container row">
             <div class="col-12">
                 <h1 class="single-title">Canción: <?php echo get_the_title(); ?></h1>
                 <h2>Artista:
@@ -30,13 +30,13 @@
                 $generos = get_the_terms(get_the_ID(), 'genero_videos');
                 if (!empty($generos) && !is_wp_error($generos)):
                     ?>
-                    <div class="mb-2">
-                        <?php foreach ($generos as $genero): ?>
-                            <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="tm-hero-btn">
-                                <?php echo esc_html($genero->name); ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
+                <div class="mb-2">
+                    <?php foreach ($generos as $genero): ?>
+                    <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="tm-hero-btn">
+                        <?php echo esc_html($genero->name); ?>
+                    </a>
+                    <?php endforeach; ?>
+                </div>
                 <?php endif; ?>
             </div>
             <div class="single-byline">
@@ -46,10 +46,8 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4 pt-3 links-single">ACA O NO?
+        <div class="mt-4 pt-3 links-single">
             <?php nota3_template_entry_footer(); ?>
         </div>
     </div>
-    </div>
-
 </article>
