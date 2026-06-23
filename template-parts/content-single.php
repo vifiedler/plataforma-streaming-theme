@@ -19,8 +19,10 @@
                 <h2>Artista:
                     <?php echo get_field('nombre_artista'); ?>
                 </h2>
-                <p class="duracion-single mb-3">Duración: <i class="bi bi-clock"></i><?php echo get_field('duracion'); ?>
+                <p class="duracion-single mb-3">Duración: <i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?>
                 </p>
+                <!--imagen artista-->
+                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
                 <!-- Descripción corta -->
                 <div class="single-dek">
                     <?php echo get_the_excerpt(); ?>
