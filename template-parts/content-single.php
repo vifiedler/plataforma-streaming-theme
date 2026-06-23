@@ -18,17 +18,26 @@
                 <h1 class="single-title">Canción: <?php echo get_the_title(); ?></h1>
                 <h2>Artista:
                     <?php echo get_field('nombre_artista'); ?>
-                </h2>
-                <p class="duracion-single mb-3">Duración: <i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?>
-                </p>
-                <!--imagen artista-->
-                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
-                <!-- Descripción corta -->
+                </h2> <!-- Descripción corta -->
                 <div class="single-dek">
                     <?php echo get_the_excerpt(); ?>
                 </div>
-                <!-- Descripción del video -->
-                 <p><?php echo get_field('descripcion');?></p>
+                <p class="duracion-single mb-3">Duración: <i class="bi bi-clock"></i>
+                    <?php echo get_field('duracion'); ?>
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <!--imagen artista-->
+                        <div class="col-md-4">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                                alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
+                        </div><!-- Descripción del video -->
+                        <div class="col-md-8">
+
+                            <p><?php echo get_field('descripcion');?></p>
+                        </div>
+                    </div>
+                </div>
                 <!-- Géneros -->
                 <?php
                 $generos = get_the_terms(get_the_ID(), 'genero_videos');
