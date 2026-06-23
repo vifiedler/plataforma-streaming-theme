@@ -19,13 +19,13 @@
                 <h2>Artista:
                     <?php echo get_field('nombre_artista'); ?>
                 </h2> <!-- Descripción corta -->
-                <div class="single-dek">
+                <div class="single-dek my-3">
                     <?php echo get_the_excerpt(); ?>
                 </div>
-                <p class="duracion-single mb-3">Duración: <i class="bi bi-clock"></i>
+                <p class="duracion-single">Duración: <i class="bi bi-clock"></i>
                     <?php echo get_field('duracion'); ?>
                 </p>
-                <div class="container">
+                <div class="container my-5">
                     <div class="row">
                         <!--imagen artista-->
                         <div class="col-md-4">
@@ -33,7 +33,6 @@
                                 alt="<?php echo get_the_title(); ?>" alt="" class="img-fluid">
                         </div><!-- Descripción del video -->
                         <div class="col-md-8">
-
                             <p><?php echo get_field('descripcion');?></p>
                         </div>
                     </div>
