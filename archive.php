@@ -15,14 +15,15 @@ get_header();
     <?php if (have_posts()): ?>
     <!-- Slider categoria -->
     <div class="row mb-5">
+		
         <section class="col-12 section-header-border pb-2">
             <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-archive.php'; ?>
         </section>
     </div>
-    <section>
+    <section><h2>Categoría</h2>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive.php'; ?>
 	</section>
-    <section>
+    <section><h2>Relacionados</h2>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive-relacionados.php'; ?>
 	</section>
     <!--<div class="row g-4 container-fluid page-header">
