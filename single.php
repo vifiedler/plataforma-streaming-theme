@@ -25,7 +25,8 @@ get_header();
 				)
 			);?>
     </div>
-
+	<section class="container-fluid"><h2 class="ms-3"><?php echo esc_html($current_term->name);?></h2>
+<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?></section>
     <?php
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -34,8 +35,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-	<section class="container-fluid"><h2 class="ms-3"><?php echo esc_html($current_term->name);?>POP</h2>
-<?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?></section>
+
 </main><!-- #main -->
 
 <?php
