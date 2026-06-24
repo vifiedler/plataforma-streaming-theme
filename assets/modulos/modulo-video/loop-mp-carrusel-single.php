@@ -1,24 +1,35 @@
-<!-- Custom loop categoria archive -->
+<!-- Custom loop categoria single -->
 <?php
-$current_term = get_queried_object();
+$terms = wp_get_post_terms($current_post_id, 'genero_videos');
+$current_post_id = get_the_ID();
+if (!empty($terms) && !is_wp_error($terms)) {
+    $term_slug = $terms[0]->slug;
+    } else {
+        $term_slug = null;
+}
 $temp = $wp_query;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$current_post_id = get_the_ID();
+
 $args = array(
     'post_type'      => 'videos',
     'orderby'        => 'date',
     'order'          => 'DESC',
     'paged'          => $paged,
     'post__not_in'   => array($current_post_id),
-    'posts_per_page' => -1,
-    'tax_query'      => array(
+    'posts_per_page' => -1,);
+    if ($term_slug) {
+    $args['tax_query'] = array(
         array(
             'taxonomy' => 'genero_videos',
             'field'    => 'slug',
-            'terms'    => $current_term->slug,
+            'terms'    => $term_slug,
         ),
-    ),
-);
+    );
+}
+
+$wp_query = new WP_Query($args);
+
+if ($wp_query->have_posts()) :
 $wp_query = new WP_Query($args);
 if ($wp_query->have_posts()):
 ?>
@@ -61,4 +72,4 @@ endif;
 wp_reset_query();
 $wp_query = $temp;
 ?>
-<!-- End deathcore -->
+<!-- End carrusel -->
