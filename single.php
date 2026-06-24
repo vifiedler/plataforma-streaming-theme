@@ -35,10 +35,10 @@ get_header();
             <!--imagen artista-->
             <div class="col-md-7">
                 <h2><?php echo get_the_title(); ?></h2>
-                <p><?php echo get_the_excerpt(); ?></p>
+                <p><?php echo get_field('descripcion'); ?></p>
             </div><!-- Descripción del video -->
             <div class="col-md-5">
-                <p><?php echo get_field('descripcion'); ?></p>
+                <p><?php echo get_the_excerpt(); ?></p>
             </div>
         </div> <!-- Géneros -->
         <?php
