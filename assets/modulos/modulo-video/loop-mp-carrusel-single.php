@@ -26,10 +26,6 @@ $args = array(
         ),
     );
 }
-
-$wp_query = new WP_Query($args);
-
-if ($wp_query->have_posts()) :
 $wp_query = new WP_Query($args);
 if ($wp_query->have_posts()):
 ?>
