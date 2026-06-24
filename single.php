@@ -30,7 +30,7 @@ get_header();
         <h2 class="ms-3"><?php echo esc_html($current_term->name);?></h2>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
-    <div class="container-fluid my-3 px-5">
+    <div class="container-fluid my-3 p-4">
         <div class="row mb-5">
             <!--imagen artista-->
             <div class="col-md-7">
