@@ -43,7 +43,7 @@ get_header();
                     ?>
                 <div class="mb-2">
                     <?php foreach ($generos as $genero): ?>
-                    <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="">
+                    <a href="<?php echo esc_url(get_term_link($genero)); ?>" class="tm-hero-btn">
                         <?php echo esc_html($genero->name); ?>
                     </a>
                     <?php endforeach; ?>
