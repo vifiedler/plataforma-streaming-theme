@@ -6,7 +6,7 @@
  *
  * @package nota3-template
  */
-
+$current_term=get_queried_object();
 get_header();
 ?>
 
@@ -25,6 +25,7 @@ get_header();
 				)
 			);?>
     </div>
+
     <?php
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -33,7 +34,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
+	<section class="container-fluid"><h2 class="ms-3"><?php echo esc_html($current_termn->name);?></h2></section>
 </main><!-- #main -->
 
 <?php
