@@ -20,10 +20,10 @@ get_header();
             <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-archive.php'; ?>
         </section>
     </div>
-    <section><h2><?php echo esc_html( $current_term->name );?></h2>
+    <section class="container-fluid"><h2 class="ms-3"><?php echo esc_html( $current_term->name );?></h2>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive.php'; ?>
 	</section>
-    <section><h2>Relacionados</h2>
+    <section class="container-fluid"><h2 class="ms-3">Relacionados</h2>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive-relacionados.php'; ?>
 	</section>
     <!--<div class="row g-4 container-fluid page-header">
