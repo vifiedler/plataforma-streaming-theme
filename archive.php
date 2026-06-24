@@ -6,7 +6,7 @@
  *
  * @package nota3-template
  */
-
+$current_term = get_queried_object();
 get_header();
 ?>
 
@@ -20,7 +20,7 @@ get_header();
             <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-archive.php'; ?>
         </section>
     </div>
-    <section><h2>Categoría</h2>
+    <section><h2><?php echo esc_html( $current_term->name );?></h2>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-archive.php'; ?>
 	</section>
     <section><h2>Relacionados</h2>
