@@ -1,7 +1,7 @@
 <!-- Custom loop categoria single -->
 <?php
-$terms = wp_get_post_terms($current_post_id, 'genero_videos');
 $current_post_id = get_the_ID();
+$terms = wp_get_post_terms($current_post_id, 'genero_videos');
 if (!empty($terms) && !is_wp_error($terms)) {
     $term_slug = $terms[0]->slug;
     } else {
@@ -40,8 +40,7 @@ if ($wp_query->have_posts()):
             <a href="<?php the_permalink(); ?>" class="d-block text-decoration-none">
                 <div class="bd-carousel-thumb-wrap">
                     <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
-                        alt="<?php echo esc_attr(get_the_title()); ?>"
-                        class="bd-carousel-thumb">
+                        alt="<?php echo esc_attr(get_the_title()); ?>" class="bd-carousel-thumb">
                     <span class="bd-carousel-duration">
                         <?php echo esc_html(get_field('duracion')); ?>
                     </span>
