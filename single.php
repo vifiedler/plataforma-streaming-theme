@@ -33,7 +33,7 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
-		?>
+		?>potopoto
 	<section class="container-fluid"><h2 class="ms-3"><?php echo esc_html($current_term->name);?></h2></section>
 </main><!-- #main -->
 
