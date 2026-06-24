@@ -33,12 +33,11 @@ get_header();
     <div class="container-fluid my-3 px-5">
         <div class="row mb-5">
             <!--imagen artista-->
-            <div class="col-md-8">
-                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                    alt="<?php echo get_the_title(); ?>" class="img-fluid rounded">
+            <div class="col-md-7">
+                <h2><?php echo get_the_title(); ?></h2>
                 <p><?php echo get_field('descripcion'); ?></p>
             </div><!-- Descripción del video -->
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <p><?php echo get_field('descripcion'); ?></p>
             </div>
         </div> <!-- Géneros -->
