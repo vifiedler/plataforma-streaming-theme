@@ -448,10 +448,7 @@ a:visited {
     width: 100%;
     padding: 2.5rem 3rem;
     pointer-events: auto; /* los botones y enlaces son clickeables */
-    display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
-    gap: 1.5rem 0;
 }
 
 /* Columna izquierda: botón de reproducción */
@@ -519,17 +516,11 @@ a:visited {
 
 /* Tags de género (sobre el artista) */
 .bd-tag {
-    display: inline-block;
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--breakdown-text);
-    border: 1px solid rgba(255, 255, 255, 0.25);
     text-decoration: none;
     transition: background 0.2s, border-color 0.2s;
 }
