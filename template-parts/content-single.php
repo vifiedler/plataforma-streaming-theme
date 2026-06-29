@@ -10,6 +10,7 @@ $artista = get_field('nombre_artista');
 $duracion = get_field('duracion');
 $anio = get_field('anio_lanzamiento'); // Campo ACF que debes crear
 $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
+$album = get_field('album'); // Campo ACF que debes crear
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -30,10 +31,10 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
 
         <!-- Overlay con contenido -->
         <div class="bd-single-hero__overlay" id="bd-overlay">
-            <div class="bd-single-hero__body">
+            <div class="row bd-single-hero__body">
 
                 <!-- Columna izquierda: botón de reproducción -->
-                <div class="col-md-3 align-content-center">
+                <div class="col-md-3">
                     <button id="bd-play-btn" class="tm-hero-btn">
                         <i class="bi bi-play-fill"></i> Reproducir
                     </button>
@@ -45,17 +46,17 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
                 <!-- Columna central: información -->
                 <div class="col-md-6">
                     <h1 class="tm-hero-title d-none"><?php the_title(); ?></h1>
-                    <div class="d-flex column">
+                    <div class="row">
                         <div class="tm-hero-excerpt col-12">
                             <?php the_excerpt(); ?>
                         </div>
                         <div class="row">
                             <!-- Géneros -->
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <?php if (!empty($generos) && !is_wp_error($generos)): ?>
-                                    <div class="bd-tag-wrap">
+                                    <div class="">
                                         <?php foreach ($generos as $g): ?>
-                                            <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag">
+                                            <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag me-2">
                                                 <?php echo esc_html($g->name); ?>
                                             </a>
                                         <?php endforeach; ?>
@@ -63,7 +64,7 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
                                 <?php endif; ?>
                             </div>
                             <!-- Duración + Año -->
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="bd-single-meta">
                                     <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
                                     <?php if ($anio): ?>
@@ -71,6 +72,7 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
                                     <?php else: ?>
                                         <span><i class="bi bi-calendar"></i> 2025 (placeholder)</span>
                                     <?php endif; ?>
+                                    <span><i class="bi bi-clock"></i> <?php echo esc_html($album); ?></span>
                                 </div>
                             </div>
                         </div>
