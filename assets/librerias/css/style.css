@@ -595,3 +595,88 @@ a:visited{
     font-size: 0.85rem;
     margin-right: 4px;
 }
+/* =============================================
+   SINGLE — Hero Prime Video style
+   Pegar al final de style.css
+   ============================================= */
+
+/* Imagen hero */
+.bd-single-hero__img {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gradiente overlay izquierda → transparente */
+.bd-single-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.92) 40%,
+        rgba(0, 0, 0, 0.4) 65%,
+        transparent 80%
+    );
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Cuerpo de contenido sobre imagen */
+.bd-single-hero__body {
+    width: 50%;
+    padding: 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+/* Tags de género (pill outline) */
+.bd-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--breakdown-text);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.bd-tag:hover {
+    background: var(--breakdown-accent);
+    border-color: var(--breakdown-accent);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Duración / meta secundario */
+.bd-single-meta {
+    font-size: 0.8rem;
+    color: var(--breakdown-text-muted);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive: en móvil el body ocupa todo */
+@media (max-width: 768px) {
+    .bd-single-hero__body {
+        width: 100%;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
+    }
+
+    .bd-single-hero__overlay {
+        background: none;
+    }
+
+    .tm-hero-title {
+        font-size: 1.4rem;
+    }
+}
