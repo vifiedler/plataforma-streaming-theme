@@ -13,14 +13,35 @@
         $track.animate({ scrollLeft: $track.scrollLeft() - scrollAmount }, 350);
     });
 
-    /* ===== Single: control de reproducción ===== */
+    /* ===== Single: control de reproducción con timeout ===== */
     let $playBtn = $('#bd-play-btn');
     let $pauseBtn = $('#bd-pause-btn');
     let $videoContainer = $('#bd-single-video');
     let $overlay = $('#bd-overlay');
     let $iframe = null;
     let isPaused = false;
+    let pauseTimeout = null;
 
+    // --- Funciones para timeout ---
+    function clearPauseTimeout() {
+        if (pauseTimeout) {
+            clearTimeout(pauseTimeout);
+            pauseTimeout = null;
+        }
+    }
+
+    function startPauseTimeout() {
+        clearPauseTimeout();
+        pauseTimeout = setTimeout(function() {
+            if ($pauseBtn.is(':visible') && !$pauseBtn.data('hovering')) {
+                $pauseBtn.hide();   // Solo oculta pausa, no muestra reproducir
+                console.log('Botón de pausa ocultado por timeout (sin mostrar reproducir)');
+            }
+            pauseTimeout = null;
+        }, 10000);
+    }
+
+    // --- Comandos para YouTube ---
     function sendCommand(command) {
         if (!$iframe) {
             console.warn('No hay iframe para enviar comando');
@@ -39,22 +60,17 @@
         }
     }
 
-    // Botón Reproducir
+    // --- Botón Reproducir ---
     $playBtn.on('click', function () {
         console.log('Click en Reproducir');
-        
-        // Mostrar el contenedor del video
         $videoContainer.show();
-        console.log('Contenedor video mostrado');
 
-        // Buscar el iframe dentro del contenedor
         if (!$iframe) {
             $iframe = $('#video-container').find('iframe');
             console.log('iframe encontrado:', $iframe.length ? 'Sí (' + $iframe.attr('src') + ')' : 'No');
         }
 
         if ($iframe && $iframe.length) {
-            // Si el iframe no tiene autoplay en la URL, lo forzamos (por si acaso)
             let src = $iframe.attr('src');
             if (src && src.indexOf('autoplay=1') === -1) {
                 let separator = src.indexOf('?') !== -1 ? '&' : '?';
@@ -63,32 +79,47 @@
                 console.log('Se forzó autoplay en la URL');
             }
 
-            // Si estaba pausado, reanudar
             if (isPaused) {
                 sendCommand('playVideo');
                 isPaused = false;
                 $playBtn.hide();
                 $pauseBtn.show();
+                startPauseTimeout();
             } else {
-                // Primera reproducción: ya tiene autoplay en la URL
                 $playBtn.hide();
                 $pauseBtn.show();
                 $overlay.addClass('video-active');
-                console.log('Overlay con clase video-active');
+                startPauseTimeout();
             }
         } else {
-            console.error('No se encontró el iframe. Verifica que el campo oEmbed esté funcionando.');
+            console.error('No se encontró el iframe.');
         }
     });
 
-    // Botón Pausa
+    // --- Botón Pausa (manual) ---
     $pauseBtn.on('click', function () {
         console.log('Click en Pausa');
         if ($iframe && $iframe.length) {
             sendCommand('pauseVideo');
             isPaused = true;
             $pauseBtn.hide();
-            $playBtn.show();
+            $playBtn.show();   // ← Sí muestra reproducir porque es pausa manual
+            clearPauseTimeout();
+        }
+    });
+
+    // --- Hover sobre el botón de pausa ---
+    $pauseBtn.on('mouseenter', function () {
+        $(this).data('hovering', true);
+        clearPauseTimeout();
+        console.log('Hover en pausa - timeout cancelado');
+    });
+
+    $pauseBtn.on('mouseleave', function () {
+        $(this).data('hovering', false);
+        if ($(this).is(':visible')) {
+            startPauseTimeout();
+            console.log('Hover fuera - timeout reiniciado');
         }
     });
 
