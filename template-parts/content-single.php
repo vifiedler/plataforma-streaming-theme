@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying single videos (Prime Video style)
+ * Template part for displaying single videos
  *
  * @package nota3-template
  */
@@ -12,57 +12,48 @@ $anio = get_field('anio_lanzamiento');
 $integrantes = get_field('integrantes_banda');
 $album = get_field('album');
 
-// Obtener el iframe del campo oEmbed de forma segura
+// Obtener el iframe del campo oembed
 $iframe_html = get_field('url_video');
 $iframe_final = '';
-
 if ($iframe_html) {
-    // Extraer la URL src del iframe
+    // Extraer la url src del iframe
     preg_match('/src="([^"]+)"/', $iframe_html, $matches);
     if (isset($matches[1])) {
         $src = $matches[1];
-        
-        // Parámetros a añadir
-       $params = array(
-    'controls'       => 0,
-    'rel'            => 0,
-    'iv_load_policy' => 3,
-    'enablejsapi'    => 1,
-    // 'autoplay'    => 1,   // Lo quitamos para que lo maneje JS
-);
+        // parámetros extra
+        $params = array(
+            'controls' => 0,
+            'rel' => 0,
+            'iv_load_policy' => 3,
+            'enablejsapi' => 1,
+            // 'autoplay'    => 1,
+        );
         $new_src = add_query_arg($params, $src);
         $iframe_final = str_replace($src, $new_src, $iframe_html);
-        
         // Añadir atributos adicionales
         $attributes = 'frameborder="0" allowfullscreen';
         $iframe_final = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe_final);
     } else {
-        // Si no se pudo extraer la URL, mostrar el HTML original
+        // Si no se pudo extraer la url, mostrar el html original
         $iframe_final = $iframe_html;
     }
 }
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-    <!-- ===== HERO con video superpuesto ===== -->
+    <!-- hero superpuesto con video de fondo -->
     <div id="bd-single-hero" class="bd-single-hero">
-
         <!-- Imagen de fondo -->
         <img src="<?php echo esc_url($imagen['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
             class="bd-single-hero__img">
-
         <!-- Video (inicialmente oculto) -->
         <div id="bd-single-video" class="bd-single-video-container" style="display:none;">
             <div class="embed-container" id="video-container">
                 <?php echo $iframe_final; ?>
             </div>
         </div>
-
         <!-- Overlay con contenido -->
         <div class="bd-single-hero__overlay" id="bd-overlay">
             <div class="row bd-single-hero__body">
-
                 <!-- Columna izquierda: botón de reproducción -->
                 <div class="col-md-3">
                     <button id="bd-play-btn" class="tm-hero-btn">
@@ -72,11 +63,10 @@ if ($iframe_html) {
                         <i class="bi bi-pause-fill"></i> Pausa
                     </button>
                 </div>
-
                 <!-- Columna central: información -->
-                <div class="col-md-9">
-                    <h1 class="tm-hero-title"><?php the_title(); ?></h1>
-                    <div class="tm-hero-excerpt"><?php the_excerpt(); ?></div>
+                <div class="col-md-6">
+                    <h1 class="tm-hero-title d-none"><?php the_title(); ?></h1>
+                    <div class="tm-hero-excerpt col-12"><?php the_excerpt(); ?></div>
                     <div class="row">
                         <div class="col-md-6">
                             <?php if (!empty($generos) && !is_wp_error($generos)): ?>
@@ -97,29 +87,30 @@ if ($iframe_html) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 mt-2">
-                        <strong style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
-                        <ul class="bd-cast-list">
-                            <?php if ($integrantes && is_array($integrantes)): ?>
-                                <?php foreach ($integrantes as $integrante): ?>
-                                    <li><?php echo esc_html($integrante); ?></li>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <li><strong>Vocalista</strong> (placeholder)</li>
-                                <li><strong>Guitarrista</strong> (placeholder)</li>
-                                <li><strong>Bajista</strong> (placeholder)</li>
-                                <li><strong>Baterista</strong> (placeholder)</li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
+
                 </div>
+                <div class="col-md-3 mt-2">
+                    <strong
+                        style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
+                    <ul class="bd-cast-list">
+                        <?php if ($integrantes && is_array($integrantes)): ?>
+                            <?php foreach ($integrantes as $integrante): ?>
+                                <li><?php echo esc_html($integrante); ?></li>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <li><strong>Vocalista</strong> (placeholder)</li>
+                            <li><strong>Guitarrista</strong> (placeholder)</li>
+                            <li><strong>Bajista</strong> (placeholder)</li>
+                            <li><strong>Baterista</strong> (placeholder)</li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-            </div><!-- /.bd-single-hero__body -->
-        </div><!-- /.bd-single-hero__overlay -->
+    </div>
 
-    </div><!-- /#bd-single-hero -->
-
-    <!-- ===== CARRUSEL RELACIONADOS ===== -->
+    <!-- carrusel relacionados -->
     <section class="container-fluid mt-5 mb-5">
         <div class="section-header-border pb-2 mb-2 ms-3">
             <h2 class="section-header-title text-uppercase fw-bold">Más videos</h2>
@@ -127,10 +118,9 @@ if ($iframe_html) {
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
 
-    <!-- ===== SECCIÓN DE INFORMACIÓN (detalle) ===== -->
+    <!-- Info detallada -->
     <section class="container-fluid px-4">
         <div class="row mx-0 gap-3 justify-content-around">
-
             <!-- Columna principal -->
             <div class="col-md-7 d-flex flex-column border border-secondary rounded-3 p-3">
                 <h2 class="h3 fw-bold mb-2"><?php echo get_the_title(); ?></h2>
@@ -151,10 +141,10 @@ if ($iframe_html) {
                 </div>
                 <p class="mb-0"><?php echo get_the_excerpt(); ?></p>
             </div>
-
             <!-- Columna integrantes -->
             <div class="col-md-4 d-flex flex-column border border-secondary rounded-3 p-3">
-                <strong class="text-uppercase small fw-bold mb-2" style="color:var(--breakdown-text); letter-spacing:1px;">
+                <strong class="text-uppercase small fw-bold mb-2"
+                    style="color:var(--breakdown-text); letter-spacing:1px;">
                     Integrantes
                 </strong>
                 <ul class="bd-cast-list list-unstyled mb-0">
@@ -170,19 +160,16 @@ if ($iframe_html) {
                     <?php endif; ?>
                 </ul>
             </div>
-
             <!-- Descripción canción -->
             <div class="col-md-7 border border-secondary rounded-3 p-3">
                 <?php echo the_content(); ?>
             </div>
-
             <!-- Álbum -->
             <div class="col-md-4 border border-secondary rounded-3 p-3">
                 <div class="row align-items-center g-2">
                     <div class="col-4 col-md-12 col-xl-4">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                             alt="<?php echo esc_html($album); ?>"
-                             class="img-fluid rounded-circle">
+                            alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
                     </div>
                     <div class="col-8 col-md-12 col-xl-8">
                         <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
@@ -192,5 +179,4 @@ if ($iframe_html) {
 
         </div>
     </section>
-
 </article>
