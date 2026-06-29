@@ -496,14 +496,14 @@ a:visited {
 }
 
 /* Ocultar todo el contenido excepto la columna del botón (col-md-3) */
-.bd-single-hero__overlay.video-active .bd-single-hero__body>*:not(.col-md-3) {
+.bd-single-hero__overlay.video-active .bd-single-hero__body>*:not(.col-md-2) {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
 }
 
 /* Asegurar que la columna del botón sea visible y clickeable */
-.bd-single-hero__overlay.video-active .col-md-3 {
+.bd-single-hero__overlay.video-active .col-md-2 {
     opacity: 1;
     pointer-events: auto;
 }
