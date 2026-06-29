@@ -12,8 +12,8 @@
                 endif; ?>
         </div>
     </div>
-    <!-- Créditos -->
-    <?php include get_template_directory() . '/assets/templates/footers/footer-creditos.php'; ?>
-
+    <!-- Créditos 
+   <?php include get_template_directory() . '/assets/templates/footers/footer-creditos.php'; ?>
+     -->
 
 </footer>
