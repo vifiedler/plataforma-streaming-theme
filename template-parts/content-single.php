@@ -105,71 +105,71 @@ $album = get_field('album'); // Campo ACF que debes crear
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
     <section class="container py-4">
-    <div class="row">
+        <div class="row mx-0 gap-3"> <!-- ← row sin margen negativo y con gap -->
 
-        <!-- Columna principal: título, géneros, metadatos, excerpt -->
-        <div class="col-md-8 pe-2 ps-2 d-flex flex-column border border-secondary rounded-3 p-3">
-            <h2 class="h3 fw-bold mb-2"><?php echo get_the_title(); ?></h2>
+            <!-- Columna principal: título, géneros, metadatos, excerpt -->
+            <div class="col-md-6 d-flex flex-column border border-secondary rounded-3 p-3">
+                <h2 class="h3 fw-bold mb-2"><?php echo get_the_title(); ?></h2>
 
-            <div class="mb-2">
-                <?php if (!empty($generos) && !is_wp_error($generos)): ?>
-                    <div class="d-flex flex-wrap gap-1">
-                        <?php foreach ($generos as $g): ?>
-                            <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag me-2">
-                                <?php echo esc_html($g->name); ?>
-                            </a>
+                <div class="mb-2">
+                    <?php if (!empty($generos) && !is_wp_error($generos)): ?>
+                        <div class="d-flex flex-wrap gap-1">
+                            <?php foreach ($generos as $g): ?>
+                                <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag me-2">
+                                    <?php echo esc_html($g->name); ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="bd-single-meta d-flex flex-wrap gap-3 small text-secondary mb-2">
+                    <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
+                    <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
+                </div>
+
+                <p class="mb-0"><?php echo get_the_excerpt(); ?></p>
+            </div>
+
+            <!-- Columna derecha: integrantes -->
+            <div class="col-md-3 d-flex flex-column border border-secondary rounded-3 p-3">
+                <strong class="text-uppercase small fw-bold mb-2"
+                    style="color:var(--breakdown-text); letter-spacing:1px;">
+                    Integrantes
+                </strong>
+                <ul class="bd-cast-list list-unstyled mb-0">
+                    <?php if ($integrantes && is_array($integrantes)): ?>
+                        <?php foreach ($integrantes as $integrante): ?>
+                            <li><?php echo esc_html($integrante); ?></li>
                         <?php endforeach; ?>
+                    <?php else: ?>
+                        <li><strong>Vocalista</strong> (placeholder)</li>
+                        <li><strong>Guitarrista</strong> (placeholder)</li>
+                        <li><strong>Bajista</strong> (placeholder)</li>
+                        <li><strong>Baterista</strong> (placeholder)</li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+
+            <!-- Fila siguiente: descripción canción -->
+            <div class="col-md-6 border border-secondary rounded-3 p-3">
+                <?php echo the_content(); ?>
+            </div>
+
+            <!-- Fila siguiente: información del álbum -->
+            <div class="col-md-3 border border-secondary rounded-3 p-3">
+                <div class="row align-items-center g-2">
+                    <div class="col-4 col-md-12 col-xl-4">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                            alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
                     </div>
-                <?php endif; ?>
-            </div>
-
-            <div class="bd-single-meta d-flex flex-wrap gap-3 small text-secondary mb-2">
-                <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
-                <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
-            </div>
-
-            <p class="mb-0"><?php echo get_the_excerpt(); ?></p>
-        </div>
-
-        <!-- Columna derecha: integrantes -->
-        <div class="col-md-4 pe-2 ps-2 d-flex flex-column border border-secondary rounded-3 p-3">
-            <strong class="text-uppercase small fw-bold mb-2" style="color:var(--breakdown-text); letter-spacing:1px;">
-                Integrantes
-            </strong>
-            <ul class="bd-cast-list list-unstyled mb-0">
-                <?php if ($integrantes && is_array($integrantes)): ?>
-                    <?php foreach ($integrantes as $integrante): ?>
-                        <li><?php echo esc_html($integrante); ?></li>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <li><strong>Vocalista</strong> (placeholder)</li>
-                    <li><strong>Guitarrista</strong> (placeholder)</li>
-                    <li><strong>Bajista</strong> (placeholder)</li>
-                    <li><strong>Baterista</strong> (placeholder)</li>
-                <?php endif; ?>
-            </ul>
-        </div>
-
-        <!-- Fila siguiente: descripción canción -->
-        <div class="col-md-8 pe-2 ps-2 border border-secondary rounded-3 p-3">
-            <?php echo the_content(); ?>
-        </div>
-
-        <!-- Fila siguiente: información del álbum -->
-        <div class="col-md-4 pe-2 ps-2 border border-secondary rounded-3 p-3">
-            <div class="row align-items-center g-2">
-                <div class="col-4 col-md-12 col-xl-4">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                         alt="<?php echo esc_html($album); ?>"
-                         class="img-fluid rounded-circle">
-                </div>
-                <div class="col-8 col-md-12 col-xl-8">
-                    <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
+                    <div class="col-8 col-md-12 col-xl-8">
+                        <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div> <!-- /.row -->
-</section> <!-- /.container -->
+        </div> <!-- /.row -->
+    </section> <!-- /.container -->
 
 </article>
