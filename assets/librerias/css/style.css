@@ -654,6 +654,9 @@ a:visited{
     color: #fff;
     text-decoration: none;
 }
+.bd-enlace a:visited{
+    color: #eee;
+}
 /* Duración / meta secundario */
 .bd-single-meta {
     font-size: 0.8rem;
