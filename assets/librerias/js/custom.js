@@ -1,76 +1,48 @@
-(function ($) {
+/* ===== Single: control de reproducción ===== */
+let $playBtn = $('#bd-play-btn');
+let $pauseBtn = $('#bd-pause-btn');
+let $videoContainer = $('#bd-single-video');
+let $overlay = $('#bd-overlay');
+let $iframe = null;
+let isPaused = false;
 
-    /* ===== Carruseles horizontales ===== */
-    let scrollAmount = 680;
-
-    $('.bd-carousel-next').on('click', function () {
-        let $track = $(this).siblings('.bd-carousel-track');
-        $track.animate({ scrollLeft: $track.scrollLeft() + scrollAmount }, 350);
+function sendCommand(command) {
+    if (!$iframe) return;
+    let message = JSON.stringify({
+        event: 'command',
+        func: command,
+        args: ''
     });
+    $iframe[0].contentWindow.postMessage(message, '*');
+}
 
-    $('.bd-carousel-prev').on('click', function () {
-        let $track = $(this).siblings('.bd-carousel-track');
-        $track.animate({ scrollLeft: $track.scrollLeft() - scrollAmount }, 350);
-    });
-
-    /* ===== Single: control de reproducción ===== */
-    let $playBtn = $('#bd-play-btn');
-    let $pauseBtn = $('#bd-pause-btn');
-    let $videoContainer = $('#bd-single-video');
-    let $overlay = $('#bd-overlay');
-    let $iframe = null;
-    let isPaused = false;
-
-    function sendCommand(command) {
-        if (!$iframe) return;
-        let message = JSON.stringify({
-            event: 'command',
-            func: command,
-            args: ''
-        });
-        $iframe[0].contentWindow.postMessage(message, '*');
+$playBtn.on('click', function () {
+    $videoContainer.show();
+    
+    if (!$iframe) {
+        $iframe = $('#video-container').find('iframe');
     }
-
-    // Botón Reproducir
-    $playBtn.on('click', function () {
-        $videoContainer.show();
-
-        if (!$iframe) {
-            $iframe = $('#video-container').find('iframe');
+    
+    if ($iframe && $iframe.length) {
+        if (isPaused) {
+            sendCommand('playVideo');
+            isPaused = false;
+            $playBtn.hide();
+            $pauseBtn.show();
+        } else {
+            // Primera reproducción: el autoplay ya está en la URL
+            $playBtn.hide();
+            $pauseBtn.show();
+            $overlay.addClass('video-active');
         }
+    }
+});
 
-        if ($iframe && $iframe.length) {
-            // Si no tiene autoplay, lo forzamos recargando el src
-            let src = $iframe.attr('src');
-            if (src.indexOf('autoplay=1') === -1) {
-                let separator = src.indexOf('?') !== -1 ? '&' : '?';
-                $iframe.attr('src', src + separator + 'autoplay=1');
-            }
-
-            // Si estaba pausado, reanudar
-            if (isPaused) {
-                sendCommand('playVideo');
-                isPaused = false;
-                $playBtn.hide();
-                $pauseBtn.show();
-            } else {
-                $playBtn.hide();
-                $pauseBtn.show();
-                $overlay.addClass('video-active');
-            }
-        }
-    });
-
-    // Botón Pausa
-    $pauseBtn.on('click', function () {
-        if ($iframe && $iframe.length) {
-            sendCommand('pauseVideo');
-            isPaused = true;
-            $pauseBtn.hide();
-            $playBtn.show();
-        }
-    });
-
-    // (Opcional) Resetear el estado cuando el video termina - no implementado por simplicidad
-
-})(jQuery);
+$pauseBtn.on('click', function () {
+    if ($iframe && $iframe.length) {
+        sendCommand('pauseVideo');
+        isPaused = true;
+        $pauseBtn.hide();
+        $playBtn.show();
+    }
+});
