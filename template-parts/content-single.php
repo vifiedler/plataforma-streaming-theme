@@ -104,64 +104,67 @@ $album = get_field('album'); // Campo ACF que debes crear
         </div>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
-    <section class="row">
-        <!-- Info detallada -->
-        <div class="col-md-8 d-flex flex-column">
-            <h2 class="col-md-6"><?php echo get_the_title(); ?></h2>
-            <div class="col-md-6">
-                <?php if (!empty($generos) && !is_wp_error($generos)): ?>
-                    <div class="">
-                        <?php foreach ($generos as $g): ?>
-                            <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag me-2">
-                                <?php echo esc_html($g->name); ?>
-                            </a>
-                        <?php endforeach; ?>
+    <section class="container">
+        <div class="row">
+            <!-- Info detallada -->
+            <div class="col-md-8 d-flex flex-column">
+                <h2 class="col-md-6"><?php echo get_the_title(); ?></h2>
+                <div class="col-md-6">
+                    <?php if (!empty($generos) && !is_wp_error($generos)): ?>
+                        <div class="">
+                            <?php foreach ($generos as $g): ?>
+                                <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag me-2">
+                                    <?php echo esc_html($g->name); ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="col-md-6">
+                    <div class="bd-single-meta">
+                        <span><i class="bi bi-clock"></i>
+                            <?php echo esc_html($duracion); ?>
+                        </span>
+                        <span><i class="bi bi-calendar"></i>
+                            <?php echo esc_html($anio); ?>
+                        </span>
                     </div>
-                <?php endif; ?>
+                </div>
+                <p><?php echo get_the_excerpt(); ?></p>
             </div>
-            <div class="col-md-6">
-                <div class="bd-single-meta">
-                    <span><i class="bi bi-clock"></i>
-                        <?php echo esc_html($duracion); ?>
-                    </span>
-                    <span><i class="bi bi-calendar"></i>
-                        <?php echo esc_html($anio); ?>
-                    </span>
+            <!-- info banda -->
+            <div class="col-md-4 d-flex flex-column">
+                <strong
+                    style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
+                <ul class="bd-cast-list">
+                    <?php if ($integrantes && is_array($integrantes)): ?>
+                        <?php foreach ($integrantes as $integrante): ?>
+                            <li>
+                                <?php echo esc_html($integrante); ?>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <!-- Placeholders mientras no tengas el campo -->
+                        <li><strong>Vocalista</strong> (placeholder)</li>
+                        <li><strong>Guitarrista</strong> (placeholder)</li>
+                        <li><strong>Bajista</strong> (placeholder)</li>
+                        <li><strong>Baterista</strong> (placeholder)</li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            <!-- descripción cancion -->
+            <div class="col-md-8">
+                <?php echo the_content(); ?>
+            </div>
+            <!-- info album -->
+            <div class="col-md-4">
+                <div class="row">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                        alt="<?php echo esc_html($album); ?>" class="img-fluid">
+                    <p><?php echo get_field('desc_album'); ?></p>
                 </div>
             </div>
-            <p><?php echo get_the_excerpt(); ?></p>
         </div>
-        <!-- info banda -->
-        <div class="col-md-4 d-flex flex-column">
-            <strong
-                style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
-            <ul class="bd-cast-list">
-                <?php if ($integrantes && is_array($integrantes)): ?>
-                    <?php foreach ($integrantes as $integrante): ?>
-                        <li>
-                            <?php echo esc_html($integrante); ?>
-                        </li>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <!-- Placeholders mientras no tengas el campo -->
-                    <li><strong>Vocalista</strong> (placeholder)</li>
-                    <li><strong>Guitarrista</strong> (placeholder)</li>
-                    <li><strong>Bajista</strong> (placeholder)</li>
-                    <li><strong>Baterista</strong> (placeholder)</li>
-                <?php endif; ?>
-            </ul>
-        </div>
-        <!-- descripción cancion -->
-         <div class="col-md-6">
-            <?php echo the_content();?>
-         </div>
-         <!-- info album -->
-          <div class="col-md-4">
-            <div class="row">
-                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');?>" alt="<?php echo esc_html($album); ?>">
-                <p><?php echo get_field('desc_album');?></p>
-            </div>
-          </div>
     </section>
 
 </article>
