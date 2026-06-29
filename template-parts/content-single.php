@@ -74,26 +74,26 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Columna derecha: Reparto / Integrantes -->
-                        <div class="col-md-3">
-                            <strong
-                                style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
-                            <ul class="bd-cast-list">
-                                <?php if ($integrantes && is_array($integrantes)): ?>
-                                    <?php foreach ($integrantes as $integrante): ?>
-                                        <li><?php echo esc_html($integrante); ?></li>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <!-- Placeholders mientras no tengas el campo -->
-                                    <li><strong>Vocalista</strong> (placeholder)</li>
-                                    <li><strong>Guitarrista</strong> (placeholder)</li>
-                                    <li><strong>Bajista</strong> (placeholder)</li>
-                                    <li><strong>Baterista</strong> (placeholder)</li>
-                                <?php endif; ?>
-                            </ul>
-                        </div>
                     </div>
+                    <!-- Columna derecha: Reparto / Integrantes -->
+                    <div class="col-md-3">
+                        <strong
+                            style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
+                        <ul class="bd-cast-list">
+                            <?php if ($integrantes && is_array($integrantes)): ?>
+                                <?php foreach ($integrantes as $integrante): ?>
+                                    <li><?php echo esc_html($integrante); ?></li>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <!-- Placeholders mientras no tengas el campo -->
+                                <li><strong>Vocalista</strong> (placeholder)</li>
+                                <li><strong>Guitarrista</strong> (placeholder)</li>
+                                <li><strong>Bajista</strong> (placeholder)</li>
+                                <li><strong>Baterista</strong> (placeholder)</li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+
                 </div>
             </div><!-- /.bd-single-hero__body -->
         </div><!-- /.bd-single-hero__overlay -->
