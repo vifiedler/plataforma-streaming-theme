@@ -8,9 +8,39 @@ $imagen = get_field('imagen_video');
 $generos = get_the_terms(get_the_ID(), 'genero_videos');
 $artista = get_field('nombre_artista');
 $duracion = get_field('duracion');
-$anio = get_field('anio_lanzamiento'); // Campo ACF que debes crear
-$integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
-$album = get_field('album'); // Campo ACF que debes crear
+$anio = get_field('anio_lanzamiento');
+$integrantes = get_field('integrantes_banda');
+$album = get_field('album');
+
+// Obtener el iframe del campo oEmbed de forma segura
+$iframe_html = get_field('url_video');
+$iframe_final = '';
+
+if ($iframe_html) {
+    // Extraer la URL src del iframe
+    preg_match('/src="([^"]+)"/', $iframe_html, $matches);
+    if (isset($matches[1])) {
+        $src = $matches[1];
+        
+        // Parámetros a añadir
+        $params = array(
+            'controls'       => 0,
+            'rel'            => 0,
+            'iv_load_policy' => 3,
+            'enablejsapi'    => 1,
+            'autoplay'       => 1,
+        );
+        $new_src = add_query_arg($params, $src);
+        $iframe_final = str_replace($src, $new_src, $iframe_html);
+        
+        // Añadir atributos adicionales
+        $attributes = 'frameborder="0" allowfullscreen';
+        $iframe_final = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe_final);
+    } else {
+        // Si no se pudo extraer la URL, mostrar el HTML original
+        $iframe_final = $iframe_html;
+    }
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -23,37 +53,9 @@ $album = get_field('album'); // Campo ACF que debes crear
             class="bd-single-hero__img">
 
         <!-- Video (inicialmente oculto) -->
-        <!-- ===== VIDEO (oculto hasta click en play) ===== -->
-        <div id="bd-single-video" class="d-none">
+        <div id="bd-single-video" class="bd-single-video-container" style="display:none;">
             <div class="embed-container" id="video-container">
-                <?php
-                // Cargar el iframe del campo oEmbed
-                $iframe = get_field('url_video');
-
-                if ($iframe) {
-                    // Extraer la URL src del iframe
-                    preg_match('/src="(.+?)"/', $iframe, $matches);
-                    $src = $matches[1];
-
-                    // Añadir parámetros personalizados a la URL
-                    $params = array(
-                        'controls' => 0,
-                        'rel' => 0,
-                        'iv_load_policy' => 3,
-                        'enablejsapi' => 1,
-                        'autoplay' => 1,   // ← Reproducción automática
-                    );
-                    $new_src = add_query_arg($params, $src);
-                    $iframe = str_replace($src, $new_src, $iframe);
-
-                    // Añadir atributos adicionales al iframe
-                    $attributes = 'frameborder="0" allowfullscreen';
-                    $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-
-                    // Mostrar el iframe modificado
-                    echo $iframe;
-                }
-                ?>
+                <?php echo $iframe_final; ?>
             </div>
         </div>
 
@@ -61,7 +63,7 @@ $album = get_field('album'); // Campo ACF que debes crear
         <div class="bd-single-hero__overlay" id="bd-overlay">
             <div class="row bd-single-hero__body">
 
-                <!-- Columna izquierda: botón de reproducción (visible siempre) -->
+                <!-- Columna izquierda: botón de reproducción -->
                 <div class="col-md-3">
                     <button id="bd-play-btn" class="tm-hero-btn">
                         <i class="bi bi-play-fill"></i> Reproducir
@@ -71,7 +73,7 @@ $album = get_field('album'); // Campo ACF que debes crear
                     </button>
                 </div>
 
-                <!-- Resto del contenido (se oculta al reproducir) -->
+                <!-- Columna central: información -->
                 <div class="col-md-9">
                     <h1 class="tm-hero-title"><?php the_title(); ?></h1>
                     <div class="tm-hero-excerpt"><?php the_excerpt(); ?></div>
@@ -96,8 +98,7 @@ $album = get_field('album'); // Campo ACF que debes crear
                         </div>
                     </div>
                     <div class="col-md-12 mt-2">
-                        <strong
-                            style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
+                        <strong style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
                         <ul class="bd-cast-list">
                             <?php if ($integrantes && is_array($integrantes)): ?>
                                 <?php foreach ($integrantes as $integrante): ?>
@@ -125,13 +126,14 @@ $album = get_field('album'); // Campo ACF que debes crear
         </div>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
-    <section class="container-fluid py-4">
-        <div class="row mx-5 gap-5 justify-content-center"> <!-- gap-2 (0.5rem) -->
 
-            <!-- Columna principal: col-md-7 -->
+    <!-- ===== SECCIÓN DE INFORMACIÓN (detalle) ===== -->
+    <section class="container py-4">
+        <div class="row mx-0 gap-3">
+
+            <!-- Columna principal -->
             <div class="col-md-7 d-flex flex-column border border-secondary rounded-3 p-3">
                 <h2 class="h3 fw-bold mb-2"><?php echo get_the_title(); ?></h2>
-
                 <div class="mb-2">
                     <?php if (!empty($generos) && !is_wp_error($generos)): ?>
                         <div class="d-flex flex-wrap gap-1">
@@ -143,19 +145,16 @@ $album = get_field('album'); // Campo ACF que debes crear
                         </div>
                     <?php endif; ?>
                 </div>
-
                 <div class="bd-single-meta d-flex flex-wrap gap-3 small text-secondary mb-2">
                     <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
                     <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
                 </div>
-
                 <p class="mb-0"><?php echo get_the_excerpt(); ?></p>
             </div>
 
-            <!-- Columna derecha: col-md-3 -->
+            <!-- Columna integrantes -->
             <div class="col-md-3 d-flex flex-column border border-secondary rounded-3 p-3">
-                <strong class="text-uppercase small fw-bold mb-2"
-                    style="color:var(--breakdown-text); letter-spacing:1px;">
+                <strong class="text-uppercase small fw-bold mb-2" style="color:var(--breakdown-text); letter-spacing:1px;">
                     Integrantes
                 </strong>
                 <ul class="bd-cast-list list-unstyled mb-0">
@@ -172,17 +171,18 @@ $album = get_field('album'); // Campo ACF que debes crear
                 </ul>
             </div>
 
-            <!-- Fila siguiente: descripción canción (col-md-7) -->
+            <!-- Descripción canción -->
             <div class="col-md-7 border border-secondary rounded-3 p-3">
                 <?php echo the_content(); ?>
             </div>
 
-            <!-- Fila siguiente: álbum (col-md-3) -->
+            <!-- Álbum -->
             <div class="col-md-3 border border-secondary rounded-3 p-3">
                 <div class="row align-items-center g-2">
                     <div class="col-4 col-md-12 col-xl-4">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                            alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
+                             alt="<?php echo esc_html($album); ?>"
+                             class="img-fluid rounded-circle">
                     </div>
                     <div class="col-8 col-md-12 col-xl-8">
                         <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
@@ -190,7 +190,7 @@ $album = get_field('album'); // Campo ACF que debes crear
                 </div>
             </div>
 
-        </div> <!-- /.row -->
-    </section> <!-- /.container -->
+        </div>
+    </section>
 
 </article>
