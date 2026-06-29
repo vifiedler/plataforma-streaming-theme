@@ -60,7 +60,7 @@ if ($iframe_html) {
                 <!-- Columna central: información -->
                 <div class="col-md-7">
                     <h1 class="tm-hero-title d-none"><?php the_title(); ?></h1>
-                    <div class="tm-hero-excerpt col-12"><?php the_excerpt(); ?></div>
+                    <div class="tm-hero-excerpt col-12 fs-3"><?php the_excerpt(); ?></div>
                     <div class="row">
                         <div class="col-md-6">
                             <?php if (!empty($generos) && !is_wp_error($generos)): ?>
@@ -128,8 +128,7 @@ if ($iframe_html) {
             </div>
             <!-- Columna integrantes -->
             <div class="col-md-4 d-flex flex-column border border-secondary rounded-3 p-3">
-                <strong class="text-uppercase small fw-bold mb-2"
-                    style="color:var(--breakdown-text); letter-spacing:1px;">
+                <strong class="h3 fw-bold mb-2">
                     <h3><?php echo get_field('etiqueta_integrantes');?></h3>
                 </strong>
                 <ul class="bd-cast-list list-unstyled mb-0">
