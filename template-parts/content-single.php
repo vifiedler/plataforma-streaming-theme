@@ -18,9 +18,7 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
     <div id="bd-single-hero" class="bd-single-hero">
 
         <!-- Imagen de fondo -->
-        <img
-            src="<?php echo esc_url($imagen['url']); ?>"
-            alt="<?php echo esc_attr(get_the_title()); ?>"
+        <img src="<?php echo esc_url($imagen['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
             class="bd-single-hero__img">
 
         <!-- Video (inicialmente oculto) -->
@@ -35,7 +33,7 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
             <div class="bd-single-hero__body">
 
                 <!-- Columna izquierda: botón de reproducción -->
-                <div class="col-play">
+                <div class="col-md-3 align-content-center">
                     <button id="bd-play-btn" class="tm-hero-btn">
                         <i class="bi bi-play-fill"></i> Reproducir
                     </button>
@@ -45,56 +43,58 @@ $integrantes = get_field('integrantes_banda'); // Campo ACF (texto o repeater)
                 </div>
 
                 <!-- Columna central: información -->
-                <div class="col-info">
-                    <h1 class="tm-hero-title"><?php the_title(); ?></h1>
+                <div class="col-md-6">
+                    <h1 class="tm-hero-title d-none"><?php the_title(); ?></h1>
+                    <div class="d-flex column">
+                        <div class="tm-hero-excerpt col-12">
+                            <?php the_excerpt(); ?>
+                        </div>
+                        <div class="row">
+                            <!-- Géneros -->
+                            <div class="col-md-4">
+                                <?php if (!empty($generos) && !is_wp_error($generos)): ?>
+                                    <div class="bd-tag-wrap">
+                                        <?php foreach ($generos as $g): ?>
+                                            <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag">
+                                                <?php echo esc_html($g->name); ?>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <!-- Duración + Año -->
+                            <div class="col-md-4">
+                                <div class="bd-single-meta">
+                                    <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
+                                    <?php if ($anio): ?>
+                                        <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
+                                    <?php else: ?>
+                                        <span><i class="bi bi-calendar"></i> 2025 (placeholder)</span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="tm-hero-excerpt">
-                        <?php the_excerpt(); ?>
-                    </div>
-
-                    <!-- Géneros -->
-                    <?php if (!empty($generos) && !is_wp_error($generos)): ?>
-                    <div class="bd-tag-wrap">
-                        <?php foreach ($generos as $g): ?>
-                        <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag">
-                            <?php echo esc_html($g->name); ?>
-                        </a>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php endif; ?>
-
-                    <!-- Artista + Duración + Año -->
-                    <p class="tm-hero-artist">
-                        <?php echo esc_html($artista); ?>
-                    </p>
-                    <div class="bd-single-meta">
-                        <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
-                        <?php if ($anio): ?>
-                        <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
-                        <?php else: ?>
-                        <span><i class="bi bi-calendar"></i> 2025 (placeholder)</span>
-                        <?php endif; ?>
+                        <!-- Columna derecha: Reparto / Integrantes -->
+                        <div class="col-md-3">
+                            <strong
+                                style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
+                            <ul class="bd-cast-list">
+                                <?php if ($integrantes && is_array($integrantes)): ?>
+                                    <?php foreach ($integrantes as $integrante): ?>
+                                        <li><?php echo esc_html($integrante); ?></li>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <!-- Placeholders mientras no tengas el campo -->
+                                    <li><strong>Vocalista</strong> (placeholder)</li>
+                                    <li><strong>Guitarrista</strong> (placeholder)</li>
+                                    <li><strong>Bajista</strong> (placeholder)</li>
+                                    <li><strong>Baterista</strong> (placeholder)</li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Columna derecha: Reparto / Integrantes -->
-                <div class="col-cast">
-                    <strong style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
-                    <ul class="bd-cast-list">
-                        <?php if ($integrantes && is_array($integrantes)): ?>
-                            <?php foreach ($integrantes as $integrante): ?>
-                            <li><?php echo esc_html($integrante); ?></li>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <!-- Placeholders mientras no tengas el campo -->
-                            <li><strong>Vocalista</strong> (placeholder)</li>
-                            <li><strong>Guitarrista</strong> (placeholder)</li>
-                            <li><strong>Bajista</strong> (placeholder)</li>
-                            <li><strong>Baterista</strong> (placeholder)</li>
-                        <?php endif; ?>
-                    </ul>
-                </div>
-
             </div><!-- /.bd-single-hero__body -->
         </div><!-- /.bd-single-hero__overlay -->
 
