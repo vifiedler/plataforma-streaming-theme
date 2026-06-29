@@ -9,7 +9,7 @@ $generos = get_the_terms(get_the_ID(), 'genero_videos');
 $artista = get_field('nombre_artista');
 $duracion = get_field('duracion');
 $anio = get_field('anio_lanzamiento');
-$integrantes = get_field('integrantes_banda');
+$integrantes = get_field('integrantes');
 $album = get_field('album');
 
 // Obtener el iframe del campo oembed
@@ -145,7 +145,7 @@ if ($iframe_html) {
             <div class="col-md-4 d-flex flex-column border border-secondary rounded-3 p-3">
                 <strong class="text-uppercase small fw-bold mb-2"
                     style="color:var(--breakdown-text); letter-spacing:1px;">
-                    Integrantes
+                    <?php echo get_field('etiqueta_integrantes');?>
                 </strong>
                 <ul class="bd-cast-list list-unstyled mb-0">
                     <?php if ($integrantes && is_array($integrantes)): ?>
