@@ -6,12 +6,6 @@
  */
 $imagen = get_field('imagen_video');
 $generos = get_the_terms(get_the_ID(), 'genero_videos');
-$artista = get_field('nombre_artista');
-$duracion = get_field('duracion');
-$anio = get_field('anio_lanzamiento');
-$integrantes = get_field('integrantes');
-$album = get_field('album');
-
 // Obtener el iframe del campo oembed
 $iframe_html = get_field('url_video');
 $iframe_final = '';
@@ -127,8 +121,8 @@ if ($iframe_html) {
                     <?php endif; ?>
                 </div>
                 <div class="bd-single-meta d-flex flex-wrap gap-3 small text-secondary mb-2">
-                    <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
-                    <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
+                    <span><i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?></span>
+                    <span><i class="bi bi-calendar"></i> <?php echo get_field('anio_lanzamiento'); ?></span>
                 </div>
                 <p class="mb-0"><?php echo get_the_excerpt(); ?></p>
             </div>
@@ -151,7 +145,7 @@ if ($iframe_html) {
                 <div class="row align-items-center g-2">
                     <div class="col-md-4">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                            alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
+                            alt="<?php echo get_field('album'); ?>" class="img-fluid rounded-circle">
                     </div>
                     <div class="col-md-8">
                         <p class="mb-0"><?php echo get_field('album'); ?></p>
