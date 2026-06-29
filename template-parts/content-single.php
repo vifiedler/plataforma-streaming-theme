@@ -105,7 +105,7 @@ $album = get_field('album'); // Campo ACF que debes crear
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
 <section class="container py-4">
-    <div class="row g-4">
+    <div class="row g-4">   <!-- ← AQUÍ ESTÁ EL CAMBIO -->
 
         <!-- Columna principal: título, géneros, metadatos, excerpt -->
         <div class="col-md-8 d-flex flex-column border border-secondary rounded-3 p-3">
