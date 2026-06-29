@@ -1,15 +1,9 @@
-/* ============================
-   BREAKDOWN - Videos CSS
-   Estilo dark, tipo YouTube/Crunchyroll
-   Géneros: Metalcore, Deathcore, Easycore, Pop-punk, Nu Metal, Hardcore
-============================ */
-html,
-body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
+/* ============================================================
+   BREAKDOWN - Plataforma de videos musicales
+   Estilo dark (Prime Video / YouTube)
+   ============================================================ */
 
+/* ---------- Variables globales ---------- */
 :root {
     --breakdown-bg: #0f0f0f;
     --breakdown-card: #1a1a1a;
@@ -18,12 +12,19 @@ body {
     --breakdown-accent: #e63946;
 }
 
+/* ---------- Reset y base ---------- */
+html,
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: var(--breakdown-bg);
     color: var(--breakdown-text);
 }
 
-/* ===== Links globales ===== */
 a {
     color: var(--breakdown-text-muted);
     transition: color 0.2s;
@@ -33,10 +34,13 @@ a:hover {
     color: var(--breakdown-text);
     text-decoration: none;
 }
-a:visited{
-    color:#1a1a1a;
+
+a:visited {
+    color: #1a1a1a;
+    /* puedes cambiar esto si prefieres */
 }
-/* ===== Botón primario ===== */
+
+/* ---------- Botones primarios ---------- */
 .btn-primary {
     background-color: var(--breakdown-accent);
     border-color: var(--breakdown-accent);
@@ -51,7 +55,7 @@ a:visited{
     color: #fff;
 }
 
-/* ===== site-footer fallback ===== */
+/* ---------- Footer ---------- */
 .site-footer {
     background-color: #111;
     color: var(--breakdown-text-muted);
@@ -72,7 +76,7 @@ a:visited{
     color: var(--breakdown-text);
 }
 
-/* ===== Encabezados de sección ===== */
+/* ---------- Encabezados de sección ---------- */
 .section-header-title {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
@@ -86,7 +90,7 @@ a:visited{
     border-bottom: 4px solid var(--breakdown-accent) !important;
 }
 
-/* ===== Ver más ===== */
+/* ---------- Enlace "Ver más" ---------- */
 .ver-mas {
     display: inline-block;
     vertical-align: middle;
@@ -104,7 +108,7 @@ a:visited{
     text-decoration: none;
 }
 
-/* ===== Archive / Taxonomy header ===== */
+/* ---------- Archive / Taxonomy header ---------- */
 .page-header {
     border-bottom: 4px solid var(--breakdown-accent);
     margin-bottom: 2rem;
@@ -127,7 +131,7 @@ a:visited{
     margin-top: 0.5rem;
 }
 
-/* ===== Posts navigation ===== */
+/* ---------- Navegación entre posts ---------- */
 .nav-links {
     display: flex;
     gap: 1rem;
@@ -148,7 +152,7 @@ a:visited{
     color: var(--breakdown-accent);
 }
 
-/* ===== Tarjeta de video (loops homepage — NO carrusel) ===== */
+/* ---------- Tarjeta de video (loops homepage, NO carrusel) ---------- */
 .card {
     background-color: var(--breakdown-card);
     border: none;
@@ -171,177 +175,7 @@ a:visited{
     color: var(--breakdown-text-muted);
 }
 
-/* ===== Single video ===== */
-.video__single {
-    background-color: var(--breakdown-bg);
-    color: var(--breakdown-text);
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-.back-link {
-    color: var(--breakdown-text-muted);
-}
-
-.back-link:hover {
-    color: var(--breakdown-accent);
-}
-
-.badge-genero {
-    display: inline-block;
-    background-color: var(--breakdown-accent);
-    color: #ffffff;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    border-radius: 4px;
-}
-
-.duracion-single {
-    color: var(--breakdown-text-muted);
-}
-
-/* ===== Hero embed (single) ===== */
-.video-hero {
-    width: 100%;
-    margin-bottom: 40px;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.video-hero iframe {
-    width: 100%;
-    height: 600px;
-    border: 0;
-    display: block;
-}
-
-.contenido-video {
-    color: var(--breakdown-text-muted);
-}
-
-/* ===== Carrusel destacados (hero del home) ===== */
-.tm-carousel {
-    position: relative;
-    background-color: var(--breakdown-bg);
-}
-
-.tm-carousel__img {
-    width: 100%;
-    aspect-ratio: 16 / 7;
-    display: block;
-    object-fit: cover !important;
-    transition: 0.6s;
-}
-
-.tm-carousel__body .lg__title-small {
-    color: var(--breakdown-text);
-}
-
-.tm-carousel__prev,
-.tm-carousel__next {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid #333;
-    color: var(--breakdown-text);
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-    transition: background 0.15s;
-}
-
-.tm-carousel__prev:hover,
-.tm-carousel__next:hover {
-    background: var(--breakdown-accent);
-    border-color: var(--breakdown-accent);
-}
-
-.tm-carousel__prev {
-    left: 12px;
-}
-
-.tm-carousel__next {
-    right: 12px;
-}
-
-.tm-hero-slide {
-    position: relative;
-    overflow: hidden;
-}
-
-.tm-hero-body {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 55%;
-    padding: 2.5rem 3rem;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.92) 55%, transparent);
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.tm-hero-title {
-    font-family: 'Frank Ruhl Libre', Georgia, serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--breakdown-text);
-    line-height: 1.1;
-    margin-bottom: 0;
-}
-
-.tm-hero-excerpt {
-    font-size: 0.85rem;
-    color: var(--breakdown-text-muted);
-    line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.tm-hero-artist {
-    font-size: 0.78rem;
-    color: var(--breakdown-text-muted);
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-.tm-hero-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--breakdown-text);
-    color: var(--breakdown-bg);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 10px 22px;
-    border-radius: 4px;
-    text-decoration: none;
-    width: fit-content;
-    transition: background 0.2s, color 0.2s;
-}
-
-.tm-hero-btn:hover {
-    background: var(--breakdown-accent);
-    color: #fff;
-    text-decoration: none;
-}
-
-/* ===== Video Cards (archive / taxonomy) ===== */
+/* ---------- Tarjetas en archivo / taxonomía ---------- */
 .video-card {
     background: transparent;
     cursor: pointer;
@@ -414,7 +248,7 @@ a:visited{
     font-family: 'Inter', sans-serif;
 }
 
-/* ===== Carrusel horizontal por género (Prime Video style) ===== */
+/* ---------- Carrusel horizontal (Prime Video style) ---------- */
 .bd-carousel-wrap {
     position: relative;
     display: flex;
@@ -429,7 +263,7 @@ a:visited{
     flex: 1;
     scrollbar-width: none;
     padding: 50px 8px;
-    /* espacio vertical para el pop-out sin clipping */
+    /* espacio para el pop-out */
 }
 
 .bd-carousel-track::-webkit-scrollbar {
@@ -537,11 +371,321 @@ a:visited{
     border-color: var(--breakdown-accent);
 }
 
-/* cambios para embed según acf*/
+/* ---------- Hero del home (carrusel destacado) ---------- */
+.tm-carousel {
+    position: relative;
+    background-color: var(--breakdown-bg);
+}
+
+.tm-carousel__img {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    display: block;
+    object-fit: cover !important;
+    transition: 0.6s;
+}
+
+.tm-carousel__body .lg__title-small {
+    color: var(--breakdown-text);
+}
+
+.tm-carousel__prev,
+.tm-carousel__next {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #333;
+    color: var(--breakdown-text);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.15s;
+}
+
+.tm-carousel__prev:hover,
+.tm-carousel__next:hover {
+    background: var(--breakdown-accent);
+    border-color: var(--breakdown-accent);
+}
+
+.tm-carousel__prev {
+    left: 12px;
+}
+
+.tm-carousel__next {
+    right: 12px;
+}
+
+.tm-hero-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.tm-hero-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 55%;
+    padding: 2.5rem 3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.92) 55%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* ---------- SINGLE: Hero estilo Prime Video ---------- */
+/* Contenedor del hero */
+.bd-single-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen de fondo */
+.bd-single-hero__img {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenedor del video superpuesto (inicialmente oculto) */
+.bd-single-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: #000;
+}
+
+.bd-single-video-container .embed-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Overlay (contenido) por encima del video */
+.bd-single-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    /* por encima del video */
+    pointer-events: none;
+    /* los clicks pasan al video, excepto en elementos con pointer-events:auto */
+    display: flex;
+    align-items: flex-end;
+    /* contenido alineado abajo */
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.92) 35%,
+            rgba(0, 0, 0, 0.5) 60%,
+            transparent 80%);
+    transition: background 0.3s;
+}
+
+/* Cuando el video está activo, reducimos la opacidad del fondo */
+.bd-single-hero__overlay.video-active {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Cuerpo del overlay (contenedor de los tres bloques) */
+.bd-single-hero__body {
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    pointer-events: auto;
+    /* los elementos internos son clickeables */
+}
+
+/* Cada columna del overlay (diseño de 3 columnas) */
+.bd-hero-col {
+    flex: 1 1 0;
+    /* distribución flexible */
+    min-width: 180px;
+}
+
+/* Columna 1: Botón de reproducción */
+.bd-hero-col--play {
+    flex: 0 0 20%;
+    /* 20% del ancho */
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Columna 2: Título, excerpt, tags, duración/año */
+.bd-hero-col--info {
+    flex: 0 0 50%;
+    /* 50% del ancho */
+}
+
+/* Columna 3: Integrantes (reparto) */
+.bd-hero-col--cast {
+    flex: 1;
+    /* ocupa el resto */
+}
+
+/* Estilos de texto dentro del hero */
+.tm-hero-title {
+    font-family: 'Frank Ruhl Libre', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--breakdown-text);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.tm-hero-excerpt {
+    font-size: 0.85rem;
+    color: var(--breakdown-text-muted);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.tm-hero-artist {
+    font-size: 0.78rem;
+    color: var(--breakdown-text-muted);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.bd-single-meta {
+    font-size: 0.8rem;
+    color: var(--breakdown-text-muted);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.bd-single-meta i {
+    margin-right: 4px;
+}
+
+/* Tags de género */
+.bd-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--breakdown-text);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.bd-tag:hover {
+    background: var(--breakdown-accent);
+    border-color: var(--breakdown-accent);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Botón de reproducción/pausa en el hero */
+.tm-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--breakdown-text);
+    color: var(--breakdown-bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tm-hero-btn:hover {
+    background: var(--breakdown-accent);
+    color: #fff;
+}
+
+.tm-hero-btn i {
+    font-size: 1.2rem;
+}
+
+/* Lista de integrantes (reparto) */
+.bd-cast-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bd-cast-list li {
+    font-size: 0.8rem;
+    color: var(--breakdown-text-muted);
+    line-height: 1.6;
+}
+
+.bd-cast-list li strong {
+    color: var(--breakdown-text);
+    font-weight: 600;
+}
+
+/* ---------- Responsive del single ---------- */
+@media (max-width: 992px) {
+    .bd-hero-col--play {
+        flex: 0 0 100%;
+        justify-content: center;
+    }
+
+    .bd-hero-col--info {
+        flex: 0 0 100%;
+    }
+
+    .bd-hero-col--cast {
+        flex: 0 0 100%;
+    }
+
+    .bd-single-hero__body {
+        padding: 1.5rem;
+    }
+
+    .tm-hero-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .bd-single-hero__overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
+    }
+
+    .bd-single-hero__body {
+        padding: 1rem;
+    }
+
+    .bd-single-hero__img {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* ---------- Utilidades ---------- */
 .embed-container {
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100%;
     overflow: hidden;
     background: #000;
 }
@@ -561,12 +705,7 @@ a:visited{
     padding: 0;
 }
 
-/*modificaciones al archive*/
-.video-card:hover .video-card__thumb {
-    transform: scale(1.06);
-    opacity: 0.85;
-}
-/* ===== Botón de búsqueda (estilo CTA) ===== */
+/* Botón de búsqueda (estilo CTA) */
 .nav-search-wrap .search-form .search-submit {
     background-color: var(--breakdown-accent);
     border: none;
@@ -594,132 +733,4 @@ a:visited{
 .nav-search-wrap .search-form .search-submit i.bi-search {
     font-size: 0.85rem;
     margin-right: 4px;
-}
-/* =============================================
-   SINGLE — Hero Prime Video style
-   Pegar al final de style.css
-   ============================================= */
-
-/* Imagen hero */
-.bd-single-hero__img {
-    width: 100%;
-    aspect-ratio: 16 / 7;
-    object-fit: cover;
-    display: block;
-}
-
-/* Gradiente overlay izquierda → transparente */
-.bd-single-hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.92) 40%,
-        rgba(0, 0, 0, 0.4) 65%,
-        transparent 80%
-    );
-    display: flex;
-    align-items: flex-end;
-}
-
-/* Cuerpo de contenido sobre imagen */
-.bd-single-hero__body {
-    width: 50%;
-    padding: 3rem 3.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-}
-
-/* Tags de género (pill outline) */
-.bd-tag {
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--breakdown-text);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    text-decoration: none;
-    transition: background 0.2s, border-color 0.2s;
-}
-
-.bd-tag:hover {
-    background: var(--breakdown-accent);
-    border-color: var(--breakdown-accent);
-    color: #fff;
-    text-decoration: none;
-}
-.bd-enlace a:visited{
-    color: #f0ece3;
-}
-/* Duración / meta secundario */
-.bd-single-meta {
-    font-size: 0.8rem;
-    color: var(--breakdown-text-muted);
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    letter-spacing: 0.5px;
-}
-
-/* Responsive: en móvil el body ocupa todo */
-@media (max-width: 768px) {
-    .bd-single-hero__body {
-        width: 100%;
-        padding: 2rem 1.5rem;
-        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
-    }
-
-    .bd-single-hero__overlay {
-        background: none;
-    }
-
-    .tm-hero-title {
-        font-size: 1.4rem;
-    }
-}
-
-/* =============================================
-   MEJORAS PARA EL HERO PRIME VIDEO
-   ============================================= */
-
-/* Asegurar que el overlay cubra toda la imagen */
-.bd-single-hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.92) 35%,
-        rgba(0, 0, 0, 0.5) 60%,
-        transparent 80%
-    );
-    display: flex;
-    align-items: flex-end;
-    pointer-events: none; /* Para que los clicks pasen al botón si está dentro */
-}
-
-/* El botón de reproducción debe ser clickeable */
-.tm-hero-btn {
-    pointer-events: auto;
-}
-
-/* Mejorar el espaciado en móviles */
-@media (max-width: 768px) {
-    .bd-single-hero__body {
-        width: 100%;
-        padding: 2rem 1.5rem;
-        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
-    }
-
-    .bd-single-hero__overlay {
-        background: none;
-    }
-
-    .tm-hero-title {
-        font-size: 1.4rem;
-    }
 }
