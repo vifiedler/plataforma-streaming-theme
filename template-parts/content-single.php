@@ -129,7 +129,7 @@ if ($iframe_html) {
             <!-- Columna integrantes -->
             <div class="col-md-4 d-flex flex-column border border-secondary rounded-3 p-3">
                     <h2 class="h3 fw-bold mb-2"><?php echo get_field('etiqueta_integrantes');?></h2>
-                <ul class="bd-cast-list list-unstyled mb-0">
+                <ul class="bd-cast-list list-unstyled mb-0 fs-3">
                     <?php echo get_field('integrantes');?>
                 </ul>
             </div>
