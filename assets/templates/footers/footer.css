@@ -6,7 +6,8 @@
     background-color: inherit;
     color: #aaa;
     font-family: 'Inter', sans-serif;
-    border-top: 1px solid #1e1e1e;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* footer_1: logo */
