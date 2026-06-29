@@ -1,6 +1,6 @@
 /* ============================================================
-   BREAKDOWN - Plataforma de videos musicales
-   Estilo dark (Prime Video / YouTube)
+   BREAKDOWN - Estilo dark (tipo Prime Video / YouTube)
+   Plataforma de videos musicales
    ============================================================ */
 
 /* ---------- Variables globales ---------- */
@@ -13,31 +13,25 @@
 }
 
 /* ---------- Reset y base ---------- */
-html,
-body {
+html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
-
 body {
     background-color: var(--breakdown-bg);
     color: var(--breakdown-text);
 }
-
 a {
     color: var(--breakdown-text-muted);
     transition: color 0.2s;
 }
-
 a:hover {
     color: var(--breakdown-text);
     text-decoration: none;
 }
-
 a:visited {
-    color: #1a1a1a;
-    /* puedes cambiar esto si prefieres */
+    color: var(--breakdown-text-muted); /* Corregido para que no se vea roto */
 }
 
 /* ---------- Botones primarios ---------- */
@@ -46,7 +40,6 @@ a:visited {
     border-color: var(--breakdown-accent);
     color: #fff;
 }
-
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
@@ -55,7 +48,7 @@ a:visited {
     color: #fff;
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (global) ---------- */
 .site-footer {
     background-color: #111;
     color: var(--breakdown-text-muted);
@@ -65,12 +58,10 @@ a:visited {
     text-align: center;
     border-top: 1px solid #2a2a2a;
 }
-
 .site-footer a,
 .site-info a {
     color: var(--breakdown-text-muted);
 }
-
 .site-footer a:hover,
 .site-info a:hover {
     color: var(--breakdown-text);
@@ -85,7 +76,6 @@ a:visited {
     margin-right: 1rem;
     color: var(--breakdown-text);
 }
-
 .section-header-border {
     border-bottom: 4px solid var(--breakdown-accent) !important;
 }
@@ -102,7 +92,6 @@ a:visited {
     text-transform: uppercase;
     transition: color 0.2s;
 }
-
 .ver-mas:hover {
     color: var(--breakdown-accent);
     text-decoration: none;
@@ -114,7 +103,6 @@ a:visited {
     margin-bottom: 2rem;
     padding-bottom: 0.75rem;
 }
-
 .page-title {
     font-family: 'Inter', sans-serif;
     font-size: 1.4rem;
@@ -124,7 +112,6 @@ a:visited {
     color: var(--breakdown-text);
     margin-bottom: 0;
 }
-
 .archive-description {
     color: var(--breakdown-text-muted);
     font-size: 0.9rem;
@@ -137,7 +124,6 @@ a:visited {
     gap: 1rem;
     margin-top: 2rem;
 }
-
 .nav-links a {
     color: var(--breakdown-text-muted);
     text-decoration: none;
@@ -147,7 +133,6 @@ a:visited {
     text-transform: uppercase;
     transition: color 0.2s;
 }
-
 .nav-links a:hover {
     color: var(--breakdown-accent);
 }
@@ -159,18 +144,15 @@ a:visited {
     border-radius: 10px;
     color: var(--breakdown-text);
 }
-
 .card img {
     display: block;
     aspect-ratio: 16/9;
     object-fit: cover;
 }
-
 .card-title {
     color: var(--breakdown-text);
     font-weight: 600;
 }
-
 .card-text {
     color: var(--breakdown-text-muted);
 }
@@ -180,7 +162,6 @@ a:visited {
     background: transparent;
     cursor: pointer;
 }
-
 .video-card__thumb-wrap {
     position: relative;
     width: 100%;
@@ -189,19 +170,16 @@ a:visited {
     border-radius: 4px;
     background: #000;
 }
-
 .video-card__thumb {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .video-card:hover .video-card__thumb {
     transform: scale(1.06);
     opacity: 0.85;
 }
-
 .video-card__duration {
     position: absolute;
     bottom: 6px;
@@ -215,11 +193,9 @@ a:visited {
     letter-spacing: 0.04em;
     font-family: 'Inter', sans-serif;
 }
-
 .video-card__body {
     padding: 10px 0 0;
 }
-
 .video-card__title {
     font-size: 0.95rem;
     font-weight: 600;
@@ -230,17 +206,14 @@ a:visited {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
 .video-card__title a {
     color: var(--breakdown-text);
     text-decoration: none;
     transition: color 0.2s ease;
 }
-
 .video-card__title a:hover {
     color: var(--breakdown-accent);
 }
-
 .video-card__artist {
     font-size: 0.82rem;
     color: var(--breakdown-text-muted);
@@ -255,7 +228,6 @@ a:visited {
     align-items: center;
     gap: 8px;
 }
-
 .bd-carousel-track {
     display: flex;
     gap: 12px;
@@ -263,13 +235,10 @@ a:visited {
     flex: 1;
     scrollbar-width: none;
     padding: 50px 8px;
-    /* espacio para el pop-out */
 }
-
 .bd-carousel-track::-webkit-scrollbar {
     display: none;
 }
-
 .bd-carousel-card {
     flex: 0 0 250px;
     background: var(--breakdown-card);
@@ -279,32 +248,27 @@ a:visited {
     z-index: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0.15s;
 }
-
 .bd-carousel-card:hover {
     transform: scale(1.25);
     z-index: 10;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .bd-carousel-thumb-wrap {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
 }
-
 .bd-carousel-thumb {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: opacity 0.2s ease;
 }
-
 .bd-carousel-card:hover .bd-carousel-thumb {
     opacity: 0.85;
 }
-
 .bd-carousel-duration {
     position: absolute;
     bottom: 5px;
@@ -318,11 +282,9 @@ a:visited {
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.04em;
 }
-
 .bd-carousel-card-body {
     padding: 8px 10px 10px;
 }
-
 .bd-carousel-title {
     font-size: 0.85rem;
     font-weight: 600;
@@ -333,23 +295,19 @@ a:visited {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
 .bd-carousel-title a {
     color: var(--breakdown-text);
     text-decoration: none;
 }
-
 .bd-carousel-title a:hover {
     color: var(--breakdown-accent);
 }
-
 .bd-carousel-artist {
     font-size: 0.75rem;
     color: var(--breakdown-text-muted);
     margin-bottom: 0;
     font-family: 'Inter', sans-serif;
 }
-
 .bd-carousel-btn {
     flex-shrink: 0;
     width: 34px;
@@ -365,7 +323,6 @@ a:visited {
     transition: background 0.15s, border-color 0.15s;
     z-index: 5;
 }
-
 .bd-carousel-btn:hover {
     background: var(--breakdown-accent);
     border-color: var(--breakdown-accent);
@@ -376,7 +333,6 @@ a:visited {
     position: relative;
     background-color: var(--breakdown-bg);
 }
-
 .tm-carousel__img {
     width: 100%;
     aspect-ratio: 16 / 7;
@@ -384,11 +340,6 @@ a:visited {
     object-fit: cover !important;
     transition: 0.6s;
 }
-
-.tm-carousel__body .lg__title-small {
-    color: var(--breakdown-text);
-}
-
 .tm-carousel__prev,
 .tm-carousel__next {
     position: absolute;
@@ -407,26 +358,21 @@ a:visited {
     border-radius: 50%;
     transition: background 0.15s;
 }
-
 .tm-carousel__prev:hover,
 .tm-carousel__next:hover {
     background: var(--breakdown-accent);
     border-color: var(--breakdown-accent);
 }
-
 .tm-carousel__prev {
     left: 12px;
 }
-
 .tm-carousel__next {
     right: 12px;
 }
-
 .tm-hero-slide {
     position: relative;
     overflow: hidden;
 }
-
 .tm-hero-body {
     position: absolute;
     bottom: 0;
@@ -439,22 +385,24 @@ a:visited {
     gap: 0.6rem;
 }
 
-/* ---------- SINGLE: Hero estilo Prime Video ---------- */
-/* Contenedor del hero */
+/* ---------- SINGLE: Hero estilo Prime Video (nuevo) ---------- */
+/* Contenedor principal del hero (relativo para posicionar el video) */
 .bd-single-hero {
     position: relative;
     overflow: hidden;
+    aspect-ratio: 16 / 7;
+    background: #000;
 }
 
 /* Imagen de fondo */
 .bd-single-hero__img {
     width: 100%;
-    aspect-ratio: 16 / 7;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* Contenedor del video superpuesto (inicialmente oculto) */
+/* Video superpuesto (inicialmente oculto) */
 .bd-single-video-container {
     position: absolute;
     top: 0;
@@ -463,118 +411,113 @@ a:visited {
     height: 100%;
     z-index: 2;
     background: #000;
+    display: none; /* se muestra con JS */
 }
-
 .bd-single-video-container .embed-container {
     width: 100%;
     height: 100%;
 }
+.bd-single-video-container iframe {
+    width: 100%;
+    height: 100%;
+}
 
-/* Overlay (contenido) por encima del video */
+/* Overlay (encima del video) */
 .bd-single-hero__overlay {
     position: absolute;
     inset: 0;
-    z-index: 3;
-    /* por encima del video */
-    pointer-events: none;
-    /* los clicks pasan al video, excepto en elementos con pointer-events:auto */
+    z-index: 3; /* por encima del video */
     display: flex;
     align-items: flex-end;
-    /* contenido alineado abajo */
-    background: linear-gradient(to right,
-            rgba(0, 0, 0, 0.92) 35%,
-            rgba(0, 0, 0, 0.5) 60%,
-            transparent 80%);
-    transition: background 0.3s;
+    pointer-events: none; /* permite clics en el video si no hay botones */
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.92) 35%,
+        rgba(0, 0, 0, 0.5) 60%,
+        transparent 80%
+    );
+    transition: background 0.3s ease;
 }
-
 /* Cuando el video está activo, reducimos la opacidad del fondo */
 .bd-single-hero__overlay.video-active {
     background: rgba(0, 0, 0, 0.4);
 }
 
-/* Cuerpo del overlay (contenedor de los tres bloques) */
+/* Cuerpo del overlay (contenido) */
 .bd-single-hero__body {
     width: 100%;
-    padding: 2rem 3rem;
+    padding: 2.5rem 3rem;
+    pointer-events: auto; /* los botones y enlaces son clickeables */
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    pointer-events: auto;
-    /* los elementos internos son clickeables */
+    align-items: flex-end;
+    gap: 1.5rem 0;
 }
 
-/* Cada columna del overlay (diseño de 3 columnas) */
-.bd-hero-col {
-    flex: 1 1 0;
-    /* distribución flexible */
-    min-width: 180px;
+/* Columna izquierda: botón de reproducción */
+.bd-single-hero__body .col-play {
+    flex: 0 0 200px; /* ancho fijo para el botón */
+    max-width: 200px;
 }
 
-/* Columna 1: Botón de reproducción */
-.bd-hero-col--play {
-    flex: 0 0 20%;
-    /* 20% del ancho */
-    display: flex;
-    align-items: flex-start;
+/* Columna central: título, excerpt, metadatos */
+.bd-single-hero__body .col-info {
+    flex: 1 1 400px;
+    padding: 0 1.5rem;
 }
 
-/* Columna 2: Título, excerpt, tags, duración/año */
-.bd-hero-col--info {
-    flex: 0 0 50%;
-    /* 50% del ancho */
+/* Columna derecha: reparto / integrantes */
+.bd-single-hero__body .col-cast {
+    flex: 0 0 200px;
+    max-width: 200px;
+    text-align: right;
 }
 
-/* Columna 3: Integrantes (reparto) */
-.bd-hero-col--cast {
-    flex: 1;
-    /* ocupa el resto */
-}
-
-/* Estilos de texto dentro del hero */
+/* Títulos y textos dentro del overlay */
 .tm-hero-title {
     font-family: 'Frank Ruhl Libre', Georgia, serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--breakdown-text);
     line-height: 1.1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
-
 .tm-hero-excerpt {
     font-size: 0.85rem;
     color: var(--breakdown-text-muted);
     line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin-bottom: 0.5rem;
 }
-
 .tm-hero-artist {
     font-size: 0.78rem;
     color: var(--breakdown-text-muted);
     font-family: 'Inter', sans-serif;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 0.2rem 0;
 }
-
 .bd-single-meta {
     font-size: 0.8rem;
     color: var(--breakdown-text-muted);
     font-family: 'Inter', sans-serif;
     margin: 0;
     letter-spacing: 0.5px;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.bd-single-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
-.bd-single-meta i {
-    margin-right: 4px;
-}
-
-/* Tags de género */
+/* Tags de género (sobre el artista) */
 .bd-tag {
     display: inline-block;
     font-family: 'Inter', sans-serif;
@@ -590,18 +533,24 @@ a:visited {
     text-decoration: none;
     transition: background 0.2s, border-color 0.2s;
 }
-
 .bd-tag:hover {
     background: var(--breakdown-accent);
     border-color: var(--breakdown-accent);
     color: #fff;
     text-decoration: none;
 }
+.bd-tag-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 0.5rem;
+}
 
-/* Botón de reproducción/pausa en el hero */
+/* Botón de reproducción (grande, tipo Prime Video) */
 .tm-hero-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     background: var(--breakdown-text);
     color: var(--breakdown-bg);
@@ -609,79 +558,78 @@ a:visited {
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 1px;
-    padding: 10px 22px;
+    padding: 12px 24px;
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    width: 100%;
     transition: background 0.2s, color 0.2s;
 }
-
 .tm-hero-btn:hover {
     background: var(--breakdown-accent);
     color: #fff;
 }
-
 .tm-hero-btn i {
     font-size: 1.2rem;
 }
 
-/* Lista de integrantes (reparto) */
+/* Lista de reparto (integrantes) */
 .bd-cast-list {
     list-style: none;
-    padding: 0;
     margin: 0;
-}
-
-.bd-cast-list li {
+    padding: 0;
     font-size: 0.8rem;
     color: var(--breakdown-text-muted);
-    line-height: 1.6;
 }
-
-.bd-cast-list li strong {
+.bd-cast-list li {
+    margin-bottom: 2px;
+}
+.bd-cast-list strong {
     color: var(--breakdown-text);
     font-weight: 600;
 }
 
-/* ---------- Responsive del single ---------- */
+/* Ocultar elementos cuando el video está activo (opcional) */
+.bd-single-hero__overlay.video-active .tm-hero-excerpt,
+.bd-single-hero__overlay.video-active .tm-hero-artist,
+.bd-single-hero__overlay.video-active .bd-single-meta,
+.bd-single-hero__overlay.video-active .bd-tag-wrap,
+.bd-single-hero__overlay.video-active .col-cast {
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+/* ---------- RESPONSIVE single ---------- */
 @media (max-width: 992px) {
-    .bd-hero-col--play {
-        flex: 0 0 100%;
-        justify-content: center;
-    }
-
-    .bd-hero-col--info {
-        flex: 0 0 100%;
-    }
-
-    .bd-hero-col--cast {
-        flex: 0 0 100%;
-    }
-
     .bd-single-hero__body {
         padding: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
     }
-
+    .bd-single-hero__body .col-play,
+    .bd-single-hero__body .col-info,
+    .bd-single-hero__body .col-cast {
+        flex: 1 1 100%;
+        max-width: 100%;
+        text-align: left;
+        padding: 0;
+    }
+    .bd-single-hero__body .col-cast {
+        text-align: left;
+    }
     .tm-hero-title {
         font-size: 1.4rem;
     }
-}
-
-@media (max-width: 768px) {
     .bd-single-hero__overlay {
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
-    }
-
-    .bd-single-hero__body {
-        padding: 1rem;
-    }
-
-    .bd-single-hero__img {
-        aspect-ratio: 16 / 9;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
     }
 }
 
 /* ---------- Utilidades ---------- */
+.d-none {
+    display: none !important;
+}
 .embed-container {
     position: relative;
     width: 100%;
@@ -689,7 +637,6 @@ a:visited {
     overflow: hidden;
     background: #000;
 }
-
 .embed-container iframe,
 .embed-container object,
 .embed-container embed {
@@ -701,36 +648,7 @@ a:visited {
     border: 0;
 }
 
+/* Ajuste para que el main no tenga padding en single */
 .single main {
     padding: 0;
-}
-
-/* Botón de búsqueda (estilo CTA) */
-.nav-search-wrap .search-form .search-submit {
-    background-color: var(--breakdown-accent);
-    border: none;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    white-space: nowrap;
-}
-
-.nav-search-wrap .search-form .search-submit:hover {
-    background-color: #c1121f;
-    color: #fff;
-}
-
-.nav-search-wrap .search-form .search-submit i.bi-search {
-    font-size: 0.85rem;
-    margin-right: 4px;
 }
