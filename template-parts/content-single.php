@@ -81,9 +81,9 @@ if ($iframe_html) {
                         </div>
                         <div class="col-md-6">
                             <div class="bd-single-meta">
-                                <span><i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?></span>
-                                <span><i class="bi bi-calendar"></i> <?php echo get_field('anio_lanzamiento'); ?></span>
-                                <span><i class="bi bi-disc"></i> <?php echo get_field('album)'); ?></span>
+                                <span><i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?> qqq</span>
+                                <span><i class="bi bi-calendar"></i> <?php echo get_field('anio_lanzamiento'); ?> aaaa</span>
+                                <span><i class="bi bi-disc"></i> <?php echo get_field('album)'); ?> eeee</span>
                             </div>
                         </div>
                     </div>
