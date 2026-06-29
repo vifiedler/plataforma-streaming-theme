@@ -282,7 +282,7 @@ php
                 'rel'            => 0,        // No mostrar videos relacionados
                 'iv_load_policy' => 3,        // Desactivar anotaciones
                 'enablejsapi'    => 1,        // Permite control con JS
-                // 'autoplay'    => 1,        // Opcional: reproducción automática
+                'autoplay'    => 1,        // Opcional: reproducción automática
             );
             $new_src = add_query_arg($params, $src);
             $iframe = str_replace($src, $new_src, $iframe);
