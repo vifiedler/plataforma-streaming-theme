@@ -104,14 +104,16 @@ $album = get_field('album'); // Campo ACF que debes crear
         </div>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
-    <section class="container">
-        <div class="row">
-            <!-- Info detallada -->
-            <div class="col-md-8 d-flex flex-column border rounded">
-                <h2 class="col-md-6"><?php echo get_the_title(); ?></h2>
-                <div class="col-md-6">
+    <section class="container py-4">
+        <div class="row g-4"> <!-- ← AQUÍ ESTÁ EL CAMBIO -->
+
+            <!-- Columna principal: título, géneros, metadatos, excerpt -->
+            <div class="col-md-8 d-flex flex-column border border-secondary rounded-3 p-3">
+                <h2 class="h3 fw-bold mb-2"><?php echo get_the_title(); ?></h2>
+
+                <div class="mb-2">
                     <?php if (!empty($generos) && !is_wp_error($generos)): ?>
-                        <div class="">
+                        <div class="d-flex flex-wrap gap-1">
                             <?php foreach ($generos as $g): ?>
                                 <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag me-2">
                                     <?php echo esc_html($g->name); ?>
@@ -120,31 +122,27 @@ $album = get_field('album'); // Campo ACF que debes crear
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="col-md-6">
-                    <div class="bd-single-meta">
-                        <span><i class="bi bi-clock"></i>
-                            <?php echo esc_html($duracion); ?>
-                        </span>
-                        <span><i class="bi bi-calendar"></i>
-                            <?php echo esc_html($anio); ?>
-                        </span>
-                    </div>
+
+                <div class="bd-single-meta d-flex flex-wrap gap-3 small text-secondary mb-2">
+                    <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
+                    <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
                 </div>
-                <p><?php echo get_the_excerpt(); ?></p>
+
+                <p class="mb-0"><?php echo get_the_excerpt(); ?></p>
             </div>
-            <!-- info banda -->
-            <div class="col-md-4 d-flex flex-column border rounded">
-                <strong
-                    style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
-                <ul class="bd-cast-list">
+
+            <!-- Columna derecha: integrantes -->
+            <div class="col-md-4 d-flex flex-column border border-secondary rounded-3 p-3">
+                <strong class="text-uppercase small fw-bold mb-2"
+                    style="color:var(--breakdown-text); letter-spacing:1px;">
+                    Integrantes
+                </strong>
+                <ul class="bd-cast-list list-unstyled mb-0">
                     <?php if ($integrantes && is_array($integrantes)): ?>
                         <?php foreach ($integrantes as $integrante): ?>
-                            <li>
-                                <?php echo esc_html($integrante); ?>
-                            </li>
+                            <li><?php echo esc_html($integrante); ?></li>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <!-- Placeholders mientras no tengas el campo -->
                         <li><strong>Vocalista</strong> (placeholder)</li>
                         <li><strong>Guitarrista</strong> (placeholder)</li>
                         <li><strong>Bajista</strong> (placeholder)</li>
@@ -152,19 +150,26 @@ $album = get_field('album'); // Campo ACF que debes crear
                     <?php endif; ?>
                 </ul>
             </div>
-            <!-- descripción cancion -->
-            <div class="col-md-8 border rounded">
+
+            <!-- Fila siguiente: descripción canción -->
+            <div class="col-md-8 border border-secondary rounded-3 p-3">
                 <?php echo the_content(); ?>
             </div>
-            <!-- info album -->
-            <div class="col-md-4 border rounded">
-                <div class="row">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                        alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle col-md-4">
-                    <p class="col-md-8"><?php echo get_field('desc_album'); ?></p>
+
+            <!-- Fila siguiente: información del álbum -->
+            <div class="col-md-4 border border-secondary rounded-3 p-3">
+                <div class="row align-items-center g-2">
+                    <div class="col-4 col-md-12 col-xl-4">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                            alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-8 col-md-12 col-xl-8">
+                        <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+        </div> <!-- /.row -->
+    </section> <!-- /.container -->
 
 </article>
