@@ -60,7 +60,7 @@ if ($iframe_html) {
                 <!-- Columna central: información -->
                 <div class="col-md-7">
                     <h1 class="tm-hero-title d-none"><?php the_title(); ?></h1>
-                    <div class="tm-hero-excerpt col-12 fs-3"><?php the_excerpt(); ?></div>
+                    <div class="tm-hero-excerpt col-12 fs-5"><?php the_excerpt(); ?></div>
                     <div class="row">
                         <div class="col-md-6">
                             <?php if (!empty($generos) && !is_wp_error($generos)): ?>
