@@ -154,7 +154,7 @@ if ($iframe_html) {
                             alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
                     </div>
                     <div class="col-md-8">
-                        <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
+                        <p class="mb-0"><?php echo get_field('album'); ?></p>
                     </div>
                 </div>
             </div>
