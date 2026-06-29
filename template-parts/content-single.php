@@ -6,17 +6,15 @@
  *
  * @package nota3-template
  */
-$imagen  = get_field('imagen_video');
-$generos = get_the_terms( get_the_ID(), 'genero_videos' );
+$imagen = get_field('imagen_video');
+$generos = get_the_terms(get_the_ID(), 'genero_videos');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <!-- ===== HERO: imagen + overlay ===== -->
     <div id="bd-single-hero" class="position-relative overflow-hidden">
-        <img
-            src="<?php echo esc_url( $imagen['url'] ); ?>"
-            alt="<?php echo esc_attr( get_the_title() ); ?>"
+        <img src="<?php echo esc_url($imagen['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
             class="bd-single-hero__img">
 
         <div class="bd-single-hero__overlay">
@@ -29,12 +27,11 @@ $generos = get_the_terms( get_the_ID(), 'genero_videos' );
                 </div>
 
                 <!-- Géneros -->
-                <?php if ( ! empty( $generos ) && ! is_wp_error( $generos ) ) : ?>
+                <?php if (!empty($generos) && !is_wp_error($generos)): ?>
                 <div class="d-flex flex-wrap gap-2">
-                    <?php foreach ( $generos as $g ) : ?>
-                    <a href="<?php echo esc_url( get_term_link( $g ) ); ?>"
-                       class="bd-tag">
-                        <?php echo esc_html( $g->name ); ?>
+                    <?php foreach ($generos as $g): ?>
+                    <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag">
+                        <?php echo esc_html($g->name); ?>
                     </a>
                     <?php endforeach; ?>
                 </div>
@@ -42,10 +39,10 @@ $generos = get_the_terms( get_the_ID(), 'genero_videos' );
 
                 <!-- Artista + Duración -->
                 <p class="tm-hero-artist">
-                    <?php echo esc_html( get_field('nombre_artista') ); ?>
+                    <?php echo esc_html(get_field('nombre_artista')); ?>
                 </p>
                 <p class="bd-single-meta">
-                    <i class="bi bi-clock"></i> <?php echo esc_html( get_field('duracion') ); ?>
+                    <i class="bi bi-clock"></i> <?php echo esc_html(get_field('duracion')); ?>
                 </p>
 
                 <!-- Botón play -->
@@ -59,7 +56,7 @@ $generos = get_the_terms( get_the_ID(), 'genero_videos' );
 
     <!-- ===== VIDEO (oculto hasta click en play) ===== -->
     <div id="bd-single-video" class="d-none">
-        <div class="embed-container">
+        <div class="embed-container" id="video-container">
             <?php the_field('url_video'); ?>
         </div>
     </div>
