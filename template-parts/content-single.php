@@ -30,7 +30,7 @@ $generos = get_the_terms(get_the_ID(), 'genero_videos');
                 <?php if (!empty($generos) && !is_wp_error($generos)): ?>
                 <div class="d-flex flex-wrap gap-2">
                     <?php foreach ($generos as $g): ?>
-                    <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag">
+                    <a href="<?php echo esc_url(get_term_link($g)); ?>" class="bd-tag bd-enlace">
                         <?php echo esc_html($g->name); ?>
                     </a>
                     <?php endforeach; ?>
