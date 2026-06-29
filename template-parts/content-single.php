@@ -107,7 +107,7 @@ $album = get_field('album'); // Campo ACF que debes crear
     <section class="container">
         <div class="row">
             <!-- Info detallada -->
-            <div class="col-md-8 d-flex flex-column">
+            <div class="col-md-8 d-flex flex-column border rounded">
                 <h2 class="col-md-6"><?php echo get_the_title(); ?></h2>
                 <div class="col-md-6">
                     <?php if (!empty($generos) && !is_wp_error($generos)): ?>
@@ -133,7 +133,7 @@ $album = get_field('album'); // Campo ACF que debes crear
                 <p><?php echo get_the_excerpt(); ?></p>
             </div>
             <!-- info banda -->
-            <div class="col-md-4 d-flex flex-column">
+            <div class="col-md-4 d-flex flex-column border rounded">
                 <strong
                     style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
                 <ul class="bd-cast-list">
@@ -153,14 +153,14 @@ $album = get_field('album'); // Campo ACF que debes crear
                 </ul>
             </div>
             <!-- descripción cancion -->
-            <div class="col-md-8">
+            <div class="col-md-8 border rounded">
                 <?php echo the_content(); ?>
             </div>
             <!-- info album -->
-            <div class="col-md-4">
+            <div class="col-md-4 border rounded">
                 <div class="row">
                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                        alt="<?php echo esc_html($album); ?>" class="img-fluid">
+                        alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
                     <p><?php echo get_field('desc_album'); ?></p>
                 </div>
             </div>
