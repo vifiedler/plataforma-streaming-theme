@@ -7,6 +7,9 @@
                 <?php if (is_active_sidebar('footer_2')):
                     dynamic_sidebar('footer_2');
                 endif; ?>
+                <?php if (is_active_sidebar('footer_3')):
+                    dynamic_sidebar('footer_3');
+                endif; ?>
         </div>
     </div>
     <!-- Créditos -->
