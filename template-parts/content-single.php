@@ -69,10 +69,8 @@ $album = get_field('album'); // Campo ACF que debes crear
                                     <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
                                     <?php if ($anio): ?>
                                         <span><i class="bi bi-calendar"></i> <?php echo esc_html($anio); ?></span>
-                                    <?php else: ?>
-                                        <span><i class="bi bi-calendar"></i> 2025 (placeholder)</span>
                                     <?php endif; ?>
-                                    <span><i class="bi bi-clock"></i> <?php echo esc_html($album); ?></span>
+                                    <span><i class="bi bi-disc"></i> <?php echo esc_html($album); ?></span>
                                 </div>
                             </div>
                         </div>
