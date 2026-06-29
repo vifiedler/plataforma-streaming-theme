@@ -23,13 +23,13 @@ if ($iframe_html) {
         $src = $matches[1];
         
         // Parámetros a añadir
-        $params = array(
-            'controls'       => 0,
-            'rel'            => 0,
-            'iv_load_policy' => 3,
-            'enablejsapi'    => 1,
-            'autoplay'       => 1,
-        );
+       $params = array(
+    'controls'       => 0,
+    'rel'            => 0,
+    'iv_load_policy' => 3,
+    'enablejsapi'    => 1,
+    // 'autoplay'    => 1,   // Lo quitamos para que lo maneje JS
+);
         $new_src = add_query_arg($params, $src);
         $iframe_final = str_replace($src, $new_src, $iframe_html);
         
