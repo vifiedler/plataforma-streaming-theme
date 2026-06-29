@@ -696,3 +696,8 @@ a:visited {
 .single main {
     padding: 0;
 }
+/* Ocultar controles de YouTube al hacer hover sobre el video */
+.bd-single-video-container,
+.bd-single-video-container iframe {
+    pointer-events: none;
+}
