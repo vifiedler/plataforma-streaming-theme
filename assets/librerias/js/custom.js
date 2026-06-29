@@ -40,6 +40,14 @@
         }
 
         if ($iframe && $iframe.length) {
+            // Si no tiene autoplay, lo forzamos recargando el src
+            let src = $iframe.attr('src');
+            if (src.indexOf('autoplay=1') === -1) {
+                let separator = src.indexOf('?') !== -1 ? '&' : '?';
+                $iframe.attr('src', src + separator + 'autoplay=1');
+            }
+
+            // Si estaba pausado, reanudar
             if (isPaused) {
                 sendCommand('playVideo');
                 isPaused = false;
