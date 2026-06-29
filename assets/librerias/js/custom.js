@@ -14,17 +14,17 @@
     });
 
     /* ===== Single: control de reproducción con pausa ===== */
-    var $playBtn = $('#bd-play-btn');
-    var $pauseBtn = $('#bd-pause-btn');
-    var $videoContainer = $('#bd-single-video');
-    var $overlay = $('#bd-overlay');
-    var $iframe = null;
-    var isPaused = false;
+    let $playBtn = $('#bd-play-btn');
+    let $pauseBtn = $('#bd-pause-btn');
+    let $videoContainer = $('#bd-single-video');
+    let $overlay = $('#bd-overlay');
+    let $iframe = null;
+    let isPaused = false;
 
     // Función para enviar comandos al reproductor de YouTube
     function sendCommand(command) {
         if (!$iframe) return;
-        var message = JSON.stringify({
+        let message = JSON.stringify({
             event: 'command',
             func: command,
             args: ''
@@ -37,10 +37,10 @@
         if (!$iframe) {
             $iframe = $('#video-container').find('iframe');
             if ($iframe.length) {
-                var src = $iframe.attr('src');
+                let src = $iframe.attr('src');
                 if (src.indexOf('enablejsapi=1') === -1) {
-                    var separator = src.indexOf('?') !== -1 ? '&' : '?';
-                    var newSrc = src + separator + 'enablejsapi=1';
+                    let separator = src.indexOf('?') !== -1 ? '&' : '?';
+                    let newSrc = src + separator + 'enablejsapi=1';
                     if (newSrc.indexOf('autoplay=1') === -1) {
                         newSrc += '&autoplay=1';
                     }
@@ -60,7 +60,7 @@
         // Mostrar el video
         $videoContainer.show();
         // Obtener y configurar el iframe
-        var iframe = getIframe();
+        let iframe = getIframe();
         if (iframe && iframe.length) {
             if (isPaused) {
                 // Si estaba pausado, reanudar
