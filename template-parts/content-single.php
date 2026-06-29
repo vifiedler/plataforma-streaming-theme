@@ -104,8 +104,8 @@ $album = get_field('album'); // Campo ACF que debes crear
         </div>
         <?php include get_template_directory() . '/assets/modulos/modulo-video/loop-mp-carrusel-single.php'; ?>
     </section>
-<section class="container py-4">
-    <div class="row mx-0 gap-2">   <!-- gap-2 (0.5rem) -->
+<section class="container-fluid py-4">
+    <div class="row mx-5 gap-5 justify-content-center">   <!-- gap-2 (0.5rem) -->
 
         <!-- Columna principal: col-md-7 -->
         <div class="col-md-7 d-flex flex-column border border-secondary rounded-3 p-3">
