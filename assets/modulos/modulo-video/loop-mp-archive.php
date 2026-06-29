@@ -43,7 +43,7 @@ if ($wp_query->have_posts()):
                             <div class="tm-hero-artist">
                                 <?php echo esc_html(get_field('nombre_artista')); ?>
                             </div>
-                            <a href="<?php echo get_the_permalink();?>" class="tm-hero-btn"><i class="bi bi-play-fill"></i>Ir a video</a>
+                            <a href="<?php echo get_the_permalink();?>" class="tm-hero-btn col-4"><i class="bi bi-play-fill"></i>Ir a video</a>
                         </div>
                     </article>
                 </div>
