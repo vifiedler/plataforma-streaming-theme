@@ -493,6 +493,8 @@ a:visited {
 /* Cuando el video está activo: fondo casi transparente */
 .bd-single-hero__overlay.video-active {
     background: rgba(0, 0, 0, 0.2) !important;
+    pointer-events: auto;
+    cursor: default;
 }
 
 /* Ocultar todo el contenido excepto la columna del botón (col-md-3) */
@@ -695,9 +697,4 @@ a:visited {
 /* Ajuste para que el main no tenga padding en single */
 .single main {
     padding: 0;
-}
-/* Ocultar controles de YouTube al hacer hover sobre el video */
-.bd-single-video-container,
-.bd-single-video-container iframe {
-    pointer-events: none;
 }
