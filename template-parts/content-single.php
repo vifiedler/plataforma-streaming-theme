@@ -85,9 +85,9 @@ if ($iframe_html) {
                 </div>
                 <div class="col-md-3 mt-2">
                     <strong
-                        style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;"><?php echo get_field('etiqueta_integrantes');?></strong>
+                        style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;"><?php echo get_field('etiqueta_integrantes'); ?></strong>
                     <ul class="bd-cast-list">
-                        <?php echo get_field('integrantes');?>
+                        <?php echo get_field('integrantes'); ?>
                     </ul>
                 </div>
             </div>
@@ -128,9 +128,9 @@ if ($iframe_html) {
             </div>
             <!-- Columna integrantes -->
             <div class="col-md-4 d-flex flex-column border border-secondary rounded-3 p-3">
-                    <h2 class="h3 fw-bold mb-2"><?php echo get_field('etiqueta_integrantes');?></h2>
+                <h2 class="h3 fw-bold mb-2"><?php echo get_field('etiqueta_integrantes'); ?></h2>
                 <ul class="bd-cast-list list-unstyled mb-0 fs-5">
-                    <?php echo get_field('integrantes');?>
+                    <?php echo get_field('integrantes'); ?>
                 </ul>
             </div>
             <!-- Descripción canción -->
@@ -140,12 +140,12 @@ if ($iframe_html) {
             <!-- Álbum -->
             <div class="col-md-4 border border-secondary rounded-3 p-3">
                 <div class="row align-items-center g-2">
+                    <p class="h3 fw-bold mb-2"><?php echo get_field('album'); ?></p>
                     <div class="col-md-4">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                             alt="<?php echo get_field('album'); ?>" class="img-fluid rounded-circle">
                     </div>
                     <div class="col-md-8">
-                        <p class="h3 fw-bold mb-2"><?php echo get_field('album'); ?></p>
                         <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
                     </div>
                 </div>
