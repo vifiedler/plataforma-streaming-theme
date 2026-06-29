@@ -1,6 +1,6 @@
 <footer id="colophon" class="fbs__footer mt-3">
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row">
                 <?php if (is_active_sidebar('footer_1')):
                     dynamic_sidebar('footer_1');
                 endif; ?>

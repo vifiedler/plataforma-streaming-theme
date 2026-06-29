@@ -6,7 +6,7 @@ function zona_widget(){
         array(
             'name'          => 'Footer columna 1',
             'id'            => 'footer_1',
-            'before_widget' => '<div id="%1$s" class="col-md-4 col-lg-4 mb-4 mb-lg-0 footer-theme">',
+            'before_widget' => '<div id="%1$s" class="d-flex justify-content-center mb-3">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="mb-3 d-none">',
             'after_title'   => '</h3>'
@@ -18,7 +18,7 @@ function zona_widget(){
         array(
             'name'          => 'Footer columna 2',
             'id'            => 'footer_2',
-            'before_widget' => '<div id="%1$s" class="col-md-6 mb-5 mb-lg-0">',
+            'before_widget' => '<div id="%1$s" class="d-flex justify-content-center">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="mb-3 d-none">',
             'after_title'   => '</h3>'
