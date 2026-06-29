@@ -162,7 +162,7 @@ if ($iframe_html) {
             </div>
             <!-- Descripción canción -->
             <div class="col-md-7 border border-secondary rounded-3 p-3">
-                <?php the_content(); ?>
+                <?php echo get_field('descripcion'); ?>
             </div>
             <!-- Álbum -->
             <div class="col-md-4 border border-secondary rounded-3 p-3">
