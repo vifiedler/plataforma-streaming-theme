@@ -28,24 +28,27 @@ if ($wp_query->have_posts()):
             while ($wp_query->have_posts()):
                 $wp_query->the_post(); ?>
                 <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
-                    <article class="tm-hero-slide position-relative">
-                        <!-- img -->
-                        <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
-                            alt="<?php echo esc_attr(get_the_title()); ?>" class="tm-carousel__img">
-                        <!-- contenido -->
-                        <div class="tm-hero-body">
-                            <a href="<?php echo get_the_permalink(); ?>" class="text-decoration-none">
-                                <h3 class="tm-hero-title"><?php the_title(); ?></h3>
-                            </a>
-                            <div class="tm-hero-excerpt">
-                                <?php echo get_the_excerpt(); ?>
+                    <a href="<?php echo get_the_permalink(); ?>">
+                        <article class="tm-hero-slide position-relative">
+                            <!-- img -->
+                            <img src="<?php echo esc_url(get_field('imagen_video')['url']); ?>"
+                                alt="<?php echo esc_attr(get_the_title()); ?>" class="tm-carousel__img">
+                            <!-- contenido -->
+                            <div class="tm-hero-body">
+                                <a href="<?php echo get_the_permalink(); ?>" class="text-decoration-none">
+                                    <h3 class="tm-hero-title"><?php the_title(); ?></h3>
+                                </a>
+                                <div class="tm-hero-excerpt">
+                                    <?php echo get_the_excerpt(); ?>
+                                </div>
+                                <div class="tm-hero-artist">
+                                    <?php echo esc_html(get_field('nombre_artista')); ?>
+                                </div>
+                                <a href="<?php echo get_the_permalink(); ?>" class="tm-hero-btn col-4"><i
+                                        class="bi bi-play-fill"></i>Ir a video</a>
                             </div>
-                            <div class="tm-hero-artist">
-                                <?php echo esc_html(get_field('nombre_artista')); ?>
-                            </div>
-                            <a href="<?php echo get_the_permalink();?>" class="tm-hero-btn col-4"><i class="bi bi-play-fill"></i>Ir a video</a>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
                 </div>
                 <?php $i++; endwhile; ?>
         </div>
