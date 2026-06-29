@@ -82,7 +82,7 @@ if ($iframe_html) {
                         <div class="col-md-6">
                             <div class="bd-single-meta">
                                 <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
-                                <span><i class="bi bi-calendar"></i> <?php echo esc_html( get_field('anio_lanzamiento') ); ?></span>
+                                <span><i class="bi bi-calendar"></i> <?php echo esc_html( get_field('anio_lanzamiento') ); ?> hola hola</span>
                                 <span><i class="bi bi-disc"></i> <?php echo esc_html($album); ?></span>
                             </div>
                         </div>
