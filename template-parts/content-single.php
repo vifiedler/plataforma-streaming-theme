@@ -81,9 +81,9 @@ if ($iframe_html) {
                         </div>
                         <div class="col-md-6">
                             <div class="bd-single-meta">
-                                <span><i class="bi bi-clock"></i> <?php echo esc_html($duracion); ?></span>
-                                <span><i class="bi bi-calendar"></i> <?php echo esc_html(get_field('anio_lanzamiento') ); ?></span>
-                                <span><i class="bi bi-disc"></i> <?php echo esc_html($album); ?></span>
+                                <span><i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?></span>
+                                <span><i class="bi bi-calendar"></i> <?php echo get_field('anio_lanzamiento'); ?></span>
+                                <span><i class="bi bi-disc"></i> <?php echo get_field('album)'); ?></span>
                             </div>
                         </div>
                     </div>
@@ -91,18 +91,9 @@ if ($iframe_html) {
                 </div>
                 <div class="col-md-3 mt-2">
                     <strong
-                        style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Integrantes</strong>
+                        style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;"><?php echo get_field('etiqueta_integrantes');?></strong>
                     <ul class="bd-cast-list">
-                        <?php if ($integrantes && is_array($integrantes)): ?>
-                            <?php foreach ($integrantes as $integrante): ?>
-                                <li><?php echo esc_html($integrante); ?></li>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <li><strong>Vocalista</strong> (placeholder)</li>
-                            <li><strong>Guitarrista</strong> (placeholder)</li>
-                            <li><strong>Bajista</strong> (placeholder)</li>
-                            <li><strong>Baterista</strong> (placeholder)</li>
-                        <?php endif; ?>
+                        <?php echo get_field('integrantes');?>
                     </ul>
                 </div>
             </div>
