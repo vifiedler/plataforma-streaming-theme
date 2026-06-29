@@ -167,11 +167,11 @@ if ($iframe_html) {
             <!-- Álbum -->
             <div class="col-md-4 border border-secondary rounded-3 p-3">
                 <div class="row align-items-center g-2">
-                    <div class="col-4 col-md-12 col-xl-4">
+                    <div class="col-md-4">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                             alt="<?php echo esc_html($album); ?>" class="img-fluid rounded-circle">
                     </div>
-                    <div class="col-8 col-md-12 col-xl-8">
+                    <div class="col-md-8">
                         <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
                     </div>
                 </div>
