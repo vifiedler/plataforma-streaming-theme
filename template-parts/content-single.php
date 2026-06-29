@@ -83,7 +83,7 @@ if ($iframe_html) {
                             <div class="bd-single-meta">
                                 <span><i class="bi bi-clock"></i> <?php echo get_field('duracion'); ?></span>
                                 <span><i class="bi bi-calendar"></i> <?php echo get_field('anio_lanzamiento'); ?></span>
-                                <span><i class="bi bi-disc"></i> <?php echo get_field('album)'); ?></span>
+                                <span><i class="bi bi-disc"></i> <?php echo get_field('album'); ?></span>
                             </div>
                         </div>
                     </div>
