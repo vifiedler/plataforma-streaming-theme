@@ -55,7 +55,7 @@ if ($iframe_html) {
         <div class="bd-single-hero__overlay" id="bd-overlay">
             <div class="row bd-single-hero__body">
                 <!-- Columna izquierda: botón de reproducción -->
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <button id="bd-play-btn" class="tm-hero-btn">
                         <i class="bi bi-play-fill"></i> Reproducir
                     </button>
@@ -64,7 +64,7 @@ if ($iframe_html) {
                     </button>
                 </div>
                 <!-- Columna central: información -->
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <h1 class="tm-hero-title d-none"><?php the_title(); ?></h1>
                     <div class="tm-hero-excerpt col-12"><?php the_excerpt(); ?></div>
                     <div class="row">
