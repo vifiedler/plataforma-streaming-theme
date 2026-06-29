@@ -128,8 +128,8 @@ if ($iframe_html) {
     </section>
 
     <!-- ===== SECCIÓN DE INFORMACIÓN (detalle) ===== -->
-    <section class="container py-4">
-        <div class="row mx-0 gap-3">
+    <section class="container-fluid px-4">
+        <div class="row mx-0 gap-3 justify-content-around">
 
             <!-- Columna principal -->
             <div class="col-md-7 d-flex flex-column border border-secondary rounded-3 p-3">
@@ -153,7 +153,7 @@ if ($iframe_html) {
             </div>
 
             <!-- Columna integrantes -->
-            <div class="col-md-3 d-flex flex-column border border-secondary rounded-3 p-3">
+            <div class="col-md-4 d-flex flex-column border border-secondary rounded-3 p-3">
                 <strong class="text-uppercase small fw-bold mb-2" style="color:var(--breakdown-text); letter-spacing:1px;">
                     Integrantes
                 </strong>
@@ -177,7 +177,7 @@ if ($iframe_html) {
             </div>
 
             <!-- Álbum -->
-            <div class="col-md-3 border border-secondary rounded-3 p-3">
+            <div class="col-md-4 border border-secondary rounded-3 p-3">
                 <div class="row align-items-center g-2">
                     <div class="col-4 col-md-12 col-xl-4">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
