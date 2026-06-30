@@ -47,7 +47,7 @@ if ($iframe_html) {
         </div>
         <!-- Overlay con contenido -->
         <div class="bd-single-hero__overlay" id="bd-overlay">
-            <div class="row bd-single-hero__body">
+            <div class="row bd-single-hero__body align-content-center">
                 <!-- Columna izquierda: botón de reproducción -->
                 <div class="col-md-2">
                     <button id="bd-play-btn" class="tm-hero-btn">
