@@ -143,7 +143,7 @@ if ($iframe_html) {
                     <p class="h3 fw-bold mb-2"><?php echo get_field('album'); ?></p>
                     <div class="col-md-4">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                            alt="<?php echo get_field('album'); ?>" class="img-fluid rounded-circle">
+                            alt="<?php echo get_field('album'); ?>" class="img-fluid rounded-4">
                     </div>
                     <div class="col-md-8">
                         <p class="mb-0"><?php echo get_field('desc_album'); ?></p>
