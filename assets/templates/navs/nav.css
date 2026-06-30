@@ -1,7 +1,3 @@
-/* ============================================
-   NAVBAR — estilo Texas Monthly
-   ============================================ */
-
 #masthead,
 .fbs__net-navbar {
     background-color: #0f0f0f !important;
@@ -64,7 +60,7 @@
     border-bottom: 2px solid #fff;
 }
 
-/* Ocultar flecha nativa Bootstrap */
+/* Ocultar flecha Bootstrap */
 .dropdown-toggle::after {
     display: none;
 }
@@ -101,7 +97,7 @@
     background: #222;
 }
 
-/* Botón Suscribirse — clase asignada desde WP Admin */
+/* Botón Suscribirse */
 .fbs__net-navbar .navbar-nav .nav-item .nav-link.fbs__nav-subscribe {
     color: #000 !important;
     background: #fff;
@@ -131,7 +127,7 @@
     filter: invert(1);
 }
 
-/* ===== Buscador nativo estilo Prime Video ===== */
+/* Buscador */
 .nav-search-wrap {
     flex: 0 1 auto;
     min-width: 200px;
@@ -198,7 +194,7 @@
     margin-right: 4px;
 }
 
-/* ===== Responsive: Tablet y móvil ===== */
+/* Responsive */
 @media (max-width: 991px) {
     /* Logo ocupa todo el ancho en móvil/tablet */
     .fbs__net-navbar .navbar-brand-wrap {
@@ -242,7 +238,7 @@
         padding: 8px 16px !important;
     }
 
-    /* Buscador debajo del menú, ocupando todo el ancho */
+    /* Buscador debajo del menú */
     .nav-search-wrap {
         flex: 1 1 100%;
         margin-top: 0.5rem;
@@ -260,7 +256,7 @@
     }
 }
 
-/* Ajuste adicional para pantallas muy pequeñas */
+/* pantallas muy pequeñas */
 @media (max-width: 576px) {
     .fbs__net-navbar .navbar-brand img {
         max-height: 50px;
