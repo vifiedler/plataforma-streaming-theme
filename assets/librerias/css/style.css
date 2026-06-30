@@ -697,5 +697,5 @@ a:visited {
 .border-secondary {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-secondary-rgb),var(--bs-border-opacity)) !important;
-  background-color: #333;
+  background-color: #33333326;
 }
