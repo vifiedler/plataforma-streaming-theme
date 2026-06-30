@@ -623,11 +623,13 @@ a:visited {
 
 /* Lista de reparto (integrantes) */
 .bd-cast-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
-    color: var(--breakdown-text-muted);
+  list-style: none;
+  margin: 0;
+    margin-top: 0px;
+  padding: 0;
+  font-size: 0.8rem;
+  color: #eee;
+  font-weight: 600;
 }
 
 .bd-cast-list li {
