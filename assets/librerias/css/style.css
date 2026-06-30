@@ -534,6 +534,9 @@ a:visited {
     overflow: hidden;
     margin-bottom: 0.5rem;
 }
+.tm-hero-excerpt.col-12 p{
+    font-size: 1rem;
+}
 
 .tm-hero-artist {
     font-size: 0.78rem;
