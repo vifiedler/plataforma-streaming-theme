@@ -1,9 +1,6 @@
-/* ============================================================
-   BREAKDOWN - Estilo dark (tipo Prime Video / YouTube)
-   Plataforma de videos musicales
-   ============================================================ */
+/* BREAKDOWN - Estilo dark (tipo Prime Video / YouTube) */
 
-/* ---------- Variables globales ---------- */
+/* Variables globales */
 :root {
     --breakdown-bg: #0f0f0f;
     --breakdown-card: #1a1a1a;
@@ -12,7 +9,7 @@
     --breakdown-accent: #e63946;
 }
 
-/* ---------- Reset y base ---------- */
+/* Reset y base */
 html,
 body {
     overflow-x: hidden;
@@ -39,7 +36,7 @@ a:visited {
     color: var(--breakdown-text-muted);
 }
 
-/* ---------- Botones primarios ---------- */
+/* Botones primarios */
 .btn-primary {
     background-color: var(--breakdown-accent);
     border-color: var(--breakdown-accent);
@@ -54,7 +51,7 @@ a:visited {
     color: #fff;
 }
 
-/* ---------- Footer (global) ---------- */
+/* Footer */
 .site-footer {
     background-color: #111;
     color: var(--breakdown-text-muted);
@@ -75,7 +72,7 @@ a:visited {
     color: var(--breakdown-text);
 }
 
-/* ---------- Encabezados de sección ---------- */
+/* Encabezados de sección */
 .section-header-title {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
@@ -89,7 +86,7 @@ a:visited {
     border-bottom: 4px solid var(--breakdown-accent) !important;
 }
 
-/* ---------- Enlace "Ver más" ---------- */
+/* Enlace "Ver más" */
 .ver-mas {
     display: inline-block;
     vertical-align: middle;
@@ -107,7 +104,7 @@ a:visited {
     text-decoration: none;
 }
 
-/* ---------- Archive / Taxonomy header ---------- */
+/* Archive / Taxonomy header */
 .page-header {
     border-bottom: 4px solid var(--breakdown-accent);
     margin-bottom: 2rem;
@@ -130,7 +127,7 @@ a:visited {
     margin-top: 0.5rem;
 }
 
-/* ---------- Navegación entre posts ---------- */
+/* Navegación entre posts */
 .nav-links {
     display: flex;
     gap: 1rem;
@@ -151,7 +148,7 @@ a:visited {
     color: var(--breakdown-accent);
 }
 
-/* ---------- Tarjeta de video (loops homepage, NO carrusel) ---------- */
+/* Tarjeta de video (loops homepagel)*/
 .card {
     background-color: var(--breakdown-card);
     border: none;
@@ -174,7 +171,7 @@ a:visited {
     color: var(--breakdown-text-muted);
 }
 
-/* ---------- Tarjetas en archivo / taxonomía ---------- */
+/* Tarjetas en archivo / taxonomía */
 .video-card {
     background: transparent;
     cursor: pointer;
@@ -247,7 +244,7 @@ a:visited {
     font-family: 'Inter', sans-serif;
 }
 
-/* ---------- Carrusel horizontal (Prime Video style) ---------- */
+/* Carrusel horizontal */
 .bd-carousel-wrap {
     position: relative;
     display: flex;
@@ -369,7 +366,7 @@ a:visited {
     border-color: var(--breakdown-accent);
 }
 
-/* ---------- Hero del home (carrusel destacado) ---------- */
+/* Hero del home */
 .tm-carousel {
     position: relative;
     background-color: var(--breakdown-bg);
@@ -433,9 +430,7 @@ a:visited {
     gap: 0.6rem;
 }
 
-/* ============================================================
-   SINGLE: Hero estilo Prime Video
-   ============================================================ */
+/* single */
 
 /* Contenedor principal del hero */
 .bd-single-hero {
@@ -475,7 +470,7 @@ a:visited {
     height: 100%;
 }
 
-/* Overlay (encima del video) */
+/* Overlay */
 .bd-single-hero__overlay {
     position: absolute;
     inset: 0;
@@ -497,7 +492,7 @@ a:visited {
     cursor: default;
 }
 
-/* Ocultar todo el contenido excepto la columna del botón (col-md-3) */
+/* Ocultar todo el contenido excepto la columna del botón */
 .bd-single-hero__overlay.video-active .bd-single-hero__body>*:not(.col-md-2) {
     opacity: 0;
     pointer-events: none;
@@ -510,7 +505,7 @@ a:visited {
     pointer-events: auto;
 }
 
-/* Cuerpo del overlay (contenido) */
+/* Cuerpo del overlay */
 .bd-single-hero__body {
     width: 100%;
     padding: 2.5rem 3rem;
@@ -592,7 +587,7 @@ a:visited {
     margin-bottom: 0.5rem;
 }
 
-/* Botón de reproducción (tipo Prime Video) */
+/* Botón de reproducción */
 .tm-hero-btn {
     display: inline-flex;
     align-items: center;
@@ -621,7 +616,7 @@ a:visited {
     font-size: 1.2rem;
 }
 
-/* Lista de reparto (integrantes) */
+/* Lista integrantes */
 .bd-cast-list {
   list-style: none;
   margin: 0;
@@ -641,7 +636,7 @@ a:visited {
     font-weight: 600;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* responsive */
 @media (max-width: 992px) {
     .bd-single-hero__body {
         padding: 1.5rem;
@@ -672,7 +667,6 @@ a:visited {
     }
 }
 
-/* ---------- Utilidades ---------- */
 .d-none {
     display: none !important;
 }
@@ -696,7 +690,6 @@ a:visited {
     border: 0;
 }
 
-/* Ajuste para que el main no tenga padding en single */
 .single main {
     padding: 0;
 }
