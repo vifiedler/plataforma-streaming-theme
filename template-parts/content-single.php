@@ -86,7 +86,7 @@ if ($iframe_html) {
                 <div class="col-md-3 mt-2">
                     <strong
                         style="color:var(--breakdown-text); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;"><?php echo get_field('etiqueta_integrantes'); ?></strong>
-                    <ul class="bd-cast-list">
+                    <ul class="bd-cast-list mt-4">
                         <?php echo get_field('integrantes'); ?>
                     </ul>
                 </div>
