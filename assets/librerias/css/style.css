@@ -524,7 +524,7 @@ a:visited {
 }
 
 .tm-hero-excerpt {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--breakdown-text-muted);
     line-height: 1.5;
     display: -webkit-box;
@@ -533,9 +533,6 @@ a:visited {
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin-bottom: 0.5rem;
-}
-.tm-hero-excerpt.col-12 p{
-    font-size: 1rem;
 }
 
 .tm-hero-artist {
